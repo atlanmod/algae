@@ -2,29 +2,29 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="org.atlanmod.energy.estimation.engine.extension"
+         id="org.atlanmod.analysis.algae.extension"
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
       <addon
             addonGroupId="General.AddonGroup"
-            class="org.atlanmod.energy.estimation.engine.EngineAddon"
-            id="org.atlanmod.energy.estimation.engine.addon"
-            name="Energy estimation"
-            shortDescription="Requires an energy estimation model as a parameter">
+            class="org.atlanmod.analysis.algae.engine.EngineAddon"
+            id="org.atlanmod.analysis.algae.extension"
+            name="Dynamic analysis"
+            shortDescription="Requires an algae model as a parameter">
          <addon_booleanOption
                defaultValue="false"
-               id="org.atlanmod.energy.estimation.engine.smm_metamodel"
+               id="org.atlanmod.analysis.algae.extension.smm_metamodel"
                name="SMM to meta-model"
-               shortDescription="Models the estimations with SMM, and attach estimations to the meta-model">
+               shortDescription="Models the analysis with SMM, and attach analysis to the meta-model">
          </addon_booleanOption>
          <addon_booleanOption
                defaultValue="false"
-               id="org.atlanmod.energy.estimation.engine.smm_model"
+               id="org.atlanmod.analysis.algae.extension.smm_model"
                name="SMM to model"
-               shortDescription="Models the estimations with SMM, and attach estimations to the model.">
+               shortDescription="Models the analysis with SMM, and attach analysis to the model.">
          </addon_booleanOption>
          <addon_stringOption
                defaultValue="SMMModel"
-               id="org.atlanmod.energy.estimation.engine.smm_file"
+               id="org.atlanmod.analysis.algae.extension.smm_file"
                name="Model filename"
                shortDescription="XMI file destination to persist the SMM model.">
          </addon_stringOption>
@@ -38,11 +38,11 @@
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
                id="fr.tblf.energy.menu"
-               label="Energy">
+               label="Algae">
             <menu
-                  label="Estimation Model">
+                  label="Algae Model">
                <command
-                     commandId="fr.tblf.energy.estimation.engine.setmodelcommand"
+                     commandId="fr.tblf.analysis.algae.engine.setmodelcommand"
                      label="Set Model"
                      style="push">
                </command>
@@ -54,8 +54,8 @@
          id="fr.tblf.energy.estimation.engine.setModel"
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="org.atlanmod.energy.estimation.ui.SetModelCommand"
-            id="fr.tblf.energy.estimation.engine.setmodelcommand"
+            defaultHandler="org.atlanmod.analysis.algae.ui.SetModelCommand"
+            id="fr.tblf.analysis.algae.engine.setmodelcommand"
             name="setmodel">
       </command>
    </extension>
@@ -65,7 +65,7 @@
          point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon_group">
       <addonGroup
             id="General.AddonGroup"
-            name="EEL">
+            name="Algae">
       </addonGroup>
    </extension>
 

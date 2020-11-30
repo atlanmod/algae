@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_PbKiwDLsEeuuU-loRGgn8w" version="14.1.0.201810161215">
+  <semanticResources>model/algae.ecore</semanticResources>
+  <semanticResources>model/algae.genmodel</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>model/Ecore.ecore</semanticResources>
+  <semanticResources>model/model.ecore</semanticResources>
+</viewpoint:DAnalysis>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.atlanmod.analysis.algae.metamodel/src" modelPluginID="org.atlanmod.analysis.algae.metamodel"
+    modelName="Algae" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>algae.ecore</foreignModel>
+  <genPackages prefix="Algae" basePackage="org.atlanmod.analysis" disposableProviderFactory="true"
+      ecorePackage="algae.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="algae.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="algae.ecore#//Visibility/LOCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="algae.ecore#//Visibility/GLOBAL"/>
+    </genEnums>
+    <genClasses ecoreClass="algae.ecore#//Platform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Platform/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Platform/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Platform/measures"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Variable/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Variable/vibility"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="algae.ecore#//Measure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Measure/name.1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Measure/subname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Measure/targetClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Measure/targetOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Measure/post"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Measure/uncertainty"/>
+      <genOperations ecoreOperation="algae.ecore#//Measure/value"/>
+      <genOperations ecoreOperation="algae.ecore#//Measure/name"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasureValue/value.1"/>
+      <genOperations ecoreOperation="algae.ecore#//MeasureValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureOCL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasureOCL/oclQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasureAttribute/att"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureCast">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureCast/measure"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//RealTimeDuration"/>
+    <genClasses image="false" ecoreClass="algae.ecore#//MeasureUnboundOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureUnboundOperation/measures"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSumOperation">
+      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundSumOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSubstractOperation">
+      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundSubstractOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundProductOperation">
+      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundProductOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundDivisionOperation">
+      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundDivisionOperation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasurementUncertainty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//MeasurementUncertainty/information"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasurementUncertainty/standardUncertainty"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//NormalDistribution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//NormalDistribution/meanValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//NormalDistribution/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//Interval">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Interval/lowerEndpoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Interval/upperEndpoint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="algae.ecore#//MeasurementUncertaintyInformation"/>
+    <genClasses ecoreClass="algae.ecore#//Sampling">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Sampling/samples"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Sampling/measurementProcedure"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//Integral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//Integral/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//Integral/function"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//Sample">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Sample/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//CompositeMeasure"/>
+    <genClasses ecoreClass="algae.ecore#//LogisticMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/L"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/k"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/x0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/x"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//ExponentialMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//ExponentialMeasure/x"/>
+    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//IntegrationMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/function"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/leftBound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/rightBound"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

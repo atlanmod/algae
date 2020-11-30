@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated algae -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.atlanmod.analysis.algae.presentation.AlgaeModelWizardID"
+            name="%_UI_AlgaeModelWizard_label"
+            class="org.atlanmod.analysis.algae.presentation.AlgaeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AlgaeModelFile.gif">
+         <description>%_UI_AlgaeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated algae -->
+      <editor
+            id="org.atlanmod.analysis.algae.presentation.AlgaeEditorID"
+            name="%_UI_AlgaeEditor_label"
+            icon="icons/full/obj16/AlgaeModelFile.gif"
+            extensions="algae"
+            class="org.atlanmod.analysis.algae.presentation.AlgaeEditor"
+            contributorClass="org.atlanmod.analysis.algae.presentation.AlgaeActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
