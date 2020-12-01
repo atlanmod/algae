@@ -7,23 +7,17 @@ import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Function;
 
-import org.atlanmod.analysis.algae.CompositeMeasure;
-import org.atlanmod.analysis.algae.ExponentialMeasure;
-import org.atlanmod.analysis.algae.IntegrationMeasure;
-import org.atlanmod.analysis.algae.LogisticMeasure;
 import org.atlanmod.analysis.algae.Measure;
-import org.atlanmod.analysis.algae.MeasureAttribute;
-import org.atlanmod.analysis.algae.MeasureCast;
-import org.atlanmod.analysis.algae.MeasureOCL;
 import org.atlanmod.analysis.algae.MeasureUnboundOperation;
 import org.atlanmod.analysis.algae.Platform;
-import org.atlanmod.analysis.algae.RealTimeDuration;
-import org.atlanmod.analysis.algae.engine.calculus.CompositeMeasureCalculus;
+import org.atlanmod.analysis.algae.TypedMeasure;
 import org.atlanmod.analysis.algae.smm.SmmModeler;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -41,17 +35,12 @@ import org.eclipse.modisco.omg.smm.SmmFactory;
 import org.eclipse.modisco.omg.smm.SmmModel;
 import org.eclipse.modisco.omg.smm.SmmPackage;
 import org.eclipse.modisco.omg.smm.impl.SmmModelImpl;
-import org.eclipse.ocl.pivot.ExpressionInOCL;
-import org.eclipse.ocl.pivot.utilities.OCL;
-import org.eclipse.ocl.pivot.utilities.OCLHelper;
-import org.eclipse.ocl.pivot.utilities.ParserException;
 
 public class EngineAddon implements IEngineAddon {
 
 	public static File MODEL;
 	private Platform platform;
-	private OCL ocl = OCL.newInstance();
-	private Map<String, Measure> mapClassEstimation;
+	private Map<String, Collection<Measure>> mapClassEstimation;
 	private Map<String, Long> stepDurations;
 	private ArrayList<SmmModeler<?,?>> smmModelers; //TODO: future update should enable multiple modelers at the same time
 	
@@ -96,14 +85,21 @@ public class EngineAddon implements IEngineAddon {
 			
 			// Mapping of the targets defined in EEL to the meta classes defined by the xDSL
 			resource.getAllContents().forEachRemaining(eObject -> {
+				
 				if (eObject instanceof Measure && ((Measure) eObject).getTargetClass() != null && ((Measure) eObject).getTargetOperation() != null) {
-					//EObject target = EcoreUtil.resolve(((EObject) ((Measure) eObject).getTargetClass()), resourceSet);
-					//System.out.println("Loaded target "+target);
-					
-					mapClassEstimation.put(((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation(), (Measure)eObject);
+					String key = ((Measure) eObject).getTargetClass()+"#"+((Measure) eObject).getTargetOperation();
+					Collection<Measure> mArrayList = mapClassEstimation.get(key);
+					if (mArrayList != null) {
+						mArrayList.add((Measure) eObject);
+					} else {
+						mArrayList = new ArrayList<Measure>();
+						mArrayList.add((Measure) eObject);
+						mapClassEstimation.put(key, mArrayList);
+					}
 				}
 			});
 										
+			mapClassEstimation.forEach((s, m) -> System.out.println(s+" - "+m));
 			System.out.println(platform.getName()+" estimation model loaded");
 			initializeModelers(ctx, resourceSet);								
 		} catch (IOException e) {
@@ -188,22 +184,27 @@ public class EngineAddon implements IEngineAddon {
 		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
 		String callerOperation = operation.getName();
 		String classOperation = callerClass.concat("#").concat(callerOperation);
-		Measure m = mapClassEstimation.get(classOperation);
 		
 		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis()));
-		
-		if (m != null && !(hasRealTimeDuration(m))) {			
-			updateMeasure(m, caller, operation);
-			try {
-				BigDecimal output = m.value();
-				System.out.println(classOperation+" : "+output);	
+
 				
-				manageEstimation(m, caller);
+		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {
+			if (measure != null && !(hasRealTimeDuration(measure))) {			
+				//updateMeasure(measure, caller, operation);
+				measure.computeValue(caller, operation);
 				
-			} catch (Exception e) {				
-				System.out.println(m.getName()+" - "+m.getSubname()+" cannot compute energy consumption");
-			}		
-		}
+				try {
+					BigDecimal output = measure.value();
+					System.out.println(classOperation + "." 
+							+ (measure.getSubname() == null ? ((TypedMeasure) measure).getType() : measure.getSubname())
+							+ " : "+output);					
+					manageEstimation(measure, caller);
+					
+				} catch (Exception e) {				
+					System.out.println(measure.getName()+" - "+measure.getSubname()+" cannot compute analysis");
+				}		
+			}
+		});
 		
 		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 	}
@@ -228,16 +229,21 @@ public class EngineAddon implements IEngineAddon {
 		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();
 		String callerOperation = operation.getName();
 		String classOperation = callerClass.concat("#").concat(callerOperation);
-		Measure m = mapClassEstimation.get(classOperation);		
+		
+		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {
+
+			if (measure != null && (hasRealTimeDuration(measure))) {			
+				//updateMeasure(measure, caller, operation);
+				measure.computeValue(caller, operation);
+				System.out.println(classOperation+" :  "+measure.value());
+				manageEstimation(measure, caller);
+			}		
+			
+		});;		
+				
 		Long duration = System.currentTimeMillis() - stepDurations.get(classOperation);
 		
 		stepDurations.put(classOperation, Long.valueOf(duration));
-		
-		if (m != null && (hasRealTimeDuration(m))) {			
-			updateMeasure(m, caller, operation);
-			System.out.println(classOperation+" consumed "+m.value());
-			manageEstimation(m, caller);
-		}		
 		
 		IEngineAddon.super.stepExecuted(engine, stepToExecute);
 	}
@@ -251,34 +257,7 @@ public class EngineAddon implements IEngineAddon {
 		IEngineAddon.super.engineStopped(engine);
 	}
 	
-	private void updateMeasure(MeasureAttribute m, EObject caller, EOperation operation) {
-		
-		String att = m.getAtt();
-		Object object = caller.eGet(caller.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att)).findFirst().get());		
-		m.setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
-	}
-	
-	private void updateMeasure(MeasureOCL m, EObject caller, EOperation operation) {
-		String query = m.getOclQuery();
-		
-		try {
-			OCLHelper helper = ocl.createOCLHelper(caller.eClass());
-			ExpressionInOCL expression = helper.createQuery(query);
-			m.setValue(new BigDecimal(ocl.evaluate(caller, expression).toString()));
-		} catch (ParserException e) {
-			System.err.println("Could not run query "+query+" \n on "+caller.getClass());
-			e.printStackTrace();
-		}		
-	}
-	
-	private void updateMeasure(MeasureUnboundOperation m, EObject caller, EOperation operation) {
-		m.getMeasures().forEach(measure -> updateMeasure(measure, caller, operation));
-	}
-
-	private void updateMeasure(MeasureCast m, EObject caller, EOperation operation) {
-		updateMeasure(m.getMeasure(), caller, operation);
-	}
-	
+	/*
 	private void updateMeasure(RealTimeDuration m, EObject caller, EOperation operation) {
 		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
 		String callerOperation = operation.getName();
@@ -287,16 +266,7 @@ public class EngineAddon implements IEngineAddon {
 	}
 	
 	private void updateMeasure(CompositeMeasure m, EObject caller, EOperation operation) {
-		if (m instanceof LogisticMeasure) {
-			LogisticMeasure lm = (LogisticMeasure) m;
-			
-			updateMeasure(lm.getK(), caller, operation);
-			updateMeasure(lm.getL(), caller, operation);
-			updateMeasure(lm.getX(), caller, operation);
-			updateMeasure(lm.getX0(), caller, operation);		
-						
-			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeLogisticFunction(lm)));
-		} else if (m instanceof ExponentialMeasure) {
+		if (m instanceof ExponentialMeasure) {
 			updateMeasure(((ExponentialMeasure) m).getX(), caller, operation);
 			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeExponentialFunction((ExponentialMeasure) m)));
 		} else if (m instanceof IntegrationMeasure) {
@@ -306,37 +276,15 @@ public class EngineAddon implements IEngineAddon {
 			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeIntegralFunction((IntegrationMeasure) m))); 
 		}		
 	}
-	
-	private void updateMeasure(Measure m, EObject caller, EOperation operation) {
-		if (m instanceof MeasureOCL) {
-			updateMeasure((MeasureOCL) m, caller, operation);
-		} else
-		if (m instanceof MeasureAttribute) {
-			updateMeasure((MeasureAttribute) m, caller, operation);
-		} else
-		if (m instanceof MeasureCast) {
-			updateMeasure((MeasureCast) m, caller, operation);
-		} else 
-		if (m instanceof RealTimeDuration) {
-			updateMeasure((RealTimeDuration) m, caller, operation);
-		} else 
-		if (m instanceof MeasureUnboundOperation) {
-			updateMeasure((MeasureUnboundOperation) m, caller, operation);
-		} else
-		if (m instanceof CompositeMeasure) {
-			updateMeasure((CompositeMeasure) m, caller, operation);
-		}
 		
-		//System.out.println(m.getName()+" : "+m.value()+" "+m.type().getLiteral());
-	}	
-	
+	 */
 	public static boolean hasRealTimeDuration(Measure m) {					
 		if (m.getPost()) {
 			return true;
 		} 
 		
 		if (m instanceof MeasureUnboundOperation) {
-			return ((MeasureUnboundOperation) m).getMeasures().stream().anyMatch(EngineAddon::hasRealTimeDuration); 
+			return ((MeasureUnboundOperation) m).getMeasures().stream().filter(mes -> !mes.equals(m)).anyMatch(EngineAddon::hasRealTimeDuration); 
 		}
 				
 		return false;		

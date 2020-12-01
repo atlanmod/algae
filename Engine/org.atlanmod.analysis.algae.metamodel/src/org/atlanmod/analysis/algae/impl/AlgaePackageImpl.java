@@ -12,9 +12,6 @@ import org.atlanmod.analysis.algae.Interval;
 import org.atlanmod.analysis.algae.LogisticMeasure;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureAttribute;
-import org.atlanmod.analysis.algae.MeasureBinaryOperation;
-import org.atlanmod.analysis.algae.MeasureBinaryProductOperation;
-import org.atlanmod.analysis.algae.MeasureBinarySumOperation;
 import org.atlanmod.analysis.algae.MeasureCast;
 import org.atlanmod.analysis.algae.MeasureOCL;
 import org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation;
@@ -30,7 +27,6 @@ import org.atlanmod.analysis.algae.Platform;
 import org.atlanmod.analysis.algae.RealTimeDuration;
 import org.atlanmod.analysis.algae.Sample;
 import org.atlanmod.analysis.algae.Sampling;
-import org.atlanmod.analysis.algae.TailMeasure;
 import org.atlanmod.analysis.algae.Type;
 import org.atlanmod.analysis.algae.TypedMeasure;
 import org.atlanmod.analysis.algae.Variable;
@@ -107,27 +103,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * @generated
 	 */
 	private EClass measureCastEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass measureBinaryOperationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass measureBinaryProductOperationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass measureBinarySumOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,13 +215,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * @generated
 	 */
 	private EClass exponentialMeasureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tailMeasureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -470,7 +438,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMeasure__Type_1() {
+	public EOperation getMeasure__Type() {
 		return measureEClass.getEOperations().get(0);
 	}
 
@@ -614,69 +582,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMeasureBinaryOperation() {
-		return measureBinaryOperationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMeasureBinaryOperation_Left() {
-		return (EReference)measureBinaryOperationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMeasureBinaryOperation_Right() {
-		return (EReference)measureBinaryOperationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMeasureBinaryProductOperation() {
-		return measureBinaryProductOperationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getMeasureBinaryProductOperation__Value() {
-		return measureBinaryProductOperationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMeasureBinarySumOperation() {
-		return measureBinarySumOperationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getMeasureBinarySumOperation__Value() {
-		return measureBinarySumOperationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRealTimeDuration() {
 		return realTimeDurationEClass;
 	}
@@ -686,7 +591,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRealTimeDuration__Type_1() {
+	public EOperation getRealTimeDuration__Type() {
 		return realTimeDurationEClass.getEOperations().get(0);
 	}
 
@@ -704,8 +609,17 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMeasureUnboundOperation_Val() {
+		return (EAttribute)measureUnboundOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMeasureUnboundOperation_Measures() {
-		return (EReference)measureUnboundOperationEClass.getEStructuralFeatures().get(0);
+		return (EReference)measureUnboundOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -722,26 +636,8 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMeasureUnboundSumOperation__Value() {
-		return measureUnboundSumOperationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMeasureUnboundSubstractOperation() {
 		return measureUnboundSubstractOperationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getMeasureUnboundSubstractOperation__Value() {
-		return measureUnboundSubstractOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -758,26 +654,8 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMeasureUnboundProductOperation__Value() {
-		return measureUnboundProductOperationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMeasureUnboundDivisionOperation() {
 		return measureUnboundDivisionOperationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getMeasureUnboundDivisionOperation__Value() {
-		return measureUnboundDivisionOperationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -956,6 +834,15 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCompositeMeasure_X() {
+		return (EReference)compositeMeasureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLogisticMeasure() {
 		return logisticMeasureEClass;
 	}
@@ -992,35 +879,8 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLogisticMeasure_X() {
-		return (EReference)logisticMeasureEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getExponentialMeasure() {
 		return exponentialMeasureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExponentialMeasure_X() {
-		return (EReference)exponentialMeasureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTailMeasure() {
-		return tailMeasureEClass;
 	}
 
 	/**
@@ -1144,33 +1004,20 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		measureCastEClass = createEClass(MEASURE_CAST);
 		createEReference(measureCastEClass, MEASURE_CAST__MEASURE);
 
-		measureBinaryOperationEClass = createEClass(MEASURE_BINARY_OPERATION);
-		createEReference(measureBinaryOperationEClass, MEASURE_BINARY_OPERATION__LEFT);
-		createEReference(measureBinaryOperationEClass, MEASURE_BINARY_OPERATION__RIGHT);
-
-		measureBinaryProductOperationEClass = createEClass(MEASURE_BINARY_PRODUCT_OPERATION);
-		createEOperation(measureBinaryProductOperationEClass, MEASURE_BINARY_PRODUCT_OPERATION___VALUE);
-
-		measureBinarySumOperationEClass = createEClass(MEASURE_BINARY_SUM_OPERATION);
-		createEOperation(measureBinarySumOperationEClass, MEASURE_BINARY_SUM_OPERATION___VALUE);
-
 		realTimeDurationEClass = createEClass(REAL_TIME_DURATION);
 		createEOperation(realTimeDurationEClass, REAL_TIME_DURATION___TYPE);
 
 		measureUnboundOperationEClass = createEClass(MEASURE_UNBOUND_OPERATION);
+		createEAttribute(measureUnboundOperationEClass, MEASURE_UNBOUND_OPERATION__VAL);
 		createEReference(measureUnboundOperationEClass, MEASURE_UNBOUND_OPERATION__MEASURES);
 
 		measureUnboundSumOperationEClass = createEClass(MEASURE_UNBOUND_SUM_OPERATION);
-		createEOperation(measureUnboundSumOperationEClass, MEASURE_UNBOUND_SUM_OPERATION___VALUE);
 
 		measureUnboundSubstractOperationEClass = createEClass(MEASURE_UNBOUND_SUBSTRACT_OPERATION);
-		createEOperation(measureUnboundSubstractOperationEClass, MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE);
 
 		measureUnboundProductOperationEClass = createEClass(MEASURE_UNBOUND_PRODUCT_OPERATION);
-		createEOperation(measureUnboundProductOperationEClass, MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE);
 
 		measureUnboundDivisionOperationEClass = createEClass(MEASURE_UNBOUND_DIVISION_OPERATION);
-		createEOperation(measureUnboundDivisionOperationEClass, MEASURE_UNBOUND_DIVISION_OPERATION___VALUE);
 
 		measurementUncertaintyEClass = createEClass(MEASUREMENT_UNCERTAINTY);
 		createEReference(measurementUncertaintyEClass, MEASUREMENT_UNCERTAINTY__INFORMATION);
@@ -1198,17 +1045,14 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		createEReference(sampleEClass, SAMPLE__QUANTITY);
 
 		compositeMeasureEClass = createEClass(COMPOSITE_MEASURE);
+		createEReference(compositeMeasureEClass, COMPOSITE_MEASURE__X);
 
 		logisticMeasureEClass = createEClass(LOGISTIC_MEASURE);
 		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__L);
 		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__K);
 		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__X0);
-		createEReference(logisticMeasureEClass, LOGISTIC_MEASURE__X);
 
 		exponentialMeasureEClass = createEClass(EXPONENTIAL_MEASURE);
-		createEReference(exponentialMeasureEClass, EXPONENTIAL_MEASURE__X);
-
-		tailMeasureEClass = createEClass(TAIL_MEASURE);
 
 		integrationMeasureEClass = createEClass(INTEGRATION_MEASURE);
 		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__FUNCTION);
@@ -1253,11 +1097,8 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		measureOCLEClass.getESuperTypes().add(this.getMeasureValue());
 		measureAttributeEClass.getESuperTypes().add(this.getMeasureValue());
 		measureCastEClass.getESuperTypes().add(this.getTypedMeasure());
-		measureBinaryOperationEClass.getESuperTypes().add(this.getTypedMeasure());
-		measureBinaryProductOperationEClass.getESuperTypes().add(this.getMeasureBinaryOperation());
-		measureBinarySumOperationEClass.getESuperTypes().add(this.getMeasureBinaryOperation());
 		realTimeDurationEClass.getESuperTypes().add(this.getMeasureValue());
-		measureUnboundOperationEClass.getESuperTypes().add(this.getTypedMeasure());
+		measureUnboundOperationEClass.getESuperTypes().add(this.getMeasureValue());
 		measureUnboundSumOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		measureUnboundSubstractOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
 		measureUnboundProductOperationEClass.getESuperTypes().add(this.getMeasureUnboundOperation());
@@ -1269,8 +1110,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		compositeMeasureEClass.getESuperTypes().add(this.getMeasureValue());
 		logisticMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 		exponentialMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
-		tailMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
-		integrationMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
+		integrationMeasureEClass.getESuperTypes().add(this.getMeasureValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1291,7 +1131,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEAttribute(getMeasure_Post(), ecorePackage.getEBooleanObject(), "post", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasure_Uncertainty(), this.getMeasurementUncertainty(), null, "uncertainty", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getMeasure__Type_1(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getMeasure__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getMeasure__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1305,7 +1145,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEOperation(getTypedMeasure__Name(), ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureValueEClass, MeasureValue.class, "MeasureValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMeasureValue_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, MeasureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasureValue_Value(), ecorePackage.getEBigDecimal(), "value", "0", 1, 1, MeasureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMeasureValue__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1318,40 +1158,21 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEClass(measureCastEClass, MeasureCast.class, "MeasureCast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasureCast_Measure(), this.getMeasure(), null, "measure", null, 1, 1, MeasureCast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(measureBinaryOperationEClass, MeasureBinaryOperation.class, "MeasureBinaryOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMeasureBinaryOperation_Left(), this.getMeasure(), null, "left", null, 0, 1, MeasureBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMeasureBinaryOperation_Right(), this.getMeasure(), null, "right", null, 0, 1, MeasureBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(measureBinaryProductOperationEClass, MeasureBinaryProductOperation.class, "MeasureBinaryProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getMeasureBinaryProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(measureBinarySumOperationEClass, MeasureBinarySumOperation.class, "MeasureBinarySumOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getMeasureBinarySumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(realTimeDurationEClass, RealTimeDuration.class, "RealTimeDuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getRealTimeDuration__Type_1(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRealTimeDuration__Type(), this.getType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureUnboundOperationEClass, MeasureUnboundOperation.class, "MeasureUnboundOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMeasureUnboundOperation_Val(), ecorePackage.getEBigDecimal(), "val", null, 0, 1, MeasureUnboundOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMeasureUnboundOperation_Measures(), this.getMeasure(), null, "measures", null, 1, -1, MeasureUnboundOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(measureUnboundSumOperationEClass, MeasureUnboundSumOperation.class, "MeasureUnboundSumOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getMeasureUnboundSumOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(measureUnboundSubstractOperationEClass, MeasureUnboundSubstractOperation.class, "MeasureUnboundSubstractOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getMeasureUnboundSubstractOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureUnboundProductOperationEClass, MeasureUnboundProductOperation.class, "MeasureUnboundProductOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getMeasureUnboundProductOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(measureUnboundDivisionOperationEClass, MeasureUnboundDivisionOperation.class, "MeasureUnboundDivisionOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getMeasureUnboundDivisionOperation__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measurementUncertaintyEClass, MeasurementUncertainty.class, "MeasurementUncertainty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMeasurementUncertainty_Information(), this.getMeasurementUncertaintyInformation(), null, "information", null, 0, 1, MeasurementUncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1379,17 +1200,14 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEReference(getSample_Quantity(), this.getMeasure(), null, "quantity", null, 0, -1, Sample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeMeasureEClass, CompositeMeasure.class, "CompositeMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, CompositeMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logisticMeasureEClass, LogisticMeasure.class, "LogisticMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLogisticMeasure_L(), this.getMeasure(), null, "L", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLogisticMeasure_K(), this.getMeasure(), null, "k", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLogisticMeasure_X0(), this.getMeasure(), null, "x0", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLogisticMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, LogisticMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exponentialMeasureEClass, ExponentialMeasure.class, "ExponentialMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExponentialMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, ExponentialMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tailMeasureEClass, TailMeasure.class, "TailMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(integrationMeasureEClass, IntegrationMeasure.class, "IntegrationMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntegrationMeasure_Function(), this.getCompositeMeasure(), null, "function", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1463,7 +1281,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
 		addAnnotation
-		  (getMeasure__Type_1(),
+		  (getMeasure__Type(),
 		   source,
 		   new String[] {
 			   "body", "null"
@@ -1511,46 +1329,16 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 			   "body", "self.value"
 		   });
 		addAnnotation
-		  (getMeasureBinaryProductOperation__Value(),
-		   source,
-		   new String[] {
-			   "body", "self.left.value() * self.right.value()"
-		   });
-		addAnnotation
-		  (getMeasureBinarySumOperation__Value(),
-		   source,
-		   new String[] {
-			   "body", "self.left.value() + self.right.value()"
-		   });
-		addAnnotation
-		  (getRealTimeDuration__Type_1(),
+		  (getRealTimeDuration__Type(),
 		   source,
 		   new String[] {
 			   "body", "Type::Duration"
 		   });
 		addAnnotation
-		  (getMeasureUnboundSumOperation__Value(),
+		  (getMeasureUnboundOperation_Val(),
 		   source,
 		   new String[] {
-			   "body", "self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc + m.value())"
-		   });
-		addAnnotation
-		  (getMeasureUnboundSubstractOperation__Value(),
-		   source,
-		   new String[] {
-			   "body", "self.measures -> iterate(m: Measure; acc: Real = 0.0 | acc - m.value())"
-		   });
-		addAnnotation
-		  (getMeasureUnboundProductOperation__Value(),
-		   source,
-		   new String[] {
-			   "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 | acc * m.value())"
-		   });
-		addAnnotation
-		  (getMeasureUnboundDivisionOperation__Value(),
-		   source,
-		   new String[] {
-			   "body", "self.measures -> iterate(m: Measure; acc: Real = 1.0 |  m.value() / acc)"
+			   "derivation", "0.0"
 		   });
 		addAnnotation
 		  (getNormalDistribution_MeanValue(),

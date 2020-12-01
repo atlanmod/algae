@@ -13,7 +13,7 @@ import org.atlanmod.analysis.algae.IntegrationMeasure;
  * <!-- end-user-doc -->
  * @generated
  */
-public class IntegrationMeasureTest extends CompositeMeasureTest {
+public class IntegrationMeasureTest extends MeasureValueTest {
 
 	/**
 	 * <!-- begin-user-doc -->

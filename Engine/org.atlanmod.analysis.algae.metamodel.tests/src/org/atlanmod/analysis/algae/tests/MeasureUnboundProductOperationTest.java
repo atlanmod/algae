@@ -11,12 +11,6 @@ import org.atlanmod.analysis.algae.MeasureUnboundProductOperation;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Measure Unbound Product Operation</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.atlanmod.analysis.algae.MeasureUnboundProductOperation#value() <em>Value</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class MeasureUnboundProductOperationTest extends MeasureUnboundOperationTest {
@@ -71,19 +65,6 @@ public class MeasureUnboundProductOperationTest extends MeasureUnboundOperationT
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link org.atlanmod.analysis.algae.MeasureUnboundProductOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.atlanmod.analysis.algae.MeasureUnboundProductOperation#value()
-	 * @generated
-	 */
-	public void testValue() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //MeasureUnboundProductOperationTest

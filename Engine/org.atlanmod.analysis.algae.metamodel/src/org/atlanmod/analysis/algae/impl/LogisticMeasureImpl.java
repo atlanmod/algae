@@ -2,15 +2,18 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
+import java.math.BigDecimal;
+
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.LogisticMeasure;
 import org.atlanmod.analysis.algae.Measure;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.atlanmod.analysis.algae.impl.LogisticMeasureImpl#getL <em>L</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.impl.LogisticMeasureImpl#getK <em>K</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.impl.LogisticMeasureImpl#getX0 <em>X0</em>}</li>
- *   <li>{@link org.atlanmod.analysis.algae.impl.LogisticMeasureImpl#getX <em>X</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,16 +63,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 	protected Measure x0;
 
 	/**
-	 * The cached value of the '{@link #getX() <em>X</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getX()
-	 * @generated
-	 * @ordered
-	 */
-	protected Measure x;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -78,6 +70,20 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 	protected LogisticMeasureImpl() {
 		super();
 	}
+	
+	@Generated({"NOT"})
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+		l.computeValue(targetClass, targetOperation);
+		k.computeValue(targetClass, targetOperation);
+		x0.computeValue(targetClass, targetOperation);
+		x.computeValue(targetClass, targetOperation);
+		
+		double expValue = Math.exp((x.value().doubleValue() - x0.value().doubleValue())* (-1) * k.value().doubleValue());
+				
+		value = BigDecimal.valueOf(l.value().doubleValue() / (1+expValue));
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,44 +214,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Measure getX() {
-		if (x != null && x.eIsProxy()) {
-			InternalEObject oldX = (InternalEObject)x;
-			x = (Measure)eResolveProxy(oldX);
-			if (x != oldX) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgaePackage.LOGISTIC_MEASURE__X, oldX, x));
-			}
-		}
-		return x;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Measure basicGetX() {
-		return x;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setX(Measure newX) {
-		Measure oldX = x;
-		x = newX;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgaePackage.LOGISTIC_MEASURE__X, oldX, x));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -258,9 +226,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 			case AlgaePackage.LOGISTIC_MEASURE__X0:
 				if (resolve) return getX0();
 				return basicGetX0();
-			case AlgaePackage.LOGISTIC_MEASURE__X:
-				if (resolve) return getX();
-				return basicGetX();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,9 +246,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 				return;
 			case AlgaePackage.LOGISTIC_MEASURE__X0:
 				setX0((Measure)newValue);
-				return;
-			case AlgaePackage.LOGISTIC_MEASURE__X:
-				setX((Measure)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -306,9 +268,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 			case AlgaePackage.LOGISTIC_MEASURE__X0:
 				setX0((Measure)null);
 				return;
-			case AlgaePackage.LOGISTIC_MEASURE__X:
-				setX((Measure)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -327,8 +286,6 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 				return k != null;
 			case AlgaePackage.LOGISTIC_MEASURE__X0:
 				return x0 != null;
-			case AlgaePackage.LOGISTIC_MEASURE__X:
-				return x != null;
 		}
 		return super.eIsSet(featureID);
 	}

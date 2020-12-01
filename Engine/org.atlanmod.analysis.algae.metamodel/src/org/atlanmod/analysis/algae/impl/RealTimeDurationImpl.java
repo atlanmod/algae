@@ -48,8 +48,7 @@ public class RealTimeDurationImpl extends MeasureValueImpl implements RealTimeDu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate TYPE_1__EINVOCATION_DELEGATE = ((EOperation.Internal)AlgaePackage.Literals.REAL_TIME_DURATION___TYPE).getInvocationDelegate();
-
+	protected static final EOperation.Internal.InvocationDelegate TYPE__EINVOCATION_DELEGATE = ((EOperation.Internal)AlgaePackage.Literals.REAL_TIME_DURATION___TYPE).getInvocationDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,7 +56,7 @@ public class RealTimeDurationImpl extends MeasureValueImpl implements RealTimeDu
 	 */
 	public Type type() {
 		try {
-			return (Type)TYPE_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (Type)TYPE__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

@@ -21,7 +21,7 @@ package org.atlanmod.analysis.algae;
  * @model
  * @generated
  */
-public interface IntegrationMeasure extends CompositeMeasure {
+public interface IntegrationMeasure extends MeasureValue {
 	/**
 	 * Returns the value of the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->

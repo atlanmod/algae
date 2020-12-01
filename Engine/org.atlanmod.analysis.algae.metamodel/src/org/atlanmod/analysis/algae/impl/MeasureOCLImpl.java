@@ -2,14 +2,23 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
+import java.math.BigDecimal;
+
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.MeasureOCL;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.utilities.OCL;
+import org.eclipse.ocl.pivot.utilities.OCLHelper;
+import org.eclipse.ocl.pivot.utilities.ParserException;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MeasureOCLImpl extends MeasureValueImpl implements MeasureOCL {
+	private static OCL ocl;
+	
+	static {
+		ocl = OCL.newInstance();
+
+	}
+	
 	/**
 	 * The default value of the '{@link #getOclQuery() <em>Ocl Query</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,6 +50,22 @@ public class MeasureOCLImpl extends MeasureValueImpl implements MeasureOCL {
 	 * @ordered
 	 */
 	protected static final String OCL_QUERY_EDEFAULT = null;
+
+	
+	@Generated({"NOT"})
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+	
+		try {
+			OCLHelper helper = ocl.createOCLHelper(targetClass.eClass());
+			ExpressionInOCL expression = helper.createQuery(oclQuery);
+			setValue(new BigDecimal(ocl.evaluate(targetClass, expression).toString()));
+		} catch (ParserException e) {
+			System.err.println("Could not run query "+oclQuery+" \n on "+targetClass.getClass());
+			e.printStackTrace();
+		}	
+	
+	}
 
 	/**
 	 * The cached value of the '{@link #getOclQuery() <em>Ocl Query</em>}' attribute.

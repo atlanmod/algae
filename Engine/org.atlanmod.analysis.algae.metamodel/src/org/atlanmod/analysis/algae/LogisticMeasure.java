@@ -15,7 +15,6 @@ package org.atlanmod.analysis.algae;
  *   <li>{@link org.atlanmod.analysis.algae.LogisticMeasure#getL <em>L</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.LogisticMeasure#getK <em>K</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.LogisticMeasure#getX0 <em>X0</em>}</li>
- *   <li>{@link org.atlanmod.analysis.algae.LogisticMeasure#getX <em>X</em>}</li>
  * </ul>
  *
  * @see org.atlanmod.analysis.algae.AlgaePackage#getLogisticMeasure()
@@ -100,31 +99,5 @@ public interface LogisticMeasure extends CompositeMeasure {
 	 * @generated
 	 */
 	void setX0(Measure value);
-
-	/**
-	 * Returns the value of the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>X</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>X</em>' reference.
-	 * @see #setX(Measure)
-	 * @see org.atlanmod.analysis.algae.AlgaePackage#getLogisticMeasure_X()
-	 * @model required="true"
-	 * @generated
-	 */
-	Measure getX();
-
-	/**
-	 * Sets the value of the '{@link org.atlanmod.analysis.algae.LogisticMeasure#getX <em>X</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>X</em>' reference.
-	 * @see #getX()
-	 * @generated
-	 */
-	void setX(Measure value);
 
 } // LogisticMeasure

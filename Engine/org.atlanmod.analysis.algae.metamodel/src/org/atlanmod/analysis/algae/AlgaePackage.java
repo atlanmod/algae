@@ -924,414 +924,6 @@ public interface AlgaePackage extends EPackage {
 	int MEASURE_CAST_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinaryOperationImpl <em>Measure Binary Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.atlanmod.analysis.algae.impl.MeasureBinaryOperationImpl
-	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinaryOperation()
-	 * @generated
-	 */
-	int MEASURE_BINARY_OPERATION = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__NAME = TYPED_MEASURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Subname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__SUBNAME = TYPED_MEASURE__SUBNAME;
-
-	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
-
-	/**
-	 * The feature id for the '<em><b>Post</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__POST = TYPED_MEASURE__POST;
-
-	/**
-	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__TYPE = TYPED_MEASURE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__LEFT = TYPED_MEASURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION__RIGHT = TYPED_MEASURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Measure Binary Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION___VALUE = TYPED_MEASURE___VALUE;
-
-	/**
-	 * The operation id for the '<em>Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION___TYPE = TYPED_MEASURE___TYPE;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION___NAME = TYPED_MEASURE___NAME;
-
-	/**
-	 * The number of operations of the '<em>Measure Binary Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_OPERATION_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinaryProductOperationImpl <em>Measure Binary Product Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.atlanmod.analysis.algae.impl.MeasureBinaryProductOperationImpl
-	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinaryProductOperation()
-	 * @generated
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Subname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__SUBNAME = MEASURE_BINARY_OPERATION__SUBNAME;
-
-	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
-
-	/**
-	 * The feature id for the '<em><b>Post</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__POST = MEASURE_BINARY_OPERATION__POST;
-
-	/**
-	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__UNCERTAINTY = MEASURE_BINARY_OPERATION__UNCERTAINTY;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__TYPE = MEASURE_BINARY_OPERATION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__LEFT = MEASURE_BINARY_OPERATION__LEFT;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION__RIGHT = MEASURE_BINARY_OPERATION__RIGHT;
-
-	/**
-	 * The number of structural features of the '<em>Measure Binary Product Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION_FEATURE_COUNT = MEASURE_BINARY_OPERATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION___NAME = MEASURE_BINARY_OPERATION___NAME;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION___VALUE = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Measure Binary Product Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinarySumOperationImpl <em>Measure Binary Sum Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.atlanmod.analysis.algae.impl.MeasureBinarySumOperationImpl
-	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinarySumOperation()
-	 * @generated
-	 */
-	int MEASURE_BINARY_SUM_OPERATION = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__NAME = MEASURE_BINARY_OPERATION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Subname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__SUBNAME = MEASURE_BINARY_OPERATION__SUBNAME;
-
-	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__TARGET_CLASS = MEASURE_BINARY_OPERATION__TARGET_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__TARGET_OPERATION = MEASURE_BINARY_OPERATION__TARGET_OPERATION;
-
-	/**
-	 * The feature id for the '<em><b>Post</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__POST = MEASURE_BINARY_OPERATION__POST;
-
-	/**
-	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__UNCERTAINTY = MEASURE_BINARY_OPERATION__UNCERTAINTY;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__TYPE = MEASURE_BINARY_OPERATION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__LEFT = MEASURE_BINARY_OPERATION__LEFT;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION__RIGHT = MEASURE_BINARY_OPERATION__RIGHT;
-
-	/**
-	 * The number of structural features of the '<em>Measure Binary Sum Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION_FEATURE_COUNT = MEASURE_BINARY_OPERATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION___TYPE = MEASURE_BINARY_OPERATION___TYPE;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION___NAME = MEASURE_BINARY_OPERATION___NAME;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION___VALUE = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Measure Binary Sum Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_BINARY_SUM_OPERATION_OPERATION_COUNT = MEASURE_BINARY_OPERATION_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.RealTimeDurationImpl <em>Real Time Duration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1339,7 +931,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getRealTimeDuration()
 	 * @generated
 	 */
-	int REAL_TIME_DURATION = 11;
+	int REAL_TIME_DURATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1466,7 +1058,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureUnboundOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_OPERATION = 12;
+	int MEASURE_UNBOUND_OPERATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1475,7 +1067,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__NAME = TYPED_MEASURE__NAME;
+	int MEASURE_UNBOUND_OPERATION__NAME = MEASURE_VALUE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Subname</b></em>' attribute.
@@ -1484,7 +1076,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__SUBNAME = TYPED_MEASURE__SUBNAME;
+	int MEASURE_UNBOUND_OPERATION__SUBNAME = MEASURE_VALUE__SUBNAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
@@ -1493,7 +1085,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__TARGET_CLASS = TYPED_MEASURE__TARGET_CLASS;
+	int MEASURE_UNBOUND_OPERATION__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
@@ -1502,7 +1094,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__TARGET_OPERATION = TYPED_MEASURE__TARGET_OPERATION;
+	int MEASURE_UNBOUND_OPERATION__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Post</b></em>' attribute.
@@ -1511,7 +1103,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__POST = TYPED_MEASURE__POST;
+	int MEASURE_UNBOUND_OPERATION__POST = MEASURE_VALUE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -1520,7 +1112,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__UNCERTAINTY = TYPED_MEASURE__UNCERTAINTY;
+	int MEASURE_UNBOUND_OPERATION__UNCERTAINTY = MEASURE_VALUE__UNCERTAINTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1529,7 +1121,25 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__TYPE = TYPED_MEASURE__TYPE;
+	int MEASURE_UNBOUND_OPERATION__TYPE = MEASURE_VALUE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__VALUE = MEASURE_VALUE__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Val</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION__VAL = MEASURE_VALUE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Measures</b></em>' reference list.
@@ -1538,7 +1148,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION__MEASURES = TYPED_MEASURE_FEATURE_COUNT + 0;
+	int MEASURE_UNBOUND_OPERATION__MEASURES = MEASURE_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Measure Unbound Operation</em>' class.
@@ -1547,16 +1157,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION_FEATURE_COUNT = TYPED_MEASURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEASURE_UNBOUND_OPERATION___VALUE = TYPED_MEASURE___VALUE;
+	int MEASURE_UNBOUND_OPERATION_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -1565,7 +1166,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION___TYPE = TYPED_MEASURE___TYPE;
+	int MEASURE_UNBOUND_OPERATION___TYPE = MEASURE_VALUE___TYPE;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -1574,7 +1175,16 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION___NAME = TYPED_MEASURE___NAME;
+	int MEASURE_UNBOUND_OPERATION___NAME = MEASURE_VALUE___NAME;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_OPERATION___VALUE = MEASURE_VALUE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Measure Unbound Operation</em>' class.
@@ -1583,7 +1193,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_OPERATION_OPERATION_COUNT = TYPED_MEASURE_OPERATION_COUNT + 0;
+	int MEASURE_UNBOUND_OPERATION_OPERATION_COUNT = MEASURE_VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundSumOperationImpl <em>Measure Unbound Sum Operation</em>}' class.
@@ -1593,7 +1203,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureUnboundSumOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_SUM_OPERATION = 13;
+	int MEASURE_UNBOUND_SUM_OPERATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1659,6 +1269,24 @@ public interface AlgaePackage extends EPackage {
 	int MEASURE_UNBOUND_SUM_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__VALUE = MEASURE_UNBOUND_OPERATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Val</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUM_OPERATION__VAL = MEASURE_UNBOUND_OPERATION__VAL;
+
+	/**
 	 * The feature id for the '<em><b>Measures</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1701,7 +1329,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_SUM_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_UNBOUND_SUM_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Measure Unbound Sum Operation</em>' class.
@@ -1710,7 +1338,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_SUM_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_UNBOUND_SUM_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundSubstractOperationImpl <em>Measure Unbound Substract Operation</em>}' class.
@@ -1720,7 +1348,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureUnboundSubstractOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_SUBSTRACT_OPERATION = 14;
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1786,6 +1414,24 @@ public interface AlgaePackage extends EPackage {
 	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__VALUE = MEASURE_UNBOUND_OPERATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Val</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION__VAL = MEASURE_UNBOUND_OPERATION__VAL;
+
+	/**
 	 * The feature id for the '<em><b>Measures</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1828,7 +1474,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Measure Unbound Substract Operation</em>' class.
@@ -1837,7 +1483,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_SUBSTRACT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_UNBOUND_SUBSTRACT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
@@ -1847,7 +1493,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureUnboundProductOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_PRODUCT_OPERATION = 15;
+	int MEASURE_UNBOUND_PRODUCT_OPERATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1913,6 +1559,24 @@ public interface AlgaePackage extends EPackage {
 	int MEASURE_UNBOUND_PRODUCT_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__VALUE = MEASURE_UNBOUND_OPERATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Val</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_PRODUCT_OPERATION__VAL = MEASURE_UNBOUND_OPERATION__VAL;
+
+	/**
 	 * The feature id for the '<em><b>Measures</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1955,7 +1619,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Measure Unbound Product Operation</em>' class.
@@ -1964,7 +1628,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_UNBOUND_PRODUCT_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundDivisionOperationImpl <em>Measure Unbound Division Operation</em>}' class.
@@ -1974,7 +1638,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureUnboundDivisionOperation()
 	 * @generated
 	 */
-	int MEASURE_UNBOUND_DIVISION_OPERATION = 16;
+	int MEASURE_UNBOUND_DIVISION_OPERATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2040,6 +1704,24 @@ public interface AlgaePackage extends EPackage {
 	int MEASURE_UNBOUND_DIVISION_OPERATION__TYPE = MEASURE_UNBOUND_OPERATION__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__VALUE = MEASURE_UNBOUND_OPERATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Val</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEASURE_UNBOUND_DIVISION_OPERATION__VAL = MEASURE_UNBOUND_OPERATION__VAL;
+
+	/**
 	 * The feature id for the '<em><b>Measures</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2082,7 +1764,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_DIVISION_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
+	int MEASURE_UNBOUND_DIVISION_OPERATION___VALUE = MEASURE_UNBOUND_OPERATION___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Measure Unbound Division Operation</em>' class.
@@ -2091,7 +1773,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEASURE_UNBOUND_DIVISION_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 1;
+	int MEASURE_UNBOUND_DIVISION_OPERATION_OPERATION_COUNT = MEASURE_UNBOUND_OPERATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.
@@ -2101,7 +1783,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasurementUncertainty()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY = 17;
+	int MEASUREMENT_UNCERTAINTY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Information</b></em>' containment reference.
@@ -2147,7 +1829,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasurementUncertaintyInformation()
 	 * @generated
 	 */
-	int MEASUREMENT_UNCERTAINTY_INFORMATION = 20;
+	int MEASUREMENT_UNCERTAINTY_INFORMATION = 17;
 
 	/**
 	 * The number of structural features of the '<em>Measurement Uncertainty Information</em>' class.
@@ -2175,7 +1857,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int NORMAL_DISTRIBUTION = 18;
+	int NORMAL_DISTRIBUTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Mean Value</b></em>' attribute.
@@ -2221,7 +1903,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getInterval()
 	 * @generated
 	 */
-	int INTERVAL = 19;
+	int INTERVAL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Lower Endpoint</b></em>' containment reference.
@@ -2267,7 +1949,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getSampling()
 	 * @generated
 	 */
-	int SAMPLING = 21;
+	int SAMPLING = 18;
 
 	/**
 	 * The feature id for the '<em><b>Samples</b></em>' containment reference list.
@@ -2313,7 +1995,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getIntegral()
 	 * @generated
 	 */
-	int INTEGRAL = 22;
+	int INTEGRAL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Interval</b></em>' reference.
@@ -2359,7 +2041,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getSample()
 	 * @generated
 	 */
-	int SAMPLE = 23;
+	int SAMPLE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference list.
@@ -2396,7 +2078,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getCompositeMeasure()
 	 * @generated
 	 */
-	int COMPOSITE_MEASURE = 24;
+	int COMPOSITE_MEASURE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2471,13 +2153,22 @@ public interface AlgaePackage extends EPackage {
 	int COMPOSITE_MEASURE__VALUE = MEASURE_VALUE__VALUE;
 
 	/**
+	 * The feature id for the '<em><b>X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_MEASURE__X = MEASURE_VALUE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Composite Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_MEASURE_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 0;
+	int COMPOSITE_MEASURE_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2523,7 +2214,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getLogisticMeasure()
 	 * @generated
 	 */
-	int LOGISTIC_MEASURE = 25;
+	int LOGISTIC_MEASURE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2598,6 +2289,15 @@ public interface AlgaePackage extends EPackage {
 	int LOGISTIC_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
 
 	/**
+	 * The feature id for the '<em><b>X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGISTIC_MEASURE__X = COMPOSITE_MEASURE__X;
+
+	/**
 	 * The feature id for the '<em><b>L</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2625,22 +2325,13 @@ public interface AlgaePackage extends EPackage {
 	int LOGISTIC_MEASURE__X0 = COMPOSITE_MEASURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGISTIC_MEASURE__X = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Logistic Measure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGISTIC_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 4;
+	int LOGISTIC_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2686,7 +2377,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getExponentialMeasure()
 	 * @generated
 	 */
-	int EXPONENTIAL_MEASURE = 26;
+	int EXPONENTIAL_MEASURE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2767,7 +2458,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPONENTIAL_MEASURE__X = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+	int EXPONENTIAL_MEASURE__X = COMPOSITE_MEASURE__X;
 
 	/**
 	 * The number of structural features of the '<em>Exponential Measure</em>' class.
@@ -2776,7 +2467,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPONENTIAL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
+	int EXPONENTIAL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2815,133 +2506,6 @@ public interface AlgaePackage extends EPackage {
 	int EXPONENTIAL_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.TailMeasureImpl <em>Tail Measure</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.atlanmod.analysis.algae.impl.TailMeasureImpl
-	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getTailMeasure()
-	 * @generated
-	 */
-	int TAIL_MEASURE = 27;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Subname</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
-
-	/**
-	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
-
-	/**
-	 * The feature id for the '<em><b>Post</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__POST = COMPOSITE_MEASURE__POST;
-
-	/**
-	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
-
-	/**
-	 * The number of structural features of the '<em>Tail Measure</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
-
-	/**
-	 * The operation id for the '<em>Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
-
-	/**
-	 * The number of operations of the '<em>Tail Measure</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAIL_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.impl.IntegrationMeasureImpl <em>Integration Measure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2949,7 +2513,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getIntegrationMeasure()
 	 * @generated
 	 */
-	int INTEGRATION_MEASURE = 28;
+	int INTEGRATION_MEASURE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2958,7 +2522,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
+	int INTEGRATION_MEASURE__NAME = MEASURE_VALUE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Subname</b></em>' attribute.
@@ -2967,7 +2531,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
+	int INTEGRATION_MEASURE__SUBNAME = MEASURE_VALUE__SUBNAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
@@ -2976,7 +2540,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
+	int INTEGRATION_MEASURE__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
@@ -2985,7 +2549,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
+	int INTEGRATION_MEASURE__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Post</b></em>' attribute.
@@ -2994,7 +2558,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__POST = COMPOSITE_MEASURE__POST;
+	int INTEGRATION_MEASURE__POST = MEASURE_VALUE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -3003,7 +2567,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
+	int INTEGRATION_MEASURE__UNCERTAINTY = MEASURE_VALUE__UNCERTAINTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -3012,7 +2576,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
+	int INTEGRATION_MEASURE__TYPE = MEASURE_VALUE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3021,7 +2585,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
+	int INTEGRATION_MEASURE__VALUE = MEASURE_VALUE__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
@@ -3030,7 +2594,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__FUNCTION = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
+	int INTEGRATION_MEASURE__FUNCTION = MEASURE_VALUE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Left Bound</b></em>' reference.
@@ -3039,7 +2603,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__LEFT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
+	int INTEGRATION_MEASURE__LEFT_BOUND = MEASURE_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Right Bound</b></em>' reference.
@@ -3048,7 +2612,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__RIGHT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 2;
+	int INTEGRATION_MEASURE__RIGHT_BOUND = MEASURE_VALUE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Integration Measure</em>' class.
@@ -3057,7 +2621,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 3;
+	int INTEGRATION_MEASURE_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -3066,7 +2630,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
+	int INTEGRATION_MEASURE___TYPE = MEASURE_VALUE___TYPE;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -3075,7 +2639,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
+	int INTEGRATION_MEASURE___NAME = MEASURE_VALUE___NAME;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -3084,7 +2648,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
+	int INTEGRATION_MEASURE___VALUE = MEASURE_VALUE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Integration Measure</em>' class.
@@ -3093,7 +2657,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
+	int INTEGRATION_MEASURE_OPERATION_COUNT = MEASURE_VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.Visibility <em>Visibility</em>}' enum.
@@ -3103,7 +2667,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 29;
+	int VISIBILITY = 25;
 
 
 	/**
@@ -3114,7 +2678,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 30;
+	int TYPE = 26;
 
 
 	/**
@@ -3287,7 +2851,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.Measure#type()
 	 * @generated
 	 */
-	EOperation getMeasure__Type_1();
+	EOperation getMeasure__Type();
 
 	/**
 	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.Measure#value() <em>Value</em>}' operation.
@@ -3445,78 +3009,6 @@ public interface AlgaePackage extends EPackage {
 	EReference getMeasureCast_Measure();
 
 	/**
-	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureBinaryOperation <em>Measure Binary Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Binary Operation</em>'.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryOperation
-	 * @generated
-	 */
-	EClass getMeasureBinaryOperation();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.MeasureBinaryOperation#getLeft <em>Left</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Left</em>'.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryOperation#getLeft()
-	 * @see #getMeasureBinaryOperation()
-	 * @generated
-	 */
-	EReference getMeasureBinaryOperation_Left();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.MeasureBinaryOperation#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Right</em>'.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryOperation#getRight()
-	 * @see #getMeasureBinaryOperation()
-	 * @generated
-	 */
-	EReference getMeasureBinaryOperation_Right();
-
-	/**
-	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureBinaryProductOperation <em>Measure Binary Product Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Binary Product Operation</em>'.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryProductOperation
-	 * @generated
-	 */
-	EClass getMeasureBinaryProductOperation();
-
-	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureBinaryProductOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryProductOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureBinaryProductOperation__Value();
-
-	/**
-	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureBinarySumOperation <em>Measure Binary Sum Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Measure Binary Sum Operation</em>'.
-	 * @see org.atlanmod.analysis.algae.MeasureBinarySumOperation
-	 * @generated
-	 */
-	EClass getMeasureBinarySumOperation();
-
-	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureBinarySumOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureBinarySumOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureBinarySumOperation__Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.RealTimeDuration <em>Real Time Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3534,7 +3026,7 @@ public interface AlgaePackage extends EPackage {
 	 * @see org.atlanmod.analysis.algae.RealTimeDuration#type()
 	 * @generated
 	 */
-	EOperation getRealTimeDuration__Type_1();
+	EOperation getRealTimeDuration__Type();
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureUnboundOperation <em>Measure Unbound Operation</em>}'.
@@ -3545,6 +3037,17 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMeasureUnboundOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.atlanmod.analysis.algae.MeasureUnboundOperation#getVal <em>Val</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Val</em>'.
+	 * @see org.atlanmod.analysis.algae.MeasureUnboundOperation#getVal()
+	 * @see #getMeasureUnboundOperation()
+	 * @generated
+	 */
+	EAttribute getMeasureUnboundOperation_Val();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.atlanmod.analysis.algae.MeasureUnboundOperation#getMeasures <em>Measures</em>}'.
@@ -3568,16 +3071,6 @@ public interface AlgaePackage extends EPackage {
 	EClass getMeasureUnboundSumOperation();
 
 	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureUnboundSumOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureUnboundSumOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureUnboundSumOperation__Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureUnboundSubstractOperation <em>Measure Unbound Substract Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3586,16 +3079,6 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMeasureUnboundSubstractOperation();
-
-	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureUnboundSubstractOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureUnboundSubstractOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureUnboundSubstractOperation__Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureUnboundProductOperation <em>Measure Unbound Product Operation</em>}'.
@@ -3608,16 +3091,6 @@ public interface AlgaePackage extends EPackage {
 	EClass getMeasureUnboundProductOperation();
 
 	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureUnboundProductOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureUnboundProductOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureUnboundProductOperation__Value();
-
-	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation <em>Measure Unbound Division Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3626,16 +3099,6 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMeasureUnboundDivisionOperation();
-
-	/**
-	 * Returns the meta object for the '{@link org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation#value() <em>Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Value</em>' operation.
-	 * @see org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation#value()
-	 * @generated
-	 */
-	EOperation getMeasureUnboundDivisionOperation__Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.MeasurementUncertainty <em>Measurement Uncertainty</em>}'.
@@ -3839,6 +3302,17 @@ public interface AlgaePackage extends EPackage {
 	EClass getCompositeMeasure();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.CompositeMeasure#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>X</em>'.
+	 * @see org.atlanmod.analysis.algae.CompositeMeasure#getX()
+	 * @see #getCompositeMeasure()
+	 * @generated
+	 */
+	EReference getCompositeMeasure_X();
+
+	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.LogisticMeasure <em>Logistic Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3882,17 +3356,6 @@ public interface AlgaePackage extends EPackage {
 	EReference getLogisticMeasure_X0();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.LogisticMeasure#getX <em>X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>X</em>'.
-	 * @see org.atlanmod.analysis.algae.LogisticMeasure#getX()
-	 * @see #getLogisticMeasure()
-	 * @generated
-	 */
-	EReference getLogisticMeasure_X();
-
-	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.ExponentialMeasure <em>Exponential Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3901,27 +3364,6 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExponentialMeasure();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.ExponentialMeasure#getX <em>X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>X</em>'.
-	 * @see org.atlanmod.analysis.algae.ExponentialMeasure#getX()
-	 * @see #getExponentialMeasure()
-	 * @generated
-	 */
-	EReference getExponentialMeasure_X();
-
-	/**
-	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.TailMeasure <em>Tail Measure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tail Measure</em>'.
-	 * @see org.atlanmod.analysis.algae.TailMeasure
-	 * @generated
-	 */
-	EClass getTailMeasure();
 
 	/**
 	 * Returns the meta object for class '{@link org.atlanmod.analysis.algae.IntegrationMeasure <em>Integration Measure</em>}'.
@@ -4141,7 +3583,7 @@ public interface AlgaePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MEASURE___TYPE = eINSTANCE.getMeasure__Type_1();
+		EOperation MEASURE___TYPE = eINSTANCE.getMeasure__Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' operation.
@@ -4274,68 +3716,6 @@ public interface AlgaePackage extends EPackage {
 		EReference MEASURE_CAST__MEASURE = eINSTANCE.getMeasureCast_Measure();
 
 		/**
-		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinaryOperationImpl <em>Measure Binary Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.atlanmod.analysis.algae.impl.MeasureBinaryOperationImpl
-		 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinaryOperation()
-		 * @generated
-		 */
-		EClass MEASURE_BINARY_OPERATION = eINSTANCE.getMeasureBinaryOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEASURE_BINARY_OPERATION__LEFT = eINSTANCE.getMeasureBinaryOperation_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEASURE_BINARY_OPERATION__RIGHT = eINSTANCE.getMeasureBinaryOperation_Right();
-
-		/**
-		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinaryProductOperationImpl <em>Measure Binary Product Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.atlanmod.analysis.algae.impl.MeasureBinaryProductOperationImpl
-		 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinaryProductOperation()
-		 * @generated
-		 */
-		EClass MEASURE_BINARY_PRODUCT_OPERATION = eINSTANCE.getMeasureBinaryProductOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_BINARY_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureBinaryProductOperation__Value();
-
-		/**
-		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureBinarySumOperationImpl <em>Measure Binary Sum Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.atlanmod.analysis.algae.impl.MeasureBinarySumOperationImpl
-		 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getMeasureBinarySumOperation()
-		 * @generated
-		 */
-		EClass MEASURE_BINARY_SUM_OPERATION = eINSTANCE.getMeasureBinarySumOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_BINARY_SUM_OPERATION___VALUE = eINSTANCE.getMeasureBinarySumOperation__Value();
-
-		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.RealTimeDurationImpl <em>Real Time Duration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4351,7 +3731,7 @@ public interface AlgaePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation REAL_TIME_DURATION___TYPE = eINSTANCE.getRealTimeDuration__Type_1();
+		EOperation REAL_TIME_DURATION___TYPE = eINSTANCE.getRealTimeDuration__Type();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundOperationImpl <em>Measure Unbound Operation</em>}' class.
@@ -4362,6 +3742,14 @@ public interface AlgaePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MEASURE_UNBOUND_OPERATION = eINSTANCE.getMeasureUnboundOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEASURE_UNBOUND_OPERATION__VAL = eINSTANCE.getMeasureUnboundOperation_Val();
 
 		/**
 		 * The meta object literal for the '<em><b>Measures</b></em>' reference list feature.
@@ -4382,14 +3770,6 @@ public interface AlgaePackage extends EPackage {
 		EClass MEASURE_UNBOUND_SUM_OPERATION = eINSTANCE.getMeasureUnboundSumOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_UNBOUND_SUM_OPERATION___VALUE = eINSTANCE.getMeasureUnboundSumOperation__Value();
-
-		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundSubstractOperationImpl <em>Measure Unbound Substract Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4398,14 +3778,6 @@ public interface AlgaePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MEASURE_UNBOUND_SUBSTRACT_OPERATION = eINSTANCE.getMeasureUnboundSubstractOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_UNBOUND_SUBSTRACT_OPERATION___VALUE = eINSTANCE.getMeasureUnboundSubstractOperation__Value();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundProductOperationImpl <em>Measure Unbound Product Operation</em>}' class.
@@ -4418,14 +3790,6 @@ public interface AlgaePackage extends EPackage {
 		EClass MEASURE_UNBOUND_PRODUCT_OPERATION = eINSTANCE.getMeasureUnboundProductOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_UNBOUND_PRODUCT_OPERATION___VALUE = eINSTANCE.getMeasureUnboundProductOperation__Value();
-
-		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasureUnboundDivisionOperationImpl <em>Measure Unbound Division Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4434,14 +3798,6 @@ public interface AlgaePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MEASURE_UNBOUND_DIVISION_OPERATION = eINSTANCE.getMeasureUnboundDivisionOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MEASURE_UNBOUND_DIVISION_OPERATION___VALUE = eINSTANCE.getMeasureUnboundDivisionOperation__Value();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.MeasurementUncertaintyImpl <em>Measurement Uncertainty</em>}' class.
@@ -4612,6 +3968,14 @@ public interface AlgaePackage extends EPackage {
 		EClass COMPOSITE_MEASURE = eINSTANCE.getCompositeMeasure();
 
 		/**
+		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_MEASURE__X = eINSTANCE.getCompositeMeasure_X();
+
+		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.LogisticMeasureImpl <em>Logistic Measure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4646,14 +4010,6 @@ public interface AlgaePackage extends EPackage {
 		EReference LOGISTIC_MEASURE__X0 = eINSTANCE.getLogisticMeasure_X0();
 
 		/**
-		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOGISTIC_MEASURE__X = eINSTANCE.getLogisticMeasure_X();
-
-		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.ExponentialMeasureImpl <em>Exponential Measure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4662,24 +4018,6 @@ public interface AlgaePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXPONENTIAL_MEASURE = eINSTANCE.getExponentialMeasure();
-
-		/**
-		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPONENTIAL_MEASURE__X = eINSTANCE.getExponentialMeasure_X();
-
-		/**
-		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.TailMeasureImpl <em>Tail Measure</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.atlanmod.analysis.algae.impl.TailMeasureImpl
-		 * @see org.atlanmod.analysis.algae.impl.AlgaePackageImpl#getTailMeasure()
-		 * @generated
-		 */
-		EClass TAIL_MEASURE = eINSTANCE.getTailMeasure();
 
 		/**
 		 * The meta object literal for the '{@link org.atlanmod.analysis.algae.impl.IntegrationMeasureImpl <em>Integration Measure</em>}' class.

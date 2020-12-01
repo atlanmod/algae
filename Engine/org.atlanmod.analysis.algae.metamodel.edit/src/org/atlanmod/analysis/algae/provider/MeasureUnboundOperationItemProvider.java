@@ -14,6 +14,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.atlanmod.analysis.algae.MeasureUnboundOperation} object.
@@ -21,7 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MeasureUnboundOperationItemProvider extends TypedMeasureItemProvider {
+public class MeasureUnboundOperationItemProvider extends MeasureValueItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -43,9 +45,32 @@ public class MeasureUnboundOperationItemProvider extends TypedMeasureItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValPropertyDescriptor(object);
 			addMeasuresPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Val feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MeasureUnboundOperation_val_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MeasureUnboundOperation_val_feature", "_UI_MeasureUnboundOperation_type"),
+				 AlgaePackage.Literals.MEASURE_UNBOUND_OPERATION__VAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -95,6 +120,12 @@ public class MeasureUnboundOperationItemProvider extends TypedMeasureItemProvide
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(MeasureUnboundOperation.class)) {
+			case AlgaePackage.MEASURE_UNBOUND_OPERATION__VAL:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -80,7 +80,7 @@ public class RealTimeDurationTest extends MeasureValueTest {
 	 * @see org.atlanmod.analysis.algae.RealTimeDuration#type()
 	 * @generated
 	 */
-	public void testType_1() {
+	public void testType() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

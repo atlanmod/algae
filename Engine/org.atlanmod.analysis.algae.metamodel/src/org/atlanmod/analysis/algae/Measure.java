@@ -4,7 +4,9 @@ package org.atlanmod.analysis.algae;
 
 import java.math.BigDecimal;
 
+import javax.annotation.Generated;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +34,10 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Measure extends EObject {
+	
+	@Generated(value = { "NOT" })
+	void computeValue(EObject targetClass, EOperation targetOperation);
+	
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -76,24 +76,6 @@ public interface AlgaeFactory extends EFactory {
 	MeasureCast createMeasureCast();
 
 	/**
-	 * Returns a new object of class '<em>Measure Binary Product Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Measure Binary Product Operation</em>'.
-	 * @generated
-	 */
-	MeasureBinaryProductOperation createMeasureBinaryProductOperation();
-
-	/**
-	 * Returns a new object of class '<em>Measure Binary Sum Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Measure Binary Sum Operation</em>'.
-	 * @generated
-	 */
-	MeasureBinarySumOperation createMeasureBinarySumOperation();
-
-	/**
 	 * Returns a new object of class '<em>Real Time Duration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

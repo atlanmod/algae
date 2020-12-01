@@ -100,18 +100,6 @@ public class AlgaeAdapterFactory extends AdapterFactoryImpl {
 				return createMeasureCastAdapter();
 			}
 			@Override
-			public Adapter caseMeasureBinaryOperation(MeasureBinaryOperation object) {
-				return createMeasureBinaryOperationAdapter();
-			}
-			@Override
-			public Adapter caseMeasureBinaryProductOperation(MeasureBinaryProductOperation object) {
-				return createMeasureBinaryProductOperationAdapter();
-			}
-			@Override
-			public Adapter caseMeasureBinarySumOperation(MeasureBinarySumOperation object) {
-				return createMeasureBinarySumOperationAdapter();
-			}
-			@Override
 			public Adapter caseRealTimeDuration(RealTimeDuration object) {
 				return createRealTimeDurationAdapter();
 			}
@@ -174,10 +162,6 @@ public class AlgaeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExponentialMeasure(ExponentialMeasure object) {
 				return createExponentialMeasureAdapter();
-			}
-			@Override
-			public Adapter caseTailMeasure(TailMeasure object) {
-				return createTailMeasureAdapter();
 			}
 			@Override
 			public Adapter caseIntegrationMeasure(IntegrationMeasure object) {
@@ -312,48 +296,6 @@ public class AlgaeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMeasureCastAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.atlanmod.analysis.algae.MeasureBinaryOperation <em>Measure Binary Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryOperation
-	 * @generated
-	 */
-	public Adapter createMeasureBinaryOperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.atlanmod.analysis.algae.MeasureBinaryProductOperation <em>Measure Binary Product Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.atlanmod.analysis.algae.MeasureBinaryProductOperation
-	 * @generated
-	 */
-	public Adapter createMeasureBinaryProductOperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.atlanmod.analysis.algae.MeasureBinarySumOperation <em>Measure Binary Sum Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.atlanmod.analysis.algae.MeasureBinarySumOperation
-	 * @generated
-	 */
-	public Adapter createMeasureBinarySumOperationAdapter() {
 		return null;
 	}
 
@@ -578,20 +520,6 @@ public class AlgaeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExponentialMeasureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.atlanmod.analysis.algae.TailMeasure <em>Tail Measure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.atlanmod.analysis.algae.TailMeasure
-	 * @generated
-	 */
-	public Adapter createTailMeasureAdapter() {
 		return null;
 	}
 

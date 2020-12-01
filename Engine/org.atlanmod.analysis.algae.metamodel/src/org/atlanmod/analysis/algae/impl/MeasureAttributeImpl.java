@@ -2,13 +2,18 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
+import java.math.BigDecimal;
+
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.MeasureAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,6 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class MeasureAttributeImpl extends MeasureValueImpl implements MeasureAttribute {
+	
+	@Generated({"NOT"})
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+		Object object = targetClass.eGet(targetClass.eClass().getEAttributes().stream().filter(eAtt -> eAtt.getName().equals(att)).findFirst().get());		
+		setValue(BigDecimal.valueOf(Long.valueOf(object.toString())));
+	}
+
 	/**
 	 * The default value of the '{@link #getAtt() <em>Att</em>}' attribute.
 	 * <!-- begin-user-doc -->

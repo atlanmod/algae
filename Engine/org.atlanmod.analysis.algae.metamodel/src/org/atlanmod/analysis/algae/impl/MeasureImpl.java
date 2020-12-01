@@ -302,7 +302,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate TYPE_1__EINVOCATION_DELEGATE = ((EOperation.Internal)AlgaePackage.Literals.MEASURE___TYPE).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate TYPE__EINVOCATION_DELEGATE = ((EOperation.Internal)AlgaePackage.Literals.MEASURE___TYPE).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,7 +311,7 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public Type type() {
 		try {
-			return (Type)TYPE_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (Type)TYPE__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

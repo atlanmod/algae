@@ -6,11 +6,13 @@ package org.atlanmod.analysis.algae.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.CompositeMeasure;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -41,8 +43,31 @@ public class CompositeMeasureItemProvider extends MeasureValueItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addXPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CompositeMeasure_x_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CompositeMeasure_x_feature", "_UI_CompositeMeasure_type"),
+				 AlgaePackage.Literals.COMPOSITE_MEASURE__X,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

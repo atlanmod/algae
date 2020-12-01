@@ -2,16 +2,24 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
+import java.math.BigDecimal;
+
+import javax.annotation.Generated;
+
+import org.apache.commons.math3.analysis.UnivariateFunction;
+import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
+import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
+import org.atlanmod.analysis.algae.AlgaeFactory;
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.CompositeMeasure;
 import org.atlanmod.analysis.algae.IntegrationMeasure;
 import org.atlanmod.analysis.algae.Measure;
-
+import org.atlanmod.analysis.algae.MeasureValue;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,7 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class IntegrationMeasureImpl extends CompositeMeasureImpl implements IntegrationMeasure {
+public class IntegrationMeasureImpl extends MeasureValueImpl implements IntegrationMeasure {
 	/**
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -67,6 +75,28 @@ public class IntegrationMeasureImpl extends CompositeMeasureImpl implements Inte
 	 */
 	protected IntegrationMeasureImpl() {
 		super();
+	}
+	
+	@Generated({"NOT"})
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+		leftBound.computeValue(targetClass, targetOperation);
+		rightBound.computeValue(targetClass, targetOperation);
+		
+		UnivariateFunction fun = new UnivariateFunction() {
+			
+			@Override
+			public double value(double arg0) {
+				MeasureValue value = AlgaeFactory.eINSTANCE.createMeasureValue();
+				value.setValue(new BigDecimal(arg0));
+				function.setX(value);
+				function.computeValue(targetClass, targetOperation);
+				return function.getValue().doubleValue();
+			}
+		};
+		UnivariateIntegrator in = new SimpsonIntegrator();
+		// 100 is the number of points to compute before calculating the area. This is arbitrary and should definitely be adapted to the desired accuracy.
+		in.integrate(100, fun, leftBound.value().doubleValue(), rightBound.value().doubleValue());
 	}
 
 	/**

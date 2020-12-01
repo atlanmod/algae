@@ -158,16 +158,6 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 		newChildDescriptors.add
 			(createChildParameter
 				(AlgaePackage.Literals.INTERVAL__LOWER_ENDPOINT,
-				 AlgaeFactory.eINSTANCE.createMeasureBinaryProductOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.INTERVAL__LOWER_ENDPOINT,
-				 AlgaeFactory.eINSTANCE.createMeasureBinarySumOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.INTERVAL__LOWER_ENDPOINT,
 				 AlgaeFactory.eINSTANCE.createRealTimeDuration()));
 
 		newChildDescriptors.add
@@ -229,16 +219,6 @@ public class IntervalItemProvider extends MeasurementUncertaintyInformationItemP
 			(createChildParameter
 				(AlgaePackage.Literals.INTERVAL__UPPER_ENDPOINT,
 				 AlgaeFactory.eINSTANCE.createMeasureCast()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.INTERVAL__UPPER_ENDPOINT,
-				 AlgaeFactory.eINSTANCE.createMeasureBinaryProductOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.INTERVAL__UPPER_ENDPOINT,
-				 AlgaeFactory.eINSTANCE.createMeasureBinarySumOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter

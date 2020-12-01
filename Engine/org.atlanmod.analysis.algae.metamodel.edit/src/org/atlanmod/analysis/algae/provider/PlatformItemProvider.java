@@ -209,16 +209,6 @@ public class PlatformItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(AlgaePackage.Literals.PLATFORM__MEASURES,
-				 AlgaeFactory.eINSTANCE.createMeasureBinaryProductOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.PLATFORM__MEASURES,
-				 AlgaeFactory.eINSTANCE.createMeasureBinarySumOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.PLATFORM__MEASURES,
 				 AlgaeFactory.eINSTANCE.createRealTimeDuration()));
 
 		newChildDescriptors.add

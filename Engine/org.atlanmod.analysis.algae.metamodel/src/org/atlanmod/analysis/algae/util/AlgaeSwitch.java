@@ -125,32 +125,6 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgaePackage.MEASURE_BINARY_OPERATION: {
-				MeasureBinaryOperation measureBinaryOperation = (MeasureBinaryOperation)theEObject;
-				T result = caseMeasureBinaryOperation(measureBinaryOperation);
-				if (result == null) result = caseTypedMeasure(measureBinaryOperation);
-				if (result == null) result = caseMeasure(measureBinaryOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlgaePackage.MEASURE_BINARY_PRODUCT_OPERATION: {
-				MeasureBinaryProductOperation measureBinaryProductOperation = (MeasureBinaryProductOperation)theEObject;
-				T result = caseMeasureBinaryProductOperation(measureBinaryProductOperation);
-				if (result == null) result = caseMeasureBinaryOperation(measureBinaryProductOperation);
-				if (result == null) result = caseTypedMeasure(measureBinaryProductOperation);
-				if (result == null) result = caseMeasure(measureBinaryProductOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlgaePackage.MEASURE_BINARY_SUM_OPERATION: {
-				MeasureBinarySumOperation measureBinarySumOperation = (MeasureBinarySumOperation)theEObject;
-				T result = caseMeasureBinarySumOperation(measureBinarySumOperation);
-				if (result == null) result = caseMeasureBinaryOperation(measureBinarySumOperation);
-				if (result == null) result = caseTypedMeasure(measureBinarySumOperation);
-				if (result == null) result = caseMeasure(measureBinarySumOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AlgaePackage.REAL_TIME_DURATION: {
 				RealTimeDuration realTimeDuration = (RealTimeDuration)theEObject;
 				T result = caseRealTimeDuration(realTimeDuration);
@@ -163,6 +137,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 			case AlgaePackage.MEASURE_UNBOUND_OPERATION: {
 				MeasureUnboundOperation measureUnboundOperation = (MeasureUnboundOperation)theEObject;
 				T result = caseMeasureUnboundOperation(measureUnboundOperation);
+				if (result == null) result = caseMeasureValue(measureUnboundOperation);
 				if (result == null) result = caseTypedMeasure(measureUnboundOperation);
 				if (result == null) result = caseMeasure(measureUnboundOperation);
 				if (result == null) result = defaultCase(theEObject);
@@ -172,6 +147,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				MeasureUnboundSumOperation measureUnboundSumOperation = (MeasureUnboundSumOperation)theEObject;
 				T result = caseMeasureUnboundSumOperation(measureUnboundSumOperation);
 				if (result == null) result = caseMeasureUnboundOperation(measureUnboundSumOperation);
+				if (result == null) result = caseMeasureValue(measureUnboundSumOperation);
 				if (result == null) result = caseTypedMeasure(measureUnboundSumOperation);
 				if (result == null) result = caseMeasure(measureUnboundSumOperation);
 				if (result == null) result = defaultCase(theEObject);
@@ -181,6 +157,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				MeasureUnboundSubstractOperation measureUnboundSubstractOperation = (MeasureUnboundSubstractOperation)theEObject;
 				T result = caseMeasureUnboundSubstractOperation(measureUnboundSubstractOperation);
 				if (result == null) result = caseMeasureUnboundOperation(measureUnboundSubstractOperation);
+				if (result == null) result = caseMeasureValue(measureUnboundSubstractOperation);
 				if (result == null) result = caseTypedMeasure(measureUnboundSubstractOperation);
 				if (result == null) result = caseMeasure(measureUnboundSubstractOperation);
 				if (result == null) result = defaultCase(theEObject);
@@ -190,6 +167,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				MeasureUnboundProductOperation measureUnboundProductOperation = (MeasureUnboundProductOperation)theEObject;
 				T result = caseMeasureUnboundProductOperation(measureUnboundProductOperation);
 				if (result == null) result = caseMeasureUnboundOperation(measureUnboundProductOperation);
+				if (result == null) result = caseMeasureValue(measureUnboundProductOperation);
 				if (result == null) result = caseTypedMeasure(measureUnboundProductOperation);
 				if (result == null) result = caseMeasure(measureUnboundProductOperation);
 				if (result == null) result = defaultCase(theEObject);
@@ -199,6 +177,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				MeasureUnboundDivisionOperation measureUnboundDivisionOperation = (MeasureUnboundDivisionOperation)theEObject;
 				T result = caseMeasureUnboundDivisionOperation(measureUnboundDivisionOperation);
 				if (result == null) result = caseMeasureUnboundOperation(measureUnboundDivisionOperation);
+				if (result == null) result = caseMeasureValue(measureUnboundDivisionOperation);
 				if (result == null) result = caseTypedMeasure(measureUnboundDivisionOperation);
 				if (result == null) result = caseMeasure(measureUnboundDivisionOperation);
 				if (result == null) result = defaultCase(theEObject);
@@ -279,20 +258,9 @@ public class AlgaeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgaePackage.TAIL_MEASURE: {
-				TailMeasure tailMeasure = (TailMeasure)theEObject;
-				T result = caseTailMeasure(tailMeasure);
-				if (result == null) result = caseCompositeMeasure(tailMeasure);
-				if (result == null) result = caseMeasureValue(tailMeasure);
-				if (result == null) result = caseTypedMeasure(tailMeasure);
-				if (result == null) result = caseMeasure(tailMeasure);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AlgaePackage.INTEGRATION_MEASURE: {
 				IntegrationMeasure integrationMeasure = (IntegrationMeasure)theEObject;
 				T result = caseIntegrationMeasure(integrationMeasure);
-				if (result == null) result = caseCompositeMeasure(integrationMeasure);
 				if (result == null) result = caseMeasureValue(integrationMeasure);
 				if (result == null) result = caseTypedMeasure(integrationMeasure);
 				if (result == null) result = caseMeasure(integrationMeasure);
@@ -420,51 +388,6 @@ public class AlgaeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMeasureCast(MeasureCast object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Operation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMeasureBinaryOperation(MeasureBinaryOperation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Product Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Product Operation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMeasureBinaryProductOperation(MeasureBinaryProductOperation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measure Binary Sum Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measure Binary Sum Operation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMeasureBinarySumOperation(MeasureBinarySumOperation object) {
 		return null;
 	}
 
@@ -705,21 +628,6 @@ public class AlgaeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExponentialMeasure(ExponentialMeasure object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Tail Measure</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Tail Measure</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTailMeasure(TailMeasure object) {
 		return null;
 	}
 

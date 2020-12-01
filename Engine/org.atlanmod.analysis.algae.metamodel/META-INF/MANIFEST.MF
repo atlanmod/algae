@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.atlanmod.analysis.algae.metamodel;singleton:=true
 Automatic-Module-Name: org.atlanmod.analysis.algae.metamodel
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ libs/commons-math3-3.6.1.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
@@ -12,5 +13,6 @@ Export-Package: org.atlanmod.analysis.algae,
  org.atlanmod.analysis.algae.impl,
  org.atlanmod.analysis.algae.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot
 Bundle-ActivationPolicy: lazy

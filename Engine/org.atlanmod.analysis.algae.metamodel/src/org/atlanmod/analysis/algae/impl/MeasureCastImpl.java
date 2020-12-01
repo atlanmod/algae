@@ -9,6 +9,8 @@ import org.atlanmod.analysis.algae.MeasureCast;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -151,6 +153,12 @@ public class MeasureCastImpl extends TypedMeasureImpl implements MeasureCast {
 				return measure != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //MeasureCastImpl

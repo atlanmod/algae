@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -42,7 +43,7 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigDecimal VALUE_EDEFAULT = null;
+	protected static final BigDecimal VALUE_EDEFAULT = new BigDecimal("0");
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -220,6 +221,11 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 		result.append(value);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void computeValue(EObject targetClass, EOperation targetOperation) {
+		
 	}
 
 } //MeasureValueImpl

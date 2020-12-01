@@ -63,8 +63,6 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 			case AlgaePackage.MEASURE_OCL: return createMeasureOCL();
 			case AlgaePackage.MEASURE_ATTRIBUTE: return createMeasureAttribute();
 			case AlgaePackage.MEASURE_CAST: return createMeasureCast();
-			case AlgaePackage.MEASURE_BINARY_PRODUCT_OPERATION: return createMeasureBinaryProductOperation();
-			case AlgaePackage.MEASURE_BINARY_SUM_OPERATION: return createMeasureBinarySumOperation();
 			case AlgaePackage.REAL_TIME_DURATION: return createRealTimeDuration();
 			case AlgaePackage.MEASURE_UNBOUND_SUM_OPERATION: return createMeasureUnboundSumOperation();
 			case AlgaePackage.MEASURE_UNBOUND_SUBSTRACT_OPERATION: return createMeasureUnboundSubstractOperation();
@@ -177,26 +175,6 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 	public MeasureCast createMeasureCast() {
 		MeasureCastImpl measureCast = new MeasureCastImpl();
 		return measureCast;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MeasureBinaryProductOperation createMeasureBinaryProductOperation() {
-		MeasureBinaryProductOperationImpl measureBinaryProductOperation = new MeasureBinaryProductOperationImpl();
-		return measureBinaryProductOperation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MeasureBinarySumOperation createMeasureBinarySumOperation() {
-		MeasureBinarySumOperationImpl measureBinarySumOperation = new MeasureBinarySumOperationImpl();
-		return measureBinarySumOperation;
 	}
 
 	/**

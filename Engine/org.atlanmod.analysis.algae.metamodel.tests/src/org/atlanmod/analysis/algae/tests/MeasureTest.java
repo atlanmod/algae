@@ -67,7 +67,7 @@ public abstract class MeasureTest extends TestCase {
 	 * @see org.atlanmod.analysis.algae.Measure#type()
 	 * @generated
 	 */
-	public void testType_1() {
+	public void testType() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

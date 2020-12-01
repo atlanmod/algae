@@ -46,7 +46,6 @@ public class LogisticMeasureItemProvider extends CompositeMeasureItemProvider {
 			addLPropertyDescriptor(object);
 			addKPropertyDescriptor(object);
 			addX0PropertyDescriptor(object);
-			addXPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,28 +108,6 @@ public class LogisticMeasureItemProvider extends CompositeMeasureItemProvider {
 				 getString("_UI_LogisticMeasure_x0_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LogisticMeasure_x0_feature", "_UI_LogisticMeasure_type"),
 				 AlgaePackage.Literals.LOGISTIC_MEASURE__X0,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the X feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LogisticMeasure_x_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LogisticMeasure_x_feature", "_UI_LogisticMeasure_type"),
-				 AlgaePackage.Literals.LOGISTIC_MEASURE__X,
 				 true,
 				 false,
 				 true,

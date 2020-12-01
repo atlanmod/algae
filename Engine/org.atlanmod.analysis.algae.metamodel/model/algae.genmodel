@@ -55,34 +55,17 @@
     <genClasses ecoreClass="algae.ecore#//MeasureCast">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureCast/measure"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="algae.ecore#//MeasureBinaryOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureBinaryOperation/left"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureBinaryOperation/right"/>
-    </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureBinaryProductOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureBinaryProductOperation/value"/>
-    </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureBinarySumOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureBinarySumOperation/value"/>
-    </genClasses>
     <genClasses ecoreClass="algae.ecore#//RealTimeDuration">
       <genOperations ecoreOperation="algae.ecore#//RealTimeDuration/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="algae.ecore#//MeasureUnboundOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasureUnboundOperation/val"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//MeasureUnboundOperation/measures"/>
     </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSumOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundSumOperation/value"/>
-    </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSubstractOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundSubstractOperation/value"/>
-    </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureUnboundProductOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundProductOperation/value"/>
-    </genClasses>
-    <genClasses ecoreClass="algae.ecore#//MeasureUnboundDivisionOperation">
-      <genOperations ecoreOperation="algae.ecore#//MeasureUnboundDivisionOperation/value"/>
-    </genClasses>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSumOperation"/>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundSubstractOperation"/>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundProductOperation"/>
+    <genClasses ecoreClass="algae.ecore#//MeasureUnboundDivisionOperation"/>
     <genClasses ecoreClass="algae.ecore#//MeasurementUncertainty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//MeasurementUncertainty/information"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algae.ecore#//MeasurementUncertainty/standardUncertainty"/>
@@ -107,17 +90,15 @@
     <genClasses ecoreClass="algae.ecore#//Sample">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algae.ecore#//Sample/quantity"/>
     </genClasses>
-    <genClasses ecoreClass="algae.ecore#//CompositeMeasure"/>
+    <genClasses ecoreClass="algae.ecore#//CompositeMeasure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//CompositeMeasure/x"/>
+    </genClasses>
     <genClasses ecoreClass="algae.ecore#//LogisticMeasure">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/L"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/k"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/x0"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//LogisticMeasure/x"/>
     </genClasses>
-    <genClasses ecoreClass="algae.ecore#//ExponentialMeasure">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//ExponentialMeasure/x"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="algae.ecore#//TailMeasure"/>
+    <genClasses ecoreClass="algae.ecore#//ExponentialMeasure"/>
     <genClasses ecoreClass="algae.ecore#//IntegrationMeasure">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/function"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/leftBound"/>

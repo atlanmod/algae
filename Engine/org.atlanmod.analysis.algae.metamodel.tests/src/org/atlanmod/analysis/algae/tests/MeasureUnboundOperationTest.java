@@ -10,7 +10,7 @@ import org.atlanmod.analysis.algae.MeasureUnboundOperation;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class MeasureUnboundOperationTest extends TypedMeasureTest {
+public abstract class MeasureUnboundOperationTest extends MeasureValueTest {
 
 	/**
 	 * Constructs a new Measure Unbound Operation test case with the given name.

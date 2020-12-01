@@ -35,8 +35,6 @@ public class AlgaeTests extends TestSuite {
 		suite.addTestSuite(MeasureOCLTest.class);
 		suite.addTestSuite(MeasureAttributeTest.class);
 		suite.addTestSuite(MeasureCastTest.class);
-		suite.addTestSuite(MeasureBinaryProductOperationTest.class);
-		suite.addTestSuite(MeasureBinarySumOperationTest.class);
 		suite.addTestSuite(RealTimeDurationTest.class);
 		suite.addTestSuite(MeasureUnboundSumOperationTest.class);
 		suite.addTestSuite(MeasureUnboundSubstractOperationTest.class);
