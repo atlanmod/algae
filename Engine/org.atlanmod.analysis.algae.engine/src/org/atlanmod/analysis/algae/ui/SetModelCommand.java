@@ -26,7 +26,7 @@ public class SetModelCommand extends AbstractHandler {
 		
 		FileDialog dialog = new FileDialog(shell);
 		dialog.setText("Open");
-		String[] filterExt = { "*.eel"};
+		String[] filterExt = { "*.algae"};
         dialog.setFilterExtensions(filterExt);
         String selected = dialog.open();
         EngineAddon.MODEL = new File(selected);

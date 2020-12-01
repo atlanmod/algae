@@ -19,7 +19,7 @@ import org.atlanmod.analysis.algae.MeasureValue;
  * </p>
  * @generated
  */
-public class MeasureValueTest extends MeasureTest {
+public class MeasureValueTest extends TypedMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->

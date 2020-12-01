@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class MeasureCastImpl extends MeasureImpl implements MeasureCast {
+public class MeasureCastImpl extends TypedMeasureImpl implements MeasureCast {
 	/**
 	 * The cached value of the '{@link #getMeasure() <em>Measure</em>}' reference.
 	 * <!-- begin-user-doc -->

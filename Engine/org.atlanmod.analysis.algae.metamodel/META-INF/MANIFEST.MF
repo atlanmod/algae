@@ -8,8 +8,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: 
- org.atlanmod.analysis.algae,
+Export-Package: org.atlanmod.analysis.algae,
  org.atlanmod.analysis.algae.impl,
  org.atlanmod.analysis.algae.util
 Require-Bundle: org.eclipse.core.runtime,

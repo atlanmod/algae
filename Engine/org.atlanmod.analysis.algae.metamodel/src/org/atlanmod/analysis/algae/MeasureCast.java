@@ -23,7 +23,7 @@ package org.atlanmod.analysis.algae;
  * @model
  * @generated
  */
-public interface MeasureCast extends Measure {
+public interface MeasureCast extends TypedMeasure {
 	/**
 	 * Returns the value of the '<em><b>Measure</b></em>' reference.
 	 * <!-- begin-user-doc -->

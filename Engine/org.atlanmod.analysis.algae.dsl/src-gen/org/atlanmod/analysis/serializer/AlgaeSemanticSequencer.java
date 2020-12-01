@@ -13,6 +13,7 @@ import org.atlanmod.analysis.algae.IntegrationMeasure;
 import org.atlanmod.analysis.algae.Interval;
 import org.atlanmod.analysis.algae.LogisticMeasure;
 import org.atlanmod.analysis.algae.MeasureAttribute;
+import org.atlanmod.analysis.algae.MeasureCast;
 import org.atlanmod.analysis.algae.MeasureOCL;
 import org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation;
 import org.atlanmod.analysis.algae.MeasureUnboundProductOperation;
@@ -80,6 +81,9 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AlgaePackage.MEASURE_ATTRIBUTE:
 				sequence_MeasureAttribute(context, (MeasureAttribute) semanticObject); 
+				return; 
+			case AlgaePackage.MEASURE_CAST:
+				sequence_MeasureCast(context, (MeasureCast) semanticObject); 
 				return; 
 			case AlgaePackage.MEASURE_OCL:
 				sequence_MeasureOCL(context, (MeasureOCL) semanticObject); 
@@ -431,7 +435,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ExponentialMeasure returns ExponentialMeasure
 	 *
 	 * Constraint:
-	 *     (post?='post'? targetClass=EString targetOperation=EString? subname=EString x=[Measure|EString])
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) x=[Measure|EString])
 	 */
 	protected void sequence_ExponentialMeasure(ISerializationContext context, ExponentialMeasure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -462,7 +466,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         function=[CompositeMeasure|EString] 
 	 *         leftBound=[Measure|EString] 
 	 *         rightBound=[Measure|EString]
@@ -506,7 +510,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         L=[Measure|EString] 
 	 *         k=[Measure|EString] 
 	 *         x0=[Measure|EString] 
@@ -524,9 +528,29 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     MeasureAttribute returns MeasureAttribute
 	 *
 	 * Constraint:
-	 *     (post?='post'? targetClass=EString targetOperation=EString? subname=EString att=EString)
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) att=EString)
 	 */
 	protected void sequence_MeasureAttribute(ISerializationContext context, MeasureAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Measure returns MeasureCast
+	 *     MeasureCast returns MeasureCast
+	 *
+	 * Constraint:
+	 *     (
+	 *         post?='post'? 
+	 *         targetClass=EString 
+	 *         targetOperation=EString? 
+	 *         subname=EString 
+	 *         measure=[Measure|EString] 
+	 *         type=Type
+	 *     )
+	 */
+	protected void sequence_MeasureCast(ISerializationContext context, MeasureCast semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -537,7 +561,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     MeasureOCL returns MeasureOCL
 	 *
 	 * Constraint:
-	 *     (post?='post'? targetClass=EString targetOperation=EString? subname=EString oclQuery=EString)
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) oclQuery=EString)
 	 */
 	protected void sequence_MeasureOCL(ISerializationContext context, MeasureOCL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -554,7 +578,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         measures+=[Measure|EString] 
 	 *         measures+=[Measure|EString]+
 	 *     )
@@ -574,7 +598,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         measures+=[Measure|EString] 
 	 *         measures+=[Measure|EString]+
 	 *     )
@@ -594,7 +618,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         measures+=[Measure|EString] 
 	 *         measures+=[Measure|EString]+
 	 *     )
@@ -614,7 +638,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         post?='post'? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
-	 *         subname=EString 
+	 *         (type=Type | subname=EString) 
 	 *         measures+=[Measure|EString] 
 	 *         measures+=[Measure|EString]+
 	 *     )
@@ -630,7 +654,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     MeasureValue_Impl returns MeasureValue
 	 *
 	 * Constraint:
-	 *     (post?='post'? targetClass=EString targetOperation=EString? subname=EString value=EBigDecimal?)
+	 *     (post?='post'? targetClass=EString targetOperation=EString? (type=Type | subname=EString) value=EBigDecimal?)
 	 */
 	protected void sequence_MeasureValue_Impl(ISerializationContext context, MeasureValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -171,6 +171,16 @@ public class SampleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(AlgaePackage.Literals.SAMPLE__QUANTITY,
+				 AlgaeFactory.eINSTANCE.createMeasureBinaryProductOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AlgaePackage.Literals.SAMPLE__QUANTITY,
+				 AlgaeFactory.eINSTANCE.createMeasureBinarySumOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AlgaePackage.Literals.SAMPLE__QUANTITY,
 				 AlgaeFactory.eINSTANCE.createRealTimeDuration()));
 
 		newChildDescriptors.add

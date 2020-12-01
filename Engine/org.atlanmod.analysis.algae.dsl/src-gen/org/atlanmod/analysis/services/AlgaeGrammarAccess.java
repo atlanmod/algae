@@ -97,21 +97,23 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasureValue_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMeasureOCLParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cMeasureAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cMeasureUnboundProductOperationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cMeasureUnboundSumOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cMeasureUnboundDivisionOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cMeasureUnboundSubstractOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cRealTimeDurationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cCompositeMeasureParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cMeasureCastParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMeasureUnboundProductOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMeasureUnboundSumOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cMeasureUnboundDivisionOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cMeasureUnboundSubstractOperationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cRealTimeDurationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cCompositeMeasureParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//Measure:
-		//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureUnboundProductOperation | MeasureUnboundSumOperation |
-		//	MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure
-		//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+		//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
+		//	MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+		//	CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureUnboundProductOperation | MeasureUnboundSumOperation |
-		//MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure
+		//MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
+		//MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+		//CompositeMeasure
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MeasureValue_Impl
@@ -123,23 +125,26 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//MeasureAttribute
 		public RuleCall getMeasureAttributeParserRuleCall_2() { return cMeasureAttributeParserRuleCall_2; }
 		
+		//MeasureCast
+		public RuleCall getMeasureCastParserRuleCall_3() { return cMeasureCastParserRuleCall_3; }
+		
 		//MeasureUnboundProductOperation
-		public RuleCall getMeasureUnboundProductOperationParserRuleCall_3() { return cMeasureUnboundProductOperationParserRuleCall_3; }
+		public RuleCall getMeasureUnboundProductOperationParserRuleCall_4() { return cMeasureUnboundProductOperationParserRuleCall_4; }
 		
 		//MeasureUnboundSumOperation
-		public RuleCall getMeasureUnboundSumOperationParserRuleCall_4() { return cMeasureUnboundSumOperationParserRuleCall_4; }
+		public RuleCall getMeasureUnboundSumOperationParserRuleCall_5() { return cMeasureUnboundSumOperationParserRuleCall_5; }
 		
 		//MeasureUnboundDivisionOperation
-		public RuleCall getMeasureUnboundDivisionOperationParserRuleCall_5() { return cMeasureUnboundDivisionOperationParserRuleCall_5; }
+		public RuleCall getMeasureUnboundDivisionOperationParserRuleCall_6() { return cMeasureUnboundDivisionOperationParserRuleCall_6; }
 		
 		//MeasureUnboundSubstractOperation
-		public RuleCall getMeasureUnboundSubstractOperationParserRuleCall_6() { return cMeasureUnboundSubstractOperationParserRuleCall_6; }
+		public RuleCall getMeasureUnboundSubstractOperationParserRuleCall_7() { return cMeasureUnboundSubstractOperationParserRuleCall_7; }
 		
 		//RealTimeDuration
-		public RuleCall getRealTimeDurationParserRuleCall_7() { return cRealTimeDurationParserRuleCall_7; }
+		public RuleCall getRealTimeDurationParserRuleCall_8() { return cRealTimeDurationParserRuleCall_8; }
 		
 		//CompositeMeasure
-		public RuleCall getCompositeMeasureParserRuleCall_8() { return cCompositeMeasureParserRuleCall_8; }
+		public RuleCall getCompositeMeasureParserRuleCall_9() { return cCompositeMeasureParserRuleCall_9; }
 	}
 	public class CompositeMeasureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.analysis.Algae.CompositeMeasure");
@@ -309,18 +314,21 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cValueEBigDecimalParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
 		
 		//MeasureValue_Impl MeasureValue:
-		//	{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+		//	{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
 		//	value=EBigDecimal?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+		//{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
 		//value=EBigDecimal?
 		public Group getGroup() { return cGroup; }
 		
@@ -354,11 +362,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -382,20 +399,23 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cOclKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cOclQueryAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cOclQueryEStringParserRuleCall_8_0 = (RuleCall)cOclQueryAssignment_8.eContents().get(0);
 		
 		//MeasureOCL:
-		//	{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" 'ocl:'
-		//	oclQuery=EString;
+		//	{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
+		//	'ocl:' oclQuery=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" 'ocl:'
-		//oclQuery=EString
+		//{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
+		//'ocl:' oclQuery=EString
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureOCL}
@@ -428,11 +448,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -459,24 +488,116 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cAttributeKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cAttAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cAttEStringParserRuleCall_8_0 = (RuleCall)cAttAssignment_8.eContents().get(0);
 		
 		//MeasureAttribute:
-		//	{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-		//	"attribute:" att=EString;
+		//	{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//	"=" "attribute:" att=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "attribute:"
-		//att=EString
+		//{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//"=" "attribute:" att=EString
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureAttribute}
 		public Action getMeasureAttributeAction_0() { return cMeasureAttributeAction_0; }
+		
+		//post?='post'?
+		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
+		
+		//'post'
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
+		
+		//targetClass=EString
+		public Assignment getTargetClassAssignment_2() { return cTargetClassAssignment_2; }
+		
+		//EString
+		public RuleCall getTargetClassEStringParserRuleCall_2_0() { return cTargetClassEStringParserRuleCall_2_0; }
+		
+		//('#' targetOperation=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
+		
+		//targetOperation=EString
+		public Assignment getTargetOperationAssignment_3_1() { return cTargetOperationAssignment_3_1; }
+		
+		//EString
+		public RuleCall getTargetOperationEStringParserRuleCall_3_1_0() { return cTargetOperationEStringParserRuleCall_3_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
+		//subname=EString
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
+		
+		//EString
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
+		//"attribute:"
+		public Keyword getAttributeKeyword_7() { return cAttributeKeyword_7; }
+		
+		//att=EString
+		public Assignment getAttAssignment_8() { return cAttAssignment_8; }
+		
+		//EString
+		public RuleCall getAttEStringParserRuleCall_8_0() { return cAttEStringParserRuleCall_8_0; }
+	}
+	public class MeasureCastElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.analysis.Algae.MeasureCast");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMeasureCastAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPostAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostAssignment_1.eContents().get(0);
+		private final Assignment cTargetClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassEStringParserRuleCall_2_0 = (RuleCall)cTargetClassAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMeasureAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cMeasureMeasureCrossReference_7_0 = (CrossReference)cMeasureAssignment_7.eContents().get(0);
+		private final RuleCall cMeasureMeasureEStringParserRuleCall_7_0_1 = (RuleCall)cMeasureMeasureCrossReference_7_0.eContents().get(1);
+		private final Keyword cAsKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cTypeTypeEnumRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
+		
+		//MeasureCast:
+		//	{MeasureCast} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+		//	measure=[Measure|EString] "as" type=Type;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MeasureCast} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+		//measure=[Measure|EString] "as" type=Type
+		public Group getGroup() { return cGroup; }
+		
+		//{MeasureCast}
+		public Action getMeasureCastAction_0() { return cMeasureCastAction_0; }
 		
 		//post?='post'?
 		public Assignment getPostAssignment_1() { return cPostAssignment_1; }
@@ -514,14 +635,23 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 		
-		//"attribute:"
-		public Keyword getAttributeKeyword_7() { return cAttributeKeyword_7; }
+		//measure=[Measure|EString]
+		public Assignment getMeasureAssignment_7() { return cMeasureAssignment_7; }
 		
-		//att=EString
-		public Assignment getAttAssignment_8() { return cAttAssignment_8; }
+		//[Measure|EString]
+		public CrossReference getMeasureMeasureCrossReference_7_0() { return cMeasureMeasureCrossReference_7_0; }
 		
 		//EString
-		public RuleCall getAttEStringParserRuleCall_8_0() { return cAttEStringParserRuleCall_8_0; }
+		public RuleCall getMeasureMeasureEStringParserRuleCall_7_0_1() { return cMeasureMeasureEStringParserRuleCall_7_0_1; }
+		
+		//"as"
+		public Keyword getAsKeyword_8() { return cAsKeyword_8; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_9() { return cTypeAssignment_9; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_9_0() { return cTypeTypeEnumRuleCall_9_0; }
 	}
 	public class RealTimeDurationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.analysis.Algae.RealTimeDuration");
@@ -587,8 +717,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
@@ -600,12 +733,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
 		
 		//MeasureUnboundSumOperation:
-		//	{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-		//	measures+=[Measure|EString] ('+' measures+=[Measure|EString])+;
+		//	{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('+' measures+=[Measure|EString])+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-		//measures+=[Measure|EString] ('+' measures+=[Measure|EString])+
+		//{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('+' measures+=[Measure|EString])+
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureUnboundSumOperation}
@@ -638,11 +771,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -684,8 +826,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
@@ -697,12 +842,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
 		
 		//MeasureUnboundSubstractOperation:
-		//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.'
-		//	subname=EString "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
+		//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString
-		//"=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+
+		//{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureUnboundSubstractOperation}
@@ -735,11 +880,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -781,8 +935,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
@@ -794,12 +951,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
 		
 		//MeasureUnboundProductOperation:
-		//	{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString
-		//	"=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+;
+		//	{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString
-		//"=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+
+		//{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureUnboundProductOperation}
@@ -832,11 +989,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -878,8 +1044,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cMeasuresAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cMeasuresMeasureCrossReference_7_0 = (CrossReference)cMeasuresAssignment_7.eContents().get(0);
@@ -891,12 +1060,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMeasuresMeasureEStringParserRuleCall_8_1_0_1 = (RuleCall)cMeasuresMeasureCrossReference_8_1_0.eContents().get(1);
 		
 		//MeasureUnboundDivisionOperation:
-		//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.'
-		//	subname=EString "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
+		//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString
-		//"=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+
+		//{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+
 		public Group getGroup() { return cGroup; }
 		
 		//{MeasureUnboundDivisionOperation}
@@ -929,11 +1098,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -975,8 +1153,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cExpKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cXAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -984,12 +1165,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cXMeasureCrossReference_8_0.eContents().get(1);
 		
 		//ExponentialMeasure:
-		//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "exp"
-		//	x=[Measure|EString];
+		//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" "exp" x=[Measure|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "exp"
-		//x=[Measure|EString]
+		//{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//"=" "exp" x=[Measure|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//{ExponentialMeasure}
@@ -1022,11 +1203,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -1056,8 +1246,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLogisticKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cLAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -1074,12 +1267,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXMeasureEStringParserRuleCall_11_0_1 = (RuleCall)cXMeasureCrossReference_11_0.eContents().get(1);
 		
 		//LogisticMeasure:
-		//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "logistic"
-		//	L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
+		//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//	"=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "logistic"
-		//L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]
+		//{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
+		//"logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//{LogisticMeasure}
@@ -1112,11 +1305,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -1173,8 +1375,11 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetOperationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cTargetOperationEStringParserRuleCall_3_1_0 = (RuleCall)cTargetOperationAssignment_3_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSubnameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSubnameEStringParserRuleCall_5_0 = (RuleCall)cSubnameAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cTypeTypeEnumRuleCall_5_0_0 = (RuleCall)cTypeAssignment_5_0.eContents().get(0);
+		private final Assignment cSubnameAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cIntegralKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cFunctionAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -1191,12 +1396,14 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//IntegrationMeasure:
-		//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-		//	"integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString] ']';
+		//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+		//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
+		//	rightBound=[Measure|EString] ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "integral"
-		//function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString] ']'
+		//{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+		//"=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString]
+		//']'
 		public Group getGroup() { return cGroup; }
 		
 		//{IntegrationMeasure}
@@ -1229,11 +1436,20 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
+		//type=Type | subname=EString
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_5_0() { return cTypeAssignment_5_0; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_5_0_0() { return cTypeTypeEnumRuleCall_5_0_0; }
+		
 		//subname=EString
-		public Assignment getSubnameAssignment_5() { return cSubnameAssignment_5; }
+		public Assignment getSubnameAssignment_5_1() { return cSubnameAssignment_5_1; }
 		
 		//EString
-		public RuleCall getSubnameEStringParserRuleCall_5_0() { return cSubnameEStringParserRuleCall_5_0; }
+		public RuleCall getSubnameEStringParserRuleCall_5_1_0() { return cSubnameEStringParserRuleCall_5_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
@@ -4282,6 +4498,43 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	
+	public class TypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.analysis.Algae.Type");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cDurationEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cDurationDurationKeyword_0_0 = (Keyword)cDurationEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFrequencyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFrequencyFrequencyKeyword_1_0 = (Keyword)cFrequencyEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cScalarEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cScalarScalarKeyword_2_0 = (Keyword)cScalarEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Type:
+		//	Duration="duration" |
+		//	Frequency="frequency" |
+		//	Scalar="scalar";
+		public EnumRule getRule() { return rule; }
+		
+		//Duration="duration" | Frequency="frequency" | Scalar="scalar"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Duration="duration"
+		public EnumLiteralDeclaration getDurationEnumLiteralDeclaration_0() { return cDurationEnumLiteralDeclaration_0; }
+		
+		//"duration"
+		public Keyword getDurationDurationKeyword_0_0() { return cDurationDurationKeyword_0_0; }
+		
+		//Frequency="frequency"
+		public EnumLiteralDeclaration getFrequencyEnumLiteralDeclaration_1() { return cFrequencyEnumLiteralDeclaration_1; }
+		
+		//"frequency"
+		public Keyword getFrequencyFrequencyKeyword_1_0() { return cFrequencyFrequencyKeyword_1_0; }
+		
+		//Scalar="scalar"
+		public EnumLiteralDeclaration getScalarEnumLiteralDeclaration_2() { return cScalarEnumLiteralDeclaration_2; }
+		
+		//"scalar"
+		public Keyword getScalarScalarKeyword_2_0() { return cScalarScalarKeyword_2_0; }
+	}
 	public class VisibilityElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.atlanmod.analysis.Algae.Visibility");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4317,10 +4570,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	private final EStringElements pEString;
 	private final VariableElements pVariable;
 	private final EBigDecimalElements pEBigDecimal;
+	private final TypeElements eType;
 	private final VisibilityElements eVisibility;
 	private final MeasureValue_ImplElements pMeasureValue_Impl;
 	private final MeasureOCLElements pMeasureOCL;
 	private final MeasureAttributeElements pMeasureAttribute;
+	private final MeasureCastElements pMeasureCast;
 	private final RealTimeDurationElements pRealTimeDuration;
 	private final MeasureUnboundSumOperationElements pMeasureUnboundSumOperation;
 	private final MeasureUnboundSubstractOperationElements pMeasureUnboundSubstractOperation;
@@ -4369,10 +4624,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEString = new EStringElements();
 		this.pVariable = new VariableElements();
 		this.pEBigDecimal = new EBigDecimalElements();
+		this.eType = new TypeElements();
 		this.eVisibility = new VisibilityElements();
 		this.pMeasureValue_Impl = new MeasureValue_ImplElements();
 		this.pMeasureOCL = new MeasureOCLElements();
 		this.pMeasureAttribute = new MeasureAttributeElements();
+		this.pMeasureCast = new MeasureCastElements();
 		this.pRealTimeDuration = new RealTimeDurationElements();
 		this.pMeasureUnboundSumOperation = new MeasureUnboundSumOperationElements();
 		this.pMeasureUnboundSubstractOperation = new MeasureUnboundSubstractOperationElements();
@@ -4449,9 +4706,9 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Measure:
-	//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureUnboundProductOperation | MeasureUnboundSumOperation |
-	//	MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure
-	//	/*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
+	//	MeasureValue_Impl | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation |
+	//	MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration |
+	//	CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */;
 	public MeasureElements getMeasureAccess() {
 		return pMeasure;
 	}
@@ -4514,6 +4771,18 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		return getEBigDecimalAccess().getRule();
 	}
 	
+	//enum Type:
+	//	Duration="duration" |
+	//	Frequency="frequency" |
+	//	Scalar="scalar";
+	public TypeElements getTypeAccess() {
+		return eType;
+	}
+	
+	public EnumRule getTypeRule() {
+		return getTypeAccess().getRule();
+	}
+	
 	//enum Visibility:
 	//	LOCAL | GLOBAL;
 	public VisibilityElements getVisibilityAccess() {
@@ -4525,7 +4794,7 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureValue_Impl MeasureValue:
-	//	{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+	//	{MeasureValue} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
 	//	value=EBigDecimal?;
 	public MeasureValue_ImplElements getMeasureValue_ImplAccess() {
 		return pMeasureValue_Impl;
@@ -4536,8 +4805,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureOCL:
-	//	{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" 'ocl:'
-	//	oclQuery=EString;
+	//	{MeasureOCL} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString) "="
+	//	'ocl:' oclQuery=EString;
 	public MeasureOCLElements getMeasureOCLAccess() {
 		return pMeasureOCL;
 	}
@@ -4547,14 +4816,25 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureAttribute:
-	//	{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-	//	"attribute:" att=EString;
+	//	{MeasureAttribute} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+	//	"=" "attribute:" att=EString;
 	public MeasureAttributeElements getMeasureAttributeAccess() {
 		return pMeasureAttribute;
 	}
 	
 	public ParserRule getMeasureAttributeRule() {
 		return getMeasureAttributeAccess().getRule();
+	}
+	
+	//MeasureCast:
+	//	{MeasureCast} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
+	//	measure=[Measure|EString] "as" type=Type;
+	public MeasureCastElements getMeasureCastAccess() {
+		return pMeasureCast;
+	}
+	
+	public ParserRule getMeasureCastRule() {
+		return getMeasureCastAccess().getRule();
 	}
 	
 	//RealTimeDuration:
@@ -4568,8 +4848,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureUnboundSumOperation:
-	//	{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-	//	measures+=[Measure|EString] ('+' measures+=[Measure|EString])+;
+	//	{MeasureUnboundSumOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('+' measures+=[Measure|EString])+;
 	public MeasureUnboundSumOperationElements getMeasureUnboundSumOperationAccess() {
 		return pMeasureUnboundSumOperation;
 	}
@@ -4579,8 +4859,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureUnboundSubstractOperation:
-	//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.'
-	//	subname=EString "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
+	//	{MeasureUnboundSubstractOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('-' measures+=[Measure|EString])+;
 	public MeasureUnboundSubstractOperationElements getMeasureUnboundSubstractOperationAccess() {
 		return pMeasureUnboundSubstractOperation;
 	}
@@ -4590,8 +4870,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureUnboundProductOperation:
-	//	{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString
-	//	"=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+;
+	//	{MeasureUnboundProductOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('*' measures+=[Measure|EString])+;
 	public MeasureUnboundProductOperationElements getMeasureUnboundProductOperationAccess() {
 		return pMeasureUnboundProductOperation;
 	}
@@ -4601,8 +4881,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MeasureUnboundDivisionOperation:
-	//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.'
-	//	subname=EString "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
+	//	{MeasureUnboundDivisionOperation} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" measures+=[Measure|EString] ('/' measures+=[Measure|EString])+;
 	public MeasureUnboundDivisionOperationElements getMeasureUnboundDivisionOperationAccess() {
 		return pMeasureUnboundDivisionOperation;
 	}
@@ -4612,8 +4892,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExponentialMeasure:
-	//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "exp"
-	//	x=[Measure|EString];
+	//	{ExponentialMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" "exp" x=[Measure|EString];
 	public ExponentialMeasureElements getExponentialMeasureAccess() {
 		return pExponentialMeasure;
 	}
@@ -4623,8 +4903,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LogisticMeasure:
-	//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "=" "logistic"
-	//	L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
+	//	{LogisticMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type | subname=EString)
+	//	"=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString];
 	public LogisticMeasureElements getLogisticMeasureAccess() {
 		return pLogisticMeasure;
 	}
@@ -4634,8 +4914,9 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IntegrationMeasure:
-	//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' subname=EString "="
-	//	"integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString] ']';
+	//	{IntegrationMeasure} post?='post'? targetClass=EString ('#' targetOperation=EString)? '.' (type=Type |
+	//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
+	//	rightBound=[Measure|EString] ']';
 	public IntegrationMeasureElements getIntegrationMeasureAccess() {
 		return pIntegrationMeasure;
 	}

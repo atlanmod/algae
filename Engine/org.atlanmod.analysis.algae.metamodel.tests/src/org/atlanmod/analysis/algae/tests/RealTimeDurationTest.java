@@ -11,6 +11,12 @@ import org.atlanmod.analysis.algae.RealTimeDuration;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Real Time Duration</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.atlanmod.analysis.algae.RealTimeDuration#type() <em>Type</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class RealTimeDurationTest extends MeasureValueTest {
@@ -65,6 +71,19 @@ public class RealTimeDurationTest extends MeasureValueTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.atlanmod.analysis.algae.RealTimeDuration#type() <em>Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.atlanmod.analysis.algae.RealTimeDuration#type()
+	 * @generated
+	 */
+	public void testType_1() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //RealTimeDurationTest

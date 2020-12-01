@@ -13,6 +13,7 @@ import org.atlanmod.analysis.algae.Measure;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link org.atlanmod.analysis.algae.Measure#type() <em>Type</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.Measure#value() <em>Value</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.Measure#name() <em>Name</em>}</li>
  * </ul>
@@ -57,6 +58,19 @@ public abstract class MeasureTest extends TestCase {
 	 */
 	protected Measure getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Tests the '{@link org.atlanmod.analysis.algae.Measure#type() <em>Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.atlanmod.analysis.algae.Measure#type()
+	 * @generated
+	 */
+	public void testType_1() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

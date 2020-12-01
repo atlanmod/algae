@@ -13,7 +13,7 @@ import org.atlanmod.analysis.algae.MeasureCast;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MeasureCastTest extends MeasureTest {
+public class MeasureCastTest extends TypedMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->

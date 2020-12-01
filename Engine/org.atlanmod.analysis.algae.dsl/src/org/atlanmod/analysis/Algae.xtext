@@ -13,7 +13,7 @@ Platform returns Platform:
 	'}';
 
 Measure returns Measure:
-	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureUnboundProductOperation | MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
+	MeasureValue_Impl  | MeasureOCL | MeasureAttribute | MeasureCast | MeasureUnboundProductOperation | MeasureUnboundSumOperation | MeasureUnboundDivisionOperation | MeasureUnboundSubstractOperation | RealTimeDuration | CompositeMeasure /*| MeasureUnboundSumOperation | MeasureUnboundProductOperation */ ;
 
 CompositeMeasure returns CompositeMeasure:
 	ExponentialMeasure | LogisticMeasure | IntegrationMeasure
@@ -36,22 +36,33 @@ Variable returns Variable:
 EBigDecimal returns ecore::EBigDecimal:
 	INT? '.' INT;
 
+enum Type returns Type:
+	Duration="duration"  |
+	Frequency="frequency"  |
+	Scalar="scalar"   
+;
+
 enum Visibility returns Visibility:
 	LOCAL = 'LOCAL' | GLOBAL = 'GLOBAL';
 
 MeasureValue_Impl returns MeasureValue:
 	{MeasureValue}	
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" (value=EBigDecimal)? 	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" (value=EBigDecimal)? 	
 ;
 
 MeasureOCL returns MeasureOCL:
 	{MeasureOCL}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" 'ocl:' oclQuery=EString  	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" 'ocl:' oclQuery=EString  	
 ;
 
 MeasureAttribute returns MeasureAttribute:
 	{MeasureAttribute}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" "attribute:" att=EString  		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "attribute:" att=EString  		
+;
+
+MeasureCast returns MeasureCast:
+	{MeasureCast}
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') subname=EString "=" measure=[Measure|EString] "as" type=Type 	
 ;
 
 RealTimeDuration returns RealTimeDuration:
@@ -61,37 +72,37 @@ RealTimeDuration returns RealTimeDuration:
 
 MeasureUnboundSumOperation returns MeasureUnboundSumOperation:
 	{MeasureUnboundSumOperation}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ 		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('+' measures+=[Measure|EString])+ 		
 ;
 
 MeasureUnboundSubstractOperation returns MeasureUnboundSubstractOperation:
 	{MeasureUnboundSubstractOperation}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "="  measures+=[Measure|EString] ('-' measures+=[Measure|EString])+ 		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('-' measures+=[Measure|EString])+ 		
 ;
 
 MeasureUnboundProductOperation returns MeasureUnboundProductOperation:
 	{MeasureUnboundProductOperation}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ 		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('*' measures+=[Measure|EString])+ 		
 ;
 
 MeasureUnboundDivisionOperation returns MeasureUnboundDivisionOperation:
 	{MeasureUnboundDivisionOperation}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "="  measures+=[Measure|EString] ('/' measures+=[Measure|EString])+ 		
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "="  measures+=[Measure|EString] ('/' measures+=[Measure|EString])+ 		
 ;
 
 ExponentialMeasure returns ExponentialMeasure:
 	{ExponentialMeasure}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" "exp" x=[Measure|EString]
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "exp" x=[Measure|EString]
 ;	
 
 LogisticMeasure returns LogisticMeasure:
 	{LogisticMeasure} 
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]	
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "logistic" L=[Measure|EString] k=[Measure|EString] x0=[Measure|EString] x=[Measure|EString]	
 ;
 
 IntegrationMeasure returns IntegrationMeasure:
 	{IntegrationMeasure}
-	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=[Measure|EString] ';' rightBound=[Measure|EString]']'
+	(post ?= 'post')? targetClass=EString ('#' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=[Measure|EString] ';' rightBound=[Measure|EString]']'
 ;
 
 

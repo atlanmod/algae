@@ -24,7 +24,7 @@ import java.math.BigDecimal;
  * @model
  * @generated
  */
-public interface MeasureValue extends Measure {
+public interface MeasureValue extends TypedMeasure {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

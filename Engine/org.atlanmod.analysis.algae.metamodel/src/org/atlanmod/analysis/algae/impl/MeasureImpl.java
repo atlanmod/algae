@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasurementUncertainty;
-
+import org.atlanmod.analysis.algae.Type;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -295,6 +295,30 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #type() <em>Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #type()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate TYPE_1__EINVOCATION_DELEGATE = ((EOperation.Internal)AlgaePackage.Literals.MEASURE___TYPE).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type type() {
+		try {
+			return (Type)TYPE_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * The cached invocation delegate for the '{@link #value() <em>Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,6 +496,8 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case AlgaePackage.MEASURE___TYPE:
+				return type();
 			case AlgaePackage.MEASURE___VALUE:
 				return value();
 			case AlgaePackage.MEASURE___NAME:

@@ -18,4 +18,12 @@ package org.atlanmod.analysis.algae;
  * @generated
  */
 public interface RealTimeDuration extends MeasureValue {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Type::Duration'"
+	 * @generated
+	 */
+	Type type();
 } // RealTimeDuration

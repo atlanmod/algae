@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public abstract class MeasureUnboundOperationImpl extends MeasureImpl implements MeasureUnboundOperation {
+public abstract class MeasureUnboundOperationImpl extends TypedMeasureImpl implements MeasureUnboundOperation {
 	/**
 	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' reference list.
 	 * <!-- begin-user-doc -->

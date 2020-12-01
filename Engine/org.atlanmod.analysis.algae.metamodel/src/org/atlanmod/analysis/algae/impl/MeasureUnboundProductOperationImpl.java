@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureUnboundProductOperation;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
 

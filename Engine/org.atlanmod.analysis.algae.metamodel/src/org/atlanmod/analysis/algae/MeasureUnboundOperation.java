@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface MeasureUnboundOperation extends Measure {
+public interface MeasureUnboundOperation extends TypedMeasure {
 	/**
 	 * Returns the value of the '<em><b>Measures</b></em>' reference list.
 	 * The list contents are of type {@link org.atlanmod.analysis.algae.Measure}.

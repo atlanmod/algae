@@ -210,6 +210,52 @@ public class AlgaeItemProviderAdapterFactory extends AlgaeAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.atlanmod.analysis.algae.MeasureBinaryProductOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureBinaryProductOperationItemProvider measureBinaryProductOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.atlanmod.analysis.algae.MeasureBinaryProductOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureBinaryProductOperationAdapter() {
+		if (measureBinaryProductOperationItemProvider == null) {
+			measureBinaryProductOperationItemProvider = new MeasureBinaryProductOperationItemProvider(this);
+		}
+
+		return measureBinaryProductOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.atlanmod.analysis.algae.MeasureBinarySumOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MeasureBinarySumOperationItemProvider measureBinarySumOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.atlanmod.analysis.algae.MeasureBinarySumOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMeasureBinarySumOperationAdapter() {
+		if (measureBinarySumOperationItemProvider == null) {
+			measureBinarySumOperationItemProvider = new MeasureBinarySumOperationItemProvider(this);
+		}
+
+		return measureBinarySumOperationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.atlanmod.analysis.algae.RealTimeDuration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -659,6 +705,8 @@ public class AlgaeItemProviderAdapterFactory extends AlgaeAdapterFactory impleme
 		if (measureOCLItemProvider != null) measureOCLItemProvider.dispose();
 		if (measureAttributeItemProvider != null) measureAttributeItemProvider.dispose();
 		if (measureCastItemProvider != null) measureCastItemProvider.dispose();
+		if (measureBinaryProductOperationItemProvider != null) measureBinaryProductOperationItemProvider.dispose();
+		if (measureBinarySumOperationItemProvider != null) measureBinarySumOperationItemProvider.dispose();
 		if (realTimeDurationItemProvider != null) realTimeDurationItemProvider.dispose();
 		if (measureUnboundSumOperationItemProvider != null) measureUnboundSumOperationItemProvider.dispose();
 		if (measureUnboundSubstractOperationItemProvider != null) measureUnboundSubstractOperationItemProvider.dispose();

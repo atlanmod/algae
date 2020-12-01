@@ -63,6 +63,8 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 			case AlgaePackage.MEASURE_OCL: return createMeasureOCL();
 			case AlgaePackage.MEASURE_ATTRIBUTE: return createMeasureAttribute();
 			case AlgaePackage.MEASURE_CAST: return createMeasureCast();
+			case AlgaePackage.MEASURE_BINARY_PRODUCT_OPERATION: return createMeasureBinaryProductOperation();
+			case AlgaePackage.MEASURE_BINARY_SUM_OPERATION: return createMeasureBinarySumOperation();
 			case AlgaePackage.REAL_TIME_DURATION: return createRealTimeDuration();
 			case AlgaePackage.MEASURE_UNBOUND_SUM_OPERATION: return createMeasureUnboundSumOperation();
 			case AlgaePackage.MEASURE_UNBOUND_SUBSTRACT_OPERATION: return createMeasureUnboundSubstractOperation();
@@ -93,6 +95,8 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 		switch (eDataType.getClassifierID()) {
 			case AlgaePackage.VISIBILITY:
 				return createVisibilityFromString(eDataType, initialValue);
+			case AlgaePackage.TYPE:
+				return createTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +112,8 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 		switch (eDataType.getClassifierID()) {
 			case AlgaePackage.VISIBILITY:
 				return convertVisibilityToString(eDataType, instanceValue);
+			case AlgaePackage.TYPE:
+				return convertTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -171,6 +177,26 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 	public MeasureCast createMeasureCast() {
 		MeasureCastImpl measureCast = new MeasureCastImpl();
 		return measureCast;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureBinaryProductOperation createMeasureBinaryProductOperation() {
+		MeasureBinaryProductOperationImpl measureBinaryProductOperation = new MeasureBinaryProductOperationImpl();
+		return measureBinaryProductOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MeasureBinarySumOperation createMeasureBinarySumOperation() {
+		MeasureBinarySumOperationImpl measureBinarySumOperation = new MeasureBinarySumOperationImpl();
+		return measureBinarySumOperation;
 	}
 
 	/**
@@ -340,6 +366,26 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 	 * @generated
 	 */
 	public String convertVisibilityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type createTypeFromString(EDataType eDataType, String initialValue) {
+		Type result = Type.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

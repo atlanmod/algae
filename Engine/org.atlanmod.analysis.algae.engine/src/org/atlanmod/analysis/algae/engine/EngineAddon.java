@@ -122,9 +122,9 @@ public class EngineAddon implements IEngineAddon {
 	 */
 	private void initializeModelers(IExecutionContext<?,?,?> ctx, ResourceSet resourceSet) throws IOException {
 		smmModelers = new ArrayList<>();
-		Boolean isSmmModelToXMM = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_metamodel", false);
-		Boolean isSmmModelToXModel = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_model", false);
-		String smmModelFileAsString = ctx.getRunConfiguration().getAttribute("org.atlanmod.energy.estimation.engine.smm_file", "SmmModel");
+		Boolean isSmmModelToXMM = ctx.getRunConfiguration().getAttribute("org.atlanmod.analysis.algae.extension.smm_metamodel", false);
+		Boolean isSmmModelToXModel = ctx.getRunConfiguration().getAttribute("org.atlanmod.analysis.algae.extension.smm_model", false);
+		String smmModelFileAsString = ctx.getRunConfiguration().getAttribute("org.atlanmod.analysis.algae.extension.smm_file", "SmmModel");
 		
 		if(! isSmmModelToXMM && !isSmmModelToXModel) {
 			return;
@@ -196,7 +196,7 @@ public class EngineAddon implements IEngineAddon {
 			updateMeasure(m, caller, operation);
 			try {
 				BigDecimal output = m.value();
-				System.out.println(classOperation+" consumed "+output);	
+				System.out.println(classOperation+" : "+output);	
 				
 				manageEstimation(m, caller);
 				

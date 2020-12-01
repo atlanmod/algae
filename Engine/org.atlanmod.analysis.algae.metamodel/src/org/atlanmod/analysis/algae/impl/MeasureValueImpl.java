@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class MeasureValueImpl extends MeasureImpl implements MeasureValue {
+public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
