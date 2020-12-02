@@ -38,6 +38,9 @@ public interface Measure extends EObject {
 	@Generated(value = { "NOT" })
 	void computeValue(EObject targetClass, EOperation targetOperation);
 	
+	@Generated(value = {"NOT"})
+	boolean isPost();
+	
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

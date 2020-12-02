@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasurementUncertainty;
@@ -525,5 +527,13 @@ public abstract class MeasureImpl extends MinimalEObjectImpl.Container implement
 		result.append(')');
 		return result.toString();
 	}
+
+	@Generated({"NOT"})
+	@Override
+	public boolean isPost() {
+		return getPost();
+	}
+	
+	
 
 } //MeasureImpl

@@ -289,5 +289,12 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 		}
 		return super.eIsSet(featureID);
 	}
-
+	
+	@Generated({"NOT"})
+	@Override
+	public boolean isPost() {	
+		return super.isPost() || l.isPost() || x0.isPost() || k.isPost();
+	}
+	
+	
 } //LogisticMeasureImpl

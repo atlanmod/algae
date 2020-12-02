@@ -4,6 +4,9 @@ package org.atlanmod.analysis.algae.impl;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureUnboundOperation;
@@ -167,5 +170,13 @@ public abstract class MeasureUnboundOperationImpl extends MeasureValueImpl imple
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	@Generated({"NOT"})
+	@Override
+	public boolean isPost() {
+		return isPost() || getMeasures().stream().anyMatch(m -> m.isPost());		
+	}
+	
+	
 
 } //MeasureUnboundOperationImpl

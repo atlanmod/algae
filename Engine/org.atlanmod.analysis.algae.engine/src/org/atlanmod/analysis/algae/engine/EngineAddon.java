@@ -17,6 +17,7 @@ import java.util.function.Function;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureUnboundOperation;
 import org.atlanmod.analysis.algae.Platform;
+import org.atlanmod.analysis.algae.RealTimeDuration;
 import org.atlanmod.analysis.algae.TypedMeasure;
 import org.atlanmod.analysis.algae.smm.SmmModeler;
 import org.eclipse.emf.common.util.URI;
@@ -99,7 +100,6 @@ public class EngineAddon implements IEngineAddon {
 				}
 			});
 										
-			mapClassEstimation.forEach((s, m) -> System.out.println(s+" - "+m));
 			System.out.println(platform.getName()+" estimation model loaded");
 			initializeModelers(ctx, resourceSet);								
 		} catch (IOException e) {
@@ -186,10 +186,9 @@ public class EngineAddon implements IEngineAddon {
 		String classOperation = callerClass.concat("#").concat(callerOperation);
 		
 		stepDurations.put(classOperation, Long.valueOf(System.currentTimeMillis()));
-
 				
 		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {
-			if (measure != null && !(hasRealTimeDuration(measure))) {			
+			if (measure != null && !(hasPost(measure))) {			
 				//updateMeasure(measure, caller, operation);
 				measure.computeValue(caller, operation);
 				
@@ -209,6 +208,47 @@ public class EngineAddon implements IEngineAddon {
 		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 	}
 	
+	
+
+	@Override
+	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
+		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
+		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
+		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();
+		String callerOperation = operation.getName();
+		String classOperation = callerClass.concat("#").concat(callerOperation);
+		
+		Long duration = System.currentTimeMillis() - stepDurations.get(classOperation);
+		stepDurations.put(classOperation, Long.valueOf(duration));
+		
+		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {	
+			if (measure != null && (hasPost(measure))) {			
+				//updateMeasure(measure, caller, operation);
+				
+				if (measure instanceof RealTimeDuration) {
+					((RealTimeDuration) measure).setValue(BigDecimal.valueOf(duration));
+				}				
+				
+				System.out.println(classOperation+" :  "+measure.value());
+				manageEstimation(measure, caller);
+			}		
+			
+		});;		
+
+		
+		IEngineAddon.super.stepExecuted(engine, stepToExecute);
+	}
+
+	public static boolean hasPost(Measure m) {					
+		if (m.getPost()) {
+			return true;
+		} else if (m instanceof MeasureUnboundOperation) {
+			return ((MeasureUnboundOperation) m).getMeasures().stream().filter(mes -> !mes.equals(m)).anyMatch(EngineAddon::hasPost); 
+		} 
+				
+		return false;		
+	}
+	
 	/**
 	 * Models the estimation provided by EEL with SMM, using the defined Modelers.
 	 * @param m a EEL {@link Measure}.
@@ -220,34 +260,7 @@ public class EngineAddon implements IEngineAddon {
 			smm.persistMeasurement(m, m.value().doubleValue(), smm.callerToTarget(caller));
 		}				
 	}
-		
 
-	@Override
-	public void stepExecuted(IExecutionEngine<?> engine, Step<?> stepToExecute) {
-		EObject caller = stepToExecute.getMseoccurrence().getMse().getCaller();						
-		EOperation operation = stepToExecute.getMseoccurrence().getMse().getAction();
-		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();
-		String callerOperation = operation.getName();
-		String classOperation = callerClass.concat("#").concat(callerOperation);
-		
-		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {
-
-			if (measure != null && (hasRealTimeDuration(measure))) {			
-				//updateMeasure(measure, caller, operation);
-				measure.computeValue(caller, operation);
-				System.out.println(classOperation+" :  "+measure.value());
-				manageEstimation(measure, caller);
-			}		
-			
-		});;		
-				
-		Long duration = System.currentTimeMillis() - stepDurations.get(classOperation);
-		
-		stepDurations.put(classOperation, Long.valueOf(duration));
-		
-		IEngineAddon.super.stepExecuted(engine, stepToExecute);
-	}
-	
 	@Override
 	public void engineStopped(IExecutionEngine<?> engine) {
 		if (smmModelers.size() > 0) {
@@ -263,32 +276,9 @@ public class EngineAddon implements IEngineAddon {
 		String callerOperation = operation.getName();
 		String classOperation = callerClass.concat("#").concat(callerOperation);
 		m.setValue(BigDecimal.valueOf(stepDurations.get(classOperation)));
-	}
-	
-	private void updateMeasure(CompositeMeasure m, EObject caller, EOperation operation) {
-		if (m instanceof ExponentialMeasure) {
-			updateMeasure(((ExponentialMeasure) m).getX(), caller, operation);
-			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeExponentialFunction((ExponentialMeasure) m)));
-		} else if (m instanceof IntegrationMeasure) {
-			updateMeasure(((IntegrationMeasure) m).getFunction(), caller, operation);
-			updateMeasure(((IntegrationMeasure) m).getLeftBound(), caller, operation);
-			updateMeasure(((IntegrationMeasure) m).getRightBound(), caller, operation);
-			m.setValue(BigDecimal.valueOf(CompositeMeasureCalculus.computeIntegralFunction((IntegrationMeasure) m))); 
-		}		
-	}
-		
+	}		
 	 */
-	public static boolean hasRealTimeDuration(Measure m) {					
-		if (m.getPost()) {
-			return true;
-		} 
-		
-		if (m instanceof MeasureUnboundOperation) {
-			return ((MeasureUnboundOperation) m).getMeasures().stream().filter(mes -> !mes.equals(m)).anyMatch(EngineAddon::hasRealTimeDuration); 
-		}
-				
-		return false;		
-	}
+
 
 	public static void displayPlatformMeasurement(Platform p) {
 		

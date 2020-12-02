@@ -458,7 +458,6 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Contexts:
 	 *     Measure returns IntegrationMeasure
-	 *     CompositeMeasure returns IntegrationMeasure
 	 *     IntegrationMeasure returns IntegrationMeasure
 	 *
 	 * Constraint:
@@ -576,6 +575,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         post?='post'? 
+	 *         value=EBigDecimal? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
@@ -596,6 +596,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         post?='post'? 
+	 *         value=EBigDecimal? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
@@ -616,6 +617,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         post?='post'? 
+	 *         value=EBigDecimal? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
@@ -636,6 +638,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         post?='post'? 
+	 *         value=EBigDecimal? 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 

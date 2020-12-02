@@ -269,6 +269,15 @@ ruleMeasure returns [EObject current=null]
 			$current = $this_CompositeMeasure_9.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMeasureAccess().getIntegrationMeasureParserRuleCall_10());
+		}
+		this_IntegrationMeasure_10=ruleIntegrationMeasure
+		{
+			$current = $this_IntegrationMeasure_10.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -303,15 +312,6 @@ ruleCompositeMeasure returns [EObject current=null]
 		this_LogisticMeasure_1=ruleLogisticMeasure
 		{
 			$current = $this_LogisticMeasure_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getCompositeMeasureAccess().getIntegrationMeasureParserRuleCall_2());
-		}
-		this_IntegrationMeasure_2=ruleIntegrationMeasure
-		{
-			$current = $this_IntegrationMeasure_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -502,9 +502,9 @@ ruleMeasureValue_Impl returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureValue_ImplAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureValue_ImplAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -654,9 +654,9 @@ ruleMeasureOCL returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureOCLAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureOCLAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -810,9 +810,9 @@ ruleMeasureAttribute returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureAttributeAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureAttributeAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -966,9 +966,9 @@ ruleMeasureCast returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureCastAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getMeasureCastAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -1116,9 +1116,9 @@ ruleRealTimeDuration returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getRealTimeDurationAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getRealTimeDurationAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -1185,11 +1185,40 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundSumOperationAccess().getLeftParenthesisKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getValueEBigDecimalParserRuleCall_2_1_0());
+					}
+					lv_value_3_0=ruleEBigDecimal
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_3_0,
+							"org.atlanmod.analysis.Algae.EBigDecimal");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundSumOperationAccess().getRightParenthesisKeyword_2_2());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetClassEStringParserRuleCall_3_0());
 				}
-				lv_targetClass_2_0=ruleEString
+				lv_targetClass_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1197,23 +1226,23 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_2_0,
+						lv_targetClass_5_0,
 						"org.atlanmod.analysis.Algae.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_6='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundSumOperationAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_6, grammarAccess.getMeasureUnboundSumOperationAccess().getFullStopKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTargetOperationEStringParserRuleCall_4_1_0());
 					}
-					lv_targetOperation_4_0=ruleEString
+					lv_targetOperation_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1221,24 +1250,24 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_4_0,
+							lv_targetOperation_7_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_5='.'
+		otherlv_8='.'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundSumOperationAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSumOperationAccess().getFullStopKeyword_5());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getTypeTypeEnumRuleCall_6_0_0());
 					}
-					lv_type_6_0=ruleType
+					lv_type_9_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1246,7 +1275,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_6_0,
+							lv_type_9_0,
 							"org.atlanmod.analysis.Algae.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1256,9 +1285,9 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getSubnameEStringParserRuleCall_6_1_0());
 					}
-					lv_subname_7_0=ruleEString
+					lv_subname_10_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSumOperationRule());
@@ -1266,16 +1295,16 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_7_0,
+							lv_subname_10_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_8='='
+		otherlv_11='='
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSumOperationAccess().getEqualsSignKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundSumOperationAccess().getEqualsSignKeyword_7());
 		}
 		(
 			(
@@ -1285,7 +1314,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -1294,9 +1323,9 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_10='+'
+			otherlv_13='+'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundSumOperationAccess().getPlusSignKeyword_8_0());
+				newLeafNode(otherlv_13, grammarAccess.getMeasureUnboundSumOperationAccess().getPlusSignKeyword_9_0());
 			}
 			(
 				(
@@ -1306,7 +1335,7 @@ ruleMeasureUnboundSumOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSumOperationAccess().getMeasuresMeasureCrossReference_9_1_0());
 					}
 					ruleEString
 					{
@@ -1356,11 +1385,40 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundSubstractOperationAccess().getLeftParenthesisKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getValueEBigDecimalParserRuleCall_2_1_0());
+					}
+					lv_value_3_0=ruleEBigDecimal
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_3_0,
+							"org.atlanmod.analysis.Algae.EBigDecimal");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundSubstractOperationAccess().getRightParenthesisKeyword_2_2());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetClassEStringParserRuleCall_3_0());
 				}
-				lv_targetClass_2_0=ruleEString
+				lv_targetClass_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
@@ -1368,23 +1426,23 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_2_0,
+						lv_targetClass_5_0,
 						"org.atlanmod.analysis.Algae.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_6='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundSubstractOperationAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_6, grammarAccess.getMeasureUnboundSubstractOperationAccess().getFullStopKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTargetOperationEStringParserRuleCall_4_1_0());
 					}
-					lv_targetOperation_4_0=ruleEString
+					lv_targetOperation_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
@@ -1392,24 +1450,24 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_4_0,
+							lv_targetOperation_7_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_5='.'
+		otherlv_8='.'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundSubstractOperationAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSubstractOperationAccess().getFullStopKeyword_5());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getTypeTypeEnumRuleCall_6_0_0());
 					}
-					lv_type_6_0=ruleType
+					lv_type_9_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
@@ -1417,7 +1475,7 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_6_0,
+							lv_type_9_0,
 							"org.atlanmod.analysis.Algae.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1427,9 +1485,9 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getSubnameEStringParserRuleCall_6_1_0());
 					}
-					lv_subname_7_0=ruleEString
+					lv_subname_10_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundSubstractOperationRule());
@@ -1437,16 +1495,16 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_7_0,
+							lv_subname_10_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_8='='
+		otherlv_11='='
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundSubstractOperationAccess().getEqualsSignKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundSubstractOperationAccess().getEqualsSignKeyword_7());
 		}
 		(
 			(
@@ -1456,7 +1514,7 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -1465,9 +1523,9 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_10='-'
+			otherlv_13='-'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundSubstractOperationAccess().getHyphenMinusKeyword_8_0());
+				newLeafNode(otherlv_13, grammarAccess.getMeasureUnboundSubstractOperationAccess().getHyphenMinusKeyword_9_0());
 			}
 			(
 				(
@@ -1477,7 +1535,7 @@ ruleMeasureUnboundSubstractOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundSubstractOperationAccess().getMeasuresMeasureCrossReference_9_1_0());
 					}
 					ruleEString
 					{
@@ -1527,11 +1585,40 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundProductOperationAccess().getLeftParenthesisKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getValueEBigDecimalParserRuleCall_2_1_0());
+					}
+					lv_value_3_0=ruleEBigDecimal
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_3_0,
+							"org.atlanmod.analysis.Algae.EBigDecimal");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundProductOperationAccess().getRightParenthesisKeyword_2_2());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetClassEStringParserRuleCall_3_0());
 				}
-				lv_targetClass_2_0=ruleEString
+				lv_targetClass_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1539,23 +1626,23 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_2_0,
+						lv_targetClass_5_0,
 						"org.atlanmod.analysis.Algae.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_6='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundProductOperationAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_6, grammarAccess.getMeasureUnboundProductOperationAccess().getFullStopKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTargetOperationEStringParserRuleCall_4_1_0());
 					}
-					lv_targetOperation_4_0=ruleEString
+					lv_targetOperation_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1563,24 +1650,24 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_4_0,
+							lv_targetOperation_7_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_5='.'
+		otherlv_8='.'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundProductOperationAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundProductOperationAccess().getFullStopKeyword_5());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getTypeTypeEnumRuleCall_6_0_0());
 					}
-					lv_type_6_0=ruleType
+					lv_type_9_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1588,7 +1675,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_6_0,
+							lv_type_9_0,
 							"org.atlanmod.analysis.Algae.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1598,9 +1685,9 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getSubnameEStringParserRuleCall_6_1_0());
 					}
-					lv_subname_7_0=ruleEString
+					lv_subname_10_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundProductOperationRule());
@@ -1608,16 +1695,16 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_7_0,
+							lv_subname_10_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_8='='
+		otherlv_11='='
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundProductOperationAccess().getEqualsSignKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundProductOperationAccess().getEqualsSignKeyword_7());
 		}
 		(
 			(
@@ -1627,7 +1714,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -1636,9 +1723,9 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_10='*'
+			otherlv_13='*'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundProductOperationAccess().getAsteriskKeyword_8_0());
+				newLeafNode(otherlv_13, grammarAccess.getMeasureUnboundProductOperationAccess().getAsteriskKeyword_9_0());
 			}
 			(
 				(
@@ -1648,7 +1735,7 @@ ruleMeasureUnboundProductOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundProductOperationAccess().getMeasuresMeasureCrossReference_9_1_0());
 					}
 					ruleEString
 					{
@@ -1698,11 +1785,40 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getMeasureUnboundDivisionOperationAccess().getLeftParenthesisKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getValueEBigDecimalParserRuleCall_2_1_0());
+					}
+					lv_value_3_0=ruleEBigDecimal
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_3_0,
+							"org.atlanmod.analysis.Algae.EBigDecimal");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMeasureUnboundDivisionOperationAccess().getRightParenthesisKeyword_2_2());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetClassEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetClassEStringParserRuleCall_3_0());
 				}
-				lv_targetClass_2_0=ruleEString
+				lv_targetClass_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
@@ -1710,23 +1826,23 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 					set(
 						$current,
 						"targetClass",
-						lv_targetClass_2_0,
+						lv_targetClass_5_0,
 						"org.atlanmod.analysis.Algae.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_6='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getMeasureUnboundDivisionOperationAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_6, grammarAccess.getMeasureUnboundDivisionOperationAccess().getFullStopKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetOperationEStringParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTargetOperationEStringParserRuleCall_4_1_0());
 					}
-					lv_targetOperation_4_0=ruleEString
+					lv_targetOperation_7_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
@@ -1734,24 +1850,24 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 						set(
 							$current,
 							"targetOperation",
-							lv_targetOperation_4_0,
+							lv_targetOperation_7_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_5='.'
+		otherlv_8='.'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getMeasureUnboundDivisionOperationAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundDivisionOperationAccess().getFullStopKeyword_5());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTypeTypeEnumRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getTypeTypeEnumRuleCall_6_0_0());
 					}
-					lv_type_6_0=ruleType
+					lv_type_9_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
@@ -1759,7 +1875,7 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_6_0,
+							lv_type_9_0,
 							"org.atlanmod.analysis.Algae.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -1769,9 +1885,9 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getSubnameEStringParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getSubnameEStringParserRuleCall_6_1_0());
 					}
-					lv_subname_7_0=ruleEString
+					lv_subname_10_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMeasureUnboundDivisionOperationRule());
@@ -1779,16 +1895,16 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 						set(
 							$current,
 							"subname",
-							lv_subname_7_0,
+							lv_subname_10_0,
 							"org.atlanmod.analysis.Algae.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_8='='
+		otherlv_11='='
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMeasureUnboundDivisionOperationAccess().getEqualsSignKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getMeasureUnboundDivisionOperationAccess().getEqualsSignKeyword_7());
 		}
 		(
 			(
@@ -1798,7 +1914,7 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_7_0());
+					newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -1807,9 +1923,9 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_10='/'
+			otherlv_13='/'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getMeasureUnboundDivisionOperationAccess().getSolidusKeyword_8_0());
+				newLeafNode(otherlv_13, grammarAccess.getMeasureUnboundDivisionOperationAccess().getSolidusKeyword_9_0());
 			}
 			(
 				(
@@ -1819,7 +1935,7 @@ ruleMeasureUnboundDivisionOperation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getMeasureUnboundDivisionOperationAccess().getMeasuresMeasureCrossReference_9_1_0());
 					}
 					ruleEString
 					{
@@ -1888,9 +2004,9 @@ ruleExponentialMeasure returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getExponentialMeasureAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getExponentialMeasureAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -2041,9 +2157,9 @@ ruleLogisticMeasure returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getLogisticMeasureAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getLogisticMeasureAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(
@@ -2242,9 +2358,9 @@ ruleIntegrationMeasure returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='#'
+			otherlv_3='.'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getIntegrationMeasureAccess().getNumberSignKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getIntegrationMeasureAccess().getFullStopKeyword_3_0());
 			}
 			(
 				(

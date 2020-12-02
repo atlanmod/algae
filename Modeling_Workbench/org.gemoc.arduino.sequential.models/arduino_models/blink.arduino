@@ -2,7 +2,7 @@
 <arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.obeo.fr/arduino">
   <boards xsi:type="arduino:ArduinoBoard" name="board">
     <digitalPins name="2">
-      <module xsi:type="arduino:LED" name="led"/>
+      <module xsi:type="arduino:LED" name="blue"/>
     </digitalPins>
   </boards>
   <sketches name="sketch" board="//@boards.0">

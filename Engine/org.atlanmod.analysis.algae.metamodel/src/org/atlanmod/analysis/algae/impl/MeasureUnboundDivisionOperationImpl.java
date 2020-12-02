@@ -3,11 +3,11 @@
 package org.atlanmod.analysis.algae.impl;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import javax.annotation.Generated;
 
 import org.atlanmod.analysis.algae.AlgaePackage;
-import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureUnboundDivisionOperation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -33,16 +33,14 @@ public class MeasureUnboundDivisionOperationImpl extends MeasureUnboundOperation
 	@Generated(value = { "NOT"})
 	@Override
 	public void computeValue(EObject targetClass, EOperation targetOperation) {
-		BigDecimal sum = new BigDecimal(0);
-		for (Measure m : getMeasures()) {
-			if (m != this) {
-				m.computeValue(targetClass, targetOperation);
-				sum = sum.divide(m.value());
-			} else {
-				sum = sum.divide(this.value);
-			}
+		
+		getMeasures().stream().filter(m -> m != this).forEach(m -> m.computeValue(targetClass, targetOperation));
+		BigDecimal val = getMeasures().get(0).value();
+		for (int i = 1; i < getMeasures().size(); i++) {
+			val = val.divide(getMeasures().get(i).value(), 5, RoundingMode.HALF_EVEN);
 		}
-		value = sum;
+		
+		this.value = val;
 	}
 	
 	/**

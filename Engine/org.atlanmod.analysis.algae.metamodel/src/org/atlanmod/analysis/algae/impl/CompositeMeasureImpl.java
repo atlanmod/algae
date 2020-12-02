@@ -2,6 +2,8 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
+import javax.annotation.Generated;
+
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.CompositeMeasure;
 
@@ -149,6 +151,11 @@ public class CompositeMeasureImpl extends MeasureValueImpl implements CompositeM
 				return x != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	@Override
+	public boolean isPost() {
+		return getPost() || x.isPost();
 	}
 
 } //CompositeMeasureImpl
