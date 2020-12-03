@@ -1,0 +1,5 @@
+Platform attributes {
+	Delay.milliseconds = attribute:"value"
+	variable.factor = 1000.0
+	Delay.execute.durationAsSeconds = "Delay.milliseconds" / "variable.factor" 
+}

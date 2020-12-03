@@ -1,0 +1,7 @@
+Platform realduration {	
+	
+	variable.factor = 10.0
+	// measures are sequentially evaluated. When using real durations, the declaration of the real duration must be before measures relying on it
+	post Delay.execute.absoluteTime	
+	Delay.execute.durationAsSeconds = "Delay.\'http://www.atlanmod.org/algae\'::Type::Duration" / "variable.factor"	
+}

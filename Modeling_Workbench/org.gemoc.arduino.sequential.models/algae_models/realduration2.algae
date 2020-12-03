@@ -1,0 +1,9 @@
+Platform realduration2 {
+	variable.one = 1.0
+	post Delay.execute.absoluteTime	
+	(0.0) Delay.sumOfDurations = "Delay.sumOfDurations" + "Delay.\'http://www.atlanmod.org/algae\'::Type::Duration"
+	(0.0) Delay.numberOfCalls = "Delay.numberOfCalls" + "variable.one"
+	
+	// on delay.execute() : get absolute time of operation, add this value to the total, increment the number of time it has been called, and calculate average duration.
+	Delay.execute.durAvg = "Delay.sumOfDurations" / "Delay.numberOfCalls" 
+}

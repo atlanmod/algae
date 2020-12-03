@@ -191,7 +191,6 @@ public class EngineAddon implements IEngineAddon {
 				
 		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {
 			if (measure != null && !(hasPost(measure))) {			
-				//updateMeasure(measure, caller, operation);
 				measure.computeValue(caller, operation);
 				
 				try {
@@ -282,15 +281,6 @@ public class EngineAddon implements IEngineAddon {
 		IEngineAddon.super.engineStopped(engine);
 	}
 	
-	/*
-	private void updateMeasure(RealTimeDuration m, EObject caller, EOperation operation) {
-		String callerClass = caller.getClass().getInterfaces()[0].getSimpleName();		
-		String callerOperation = operation.getName();
-		String classOperation = callerClass.concat("#").concat(callerOperation);
-		m.setValue(BigDecimal.valueOf(stepDurations.get(classOperation)));
-	}		
-	 */
-
 
 	public static void displayPlatformMeasurement(Platform p) {
 		

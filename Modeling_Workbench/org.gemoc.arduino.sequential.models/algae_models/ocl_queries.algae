@@ -1,0 +1,16 @@
+Platform ocl_queries {
+	
+	LED.luminosityOfRedLed = 50.0
+	LED.luminosityOfBlueLed = 75.0
+	
+	// We count the number of LEDs with blue / red in the name
+	Board.numberOfBlueLeds = ocl:"LED.allInstances() -> select ( l | l.name.endsWith('blue')) -> size()"
+	Board.numberOfRedLeds = ocl:"LED.allInstances() -> select ( l | l.name.endsWith('red')) -> size()"
+	
+	Board.luminosityOfBlueLeds = "LED.luminosityOfBlueLed" * "Board.numberOfBlueLeds"
+	Board.luminosityOfRedLeds = "LED.luminosityOfRedLed" * "Board.numberOfRedLeds"
+	
+	// This does not make much sense physically speaking but that's not the point here.
+	Delay.execute.brightness = "Board.luminosityOfBlueLeds" + "Board.luminosityOfRedLeds"
+	 
+}

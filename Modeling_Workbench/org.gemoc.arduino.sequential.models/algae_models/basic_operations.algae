@@ -1,0 +1,10 @@
+Platform basics_operations {
+	variable.one = 1.0	
+	variable.two = 2.0
+	
+	(1.0) Delay.execute.sumcalls = "Delay.sumcalls" + "variable.one" 
+	(10.0) Delay.execute.subcalls = "Delay.subcalls" - "variable.one"
+	(1.1) Delay.execute.dividecalls = "variable.one" / "Delay.dividecalls"
+	(1.0) Delay.execute.multiplycalls = "variable.two" * "Delay.multiplycalls"
+	 	
+} 

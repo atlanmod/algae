@@ -1,0 +1,11 @@
+Platform math_functions {
+	variable.l = 1.0
+	variable.x0 = 2.0
+	variable.k = 3.0
+	variable.x = 4.0
+	
+	Delay.execute.exponentialfunction = exp "variable.x0"
+	//Delay.execute.logisticfunction = logistic "variable.l" "variable.k" "variable.x0" "variable.x"
+	Delay.execute.integration = integral "Delay.exponentialfunction" ["variable.l";"variable.x"]
+		
+}
