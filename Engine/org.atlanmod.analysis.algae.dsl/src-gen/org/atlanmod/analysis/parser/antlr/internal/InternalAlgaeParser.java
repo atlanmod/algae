@@ -5949,7 +5949,7 @@ public class InternalAlgaeParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureCrossReference_8_0());
+            					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getXMeasureCrossReference_8_0());
             				
             pushFollow(FOLLOW_32);
             ruleEString();

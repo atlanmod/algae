@@ -897,7 +897,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntegrationMeasure_Function() {
+	public EReference getIntegrationMeasure_LeftBound() {
 		return (EReference)integrationMeasureEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -906,17 +906,8 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntegrationMeasure_LeftBound() {
-		return (EReference)integrationMeasureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getIntegrationMeasure_RightBound() {
-		return (EReference)integrationMeasureEClass.getEStructuralFeatures().get(2);
+		return (EReference)integrationMeasureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1055,7 +1046,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		exponentialMeasureEClass = createEClass(EXPONENTIAL_MEASURE);
 
 		integrationMeasureEClass = createEClass(INTEGRATION_MEASURE);
-		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__FUNCTION);
 		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__LEFT_BOUND);
 		createEReference(integrationMeasureEClass, INTEGRATION_MEASURE__RIGHT_BOUND);
 
@@ -1110,7 +1100,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		compositeMeasureEClass.getESuperTypes().add(this.getMeasureValue());
 		logisticMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 		exponentialMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
-		integrationMeasureEClass.getESuperTypes().add(this.getMeasureValue());
+		integrationMeasureEClass.getESuperTypes().add(this.getCompositeMeasure());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(platformEClass, Platform.class, "Platform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1145,7 +1135,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEOperation(getTypedMeasure__Name(), ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(measureValueEClass, MeasureValue.class, "MeasureValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMeasureValue_Value(), ecorePackage.getEBigDecimal(), "value", "0", 1, 1, MeasureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMeasureValue_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, MeasureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMeasureValue__Value(), ecorePackage.getEBigDecimal(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1199,7 +1189,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEClass(sampleEClass, Sample.class, "Sample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSample_Quantity(), this.getMeasure(), null, "quantity", null, 0, -1, Sample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(compositeMeasureEClass, CompositeMeasure.class, "CompositeMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(compositeMeasureEClass, CompositeMeasure.class, "CompositeMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompositeMeasure_X(), this.getMeasure(), null, "x", null, 1, 1, CompositeMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logisticMeasureEClass, LogisticMeasure.class, "LogisticMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1210,7 +1200,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		initEClass(exponentialMeasureEClass, ExponentialMeasure.class, "ExponentialMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(integrationMeasureEClass, IntegrationMeasure.class, "IntegrationMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIntegrationMeasure_Function(), this.getCompositeMeasure(), null, "function", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntegrationMeasure_LeftBound(), this.getMeasure(), null, "leftBound", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntegrationMeasure_RightBound(), this.getMeasure(), null, "rightBound", null, 1, 1, IntegrationMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1290,7 +1279,7 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		  (getMeasure__Value(),
 		   source,
 		   new String[] {
-			   "body", "0"
+			   "body", "null"
 		   });
 		addAnnotation
 		  (getMeasure__Name(),
@@ -1329,6 +1318,12 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 			   "body", "self.value"
 		   });
 		addAnnotation
+		  (getMeasureValue_Value(),
+		   source,
+		   new String[] {
+			   "derivation", "0.0"
+		   });
+		addAnnotation
 		  (getRealTimeDuration__Type(),
 		   source,
 		   new String[] {
@@ -1339,18 +1334,6 @@ public class AlgaePackageImpl extends EPackageImpl implements AlgaePackage {
 		   source,
 		   new String[] {
 			   "derivation", "0.0"
-		   });
-		addAnnotation
-		  (getNormalDistribution_MeanValue(),
-		   source,
-		   new String[] {
-			   "derivation", "Measure.allInstances()->select(v |\n\t\t\t\t\tv.uncertainty = (MeasurementUncertainty.allInstances()->select(u |\n\t\t\t\t\t\tu.information = self)->asOrderedSet()->first()))->asOrderedSet()->first().value()"
-		   });
-		addAnnotation
-		  (getNormalDistribution_StandardDeviation(),
-		   source,
-		   new String[] {
-			   "derivation", "MeasurementUncertainty.allInstances()->select(u |\n\t\t\t\t\t\tu.information = self)->asOrderedSet()->first().standardUncertainty"
 		   });
 	}
 

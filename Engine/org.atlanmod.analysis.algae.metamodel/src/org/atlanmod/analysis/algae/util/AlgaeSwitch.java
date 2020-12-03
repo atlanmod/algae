@@ -261,6 +261,7 @@ public class AlgaeSwitch<T> extends Switch<T> {
 			case AlgaePackage.INTEGRATION_MEASURE: {
 				IntegrationMeasure integrationMeasure = (IntegrationMeasure)theEObject;
 				T result = caseIntegrationMeasure(integrationMeasure);
+				if (result == null) result = caseCompositeMeasure(integrationMeasure);
 				if (result == null) result = caseMeasureValue(integrationMeasure);
 				if (result == null) result = caseTypedMeasure(integrationMeasure);
 				if (result == null) result = caseMeasure(integrationMeasure);

@@ -175,15 +175,6 @@ public interface AlgaeFactory extends EFactory {
 	Sample createSample();
 
 	/**
-	 * Returns a new object of class '<em>Composite Measure</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Measure</em>'.
-	 * @generated
-	 */
-	CompositeMeasure createCompositeMeasure();
-
-	/**
 	 * Returns a new object of class '<em>Logistic Measure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

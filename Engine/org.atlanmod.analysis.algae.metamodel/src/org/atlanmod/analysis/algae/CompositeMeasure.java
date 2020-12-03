@@ -16,7 +16,7 @@ package org.atlanmod.analysis.algae;
  * </ul>
  *
  * @see org.atlanmod.analysis.algae.AlgaePackage#getCompositeMeasure()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface CompositeMeasure extends MeasureValue {

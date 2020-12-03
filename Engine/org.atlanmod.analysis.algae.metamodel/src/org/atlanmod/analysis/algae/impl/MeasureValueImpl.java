@@ -9,9 +9,6 @@ import java.math.BigDecimal;
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.Measure;
 import org.atlanmod.analysis.algae.MeasureValue;
-
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
 
@@ -19,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,24 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigDecimal VALUE_EDEFAULT = new BigDecimal("0");
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected BigDecimal value = VALUE_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate VALUE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)AlgaePackage.Literals.MEASURE_VALUE__VALUE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +67,7 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	 * @generated
 	 */
 	public BigDecimal getValue() {
-		return value;
+		return (BigDecimal)VALUE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -89,10 +76,7 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	 * @generated
 	 */
 	public void setValue(BigDecimal newValue) {
-		BigDecimal oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgaePackage.MEASURE_VALUE__VALUE, oldValue, value));
+		VALUE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newValue);
 	}
 
 	/**
@@ -157,7 +141,7 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AlgaePackage.MEASURE_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
+				VALUE__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
 		super.eUnset(featureID);
@@ -172,7 +156,7 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AlgaePackage.MEASURE_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return VALUE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,22 +189,6 @@ public class MeasureValueImpl extends TypedMeasureImpl implements MeasureValue {
 				return value();
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 	@Override

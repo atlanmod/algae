@@ -39,10 +39,10 @@ public class MeasureUnboundProductOperationImpl extends MeasureUnboundOperationI
 				m.computeValue(targetClass, targetOperation);
 				sum = sum.multiply(m.value());
 			} else {
-				sum = sum.multiply(this.value);
+				sum = sum.multiply(getValue());
 			}
 		}
-		value = sum;
+		setValue(sum);
 	}
 	
 	/**

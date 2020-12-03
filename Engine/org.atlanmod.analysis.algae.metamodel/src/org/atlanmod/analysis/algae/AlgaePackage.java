@@ -2522,7 +2522,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__NAME = MEASURE_VALUE__NAME;
+	int INTEGRATION_MEASURE__NAME = COMPOSITE_MEASURE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Subname</b></em>' attribute.
@@ -2531,7 +2531,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__SUBNAME = MEASURE_VALUE__SUBNAME;
+	int INTEGRATION_MEASURE__SUBNAME = COMPOSITE_MEASURE__SUBNAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Class</b></em>' attribute.
@@ -2540,7 +2540,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TARGET_CLASS = MEASURE_VALUE__TARGET_CLASS;
+	int INTEGRATION_MEASURE__TARGET_CLASS = COMPOSITE_MEASURE__TARGET_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Target Operation</b></em>' attribute.
@@ -2549,7 +2549,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TARGET_OPERATION = MEASURE_VALUE__TARGET_OPERATION;
+	int INTEGRATION_MEASURE__TARGET_OPERATION = COMPOSITE_MEASURE__TARGET_OPERATION;
 
 	/**
 	 * The feature id for the '<em><b>Post</b></em>' attribute.
@@ -2558,7 +2558,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__POST = MEASURE_VALUE__POST;
+	int INTEGRATION_MEASURE__POST = COMPOSITE_MEASURE__POST;
 
 	/**
 	 * The feature id for the '<em><b>Uncertainty</b></em>' containment reference.
@@ -2567,7 +2567,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__UNCERTAINTY = MEASURE_VALUE__UNCERTAINTY;
+	int INTEGRATION_MEASURE__UNCERTAINTY = COMPOSITE_MEASURE__UNCERTAINTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2576,7 +2576,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__TYPE = MEASURE_VALUE__TYPE;
+	int INTEGRATION_MEASURE__TYPE = COMPOSITE_MEASURE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2585,16 +2585,16 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__VALUE = MEASURE_VALUE__VALUE;
+	int INTEGRATION_MEASURE__VALUE = COMPOSITE_MEASURE__VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * The feature id for the '<em><b>X</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__FUNCTION = MEASURE_VALUE_FEATURE_COUNT + 0;
+	int INTEGRATION_MEASURE__X = COMPOSITE_MEASURE__X;
 
 	/**
 	 * The feature id for the '<em><b>Left Bound</b></em>' reference.
@@ -2603,7 +2603,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__LEFT_BOUND = MEASURE_VALUE_FEATURE_COUNT + 1;
+	int INTEGRATION_MEASURE__LEFT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Right Bound</b></em>' reference.
@@ -2612,7 +2612,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE__RIGHT_BOUND = MEASURE_VALUE_FEATURE_COUNT + 2;
+	int INTEGRATION_MEASURE__RIGHT_BOUND = COMPOSITE_MEASURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Integration Measure</em>' class.
@@ -2621,7 +2621,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE_FEATURE_COUNT = MEASURE_VALUE_FEATURE_COUNT + 3;
+	int INTEGRATION_MEASURE_FEATURE_COUNT = COMPOSITE_MEASURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Type</em>' operation.
@@ -2630,7 +2630,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___TYPE = MEASURE_VALUE___TYPE;
+	int INTEGRATION_MEASURE___TYPE = COMPOSITE_MEASURE___TYPE;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2639,7 +2639,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___NAME = MEASURE_VALUE___NAME;
+	int INTEGRATION_MEASURE___NAME = COMPOSITE_MEASURE___NAME;
 
 	/**
 	 * The operation id for the '<em>Value</em>' operation.
@@ -2648,7 +2648,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE___VALUE = MEASURE_VALUE___VALUE;
+	int INTEGRATION_MEASURE___VALUE = COMPOSITE_MEASURE___VALUE;
 
 	/**
 	 * The number of operations of the '<em>Integration Measure</em>' class.
@@ -2657,7 +2657,7 @@ public interface AlgaePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGRATION_MEASURE_OPERATION_COUNT = MEASURE_VALUE_OPERATION_COUNT + 0;
+	int INTEGRATION_MEASURE_OPERATION_COUNT = COMPOSITE_MEASURE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.atlanmod.analysis.algae.Visibility <em>Visibility</em>}' enum.
@@ -3376,17 +3376,6 @@ public interface AlgaePackage extends EPackage {
 	EClass getIntegrationMeasure();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.IntegrationMeasure#getFunction <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Function</em>'.
-	 * @see org.atlanmod.analysis.algae.IntegrationMeasure#getFunction()
-	 * @see #getIntegrationMeasure()
-	 * @generated
-	 */
-	EReference getIntegrationMeasure_Function();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.atlanmod.analysis.algae.IntegrationMeasure#getLeftBound <em>Left Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4028,14 +4017,6 @@ public interface AlgaePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTEGRATION_MEASURE = eINSTANCE.getIntegrationMeasure();
-
-		/**
-		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INTEGRATION_MEASURE__FUNCTION = eINSTANCE.getIntegrationMeasure_Function();
 
 		/**
 		 * The meta object literal for the '<em><b>Left Bound</b></em>' reference feature.

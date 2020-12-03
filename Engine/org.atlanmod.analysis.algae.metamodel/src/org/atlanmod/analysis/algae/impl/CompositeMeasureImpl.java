@@ -2,8 +2,6 @@
  */
 package org.atlanmod.analysis.algae.impl;
 
-import javax.annotation.Generated;
-
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.CompositeMeasure;
 
@@ -26,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CompositeMeasureImpl extends MeasureValueImpl implements CompositeMeasure {
+public abstract class CompositeMeasureImpl extends MeasureValueImpl implements CompositeMeasure {
 	/**
 	 * The cached value of the '{@link #getX() <em>X</em>}' reference.
 	 * <!-- begin-user-doc -->

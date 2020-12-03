@@ -466,7 +466,7 @@ public class AlgaeSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         targetClass=EString 
 	 *         targetOperation=EString? 
 	 *         (type=Type | subname=EString) 
-	 *         function=[CompositeMeasure|EString] 
+	 *         x=[Measure|EString] 
 	 *         leftBound=[Measure|EString] 
 	 *         rightBound=[Measure|EString]
 	 *     )

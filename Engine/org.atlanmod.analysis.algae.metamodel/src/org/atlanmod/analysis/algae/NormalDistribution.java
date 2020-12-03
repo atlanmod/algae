@@ -34,7 +34,6 @@ public interface NormalDistribution extends MeasurementUncertaintyInformation {
 	 * @see #setMeanValue(BigDecimal)
 	 * @see org.atlanmod.analysis.algae.AlgaePackage#getNormalDistribution_MeanValue()
 	 * @model derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='Measure.allInstances()-&gt;select(v |\n\t\t\t\t\tv.uncertainty = (MeasurementUncertainty.allInstances()-&gt;select(u |\n\t\t\t\t\t\tu.information = self)-&gt;asOrderedSet()-&gt;first()))-&gt;asOrderedSet()-&gt;first().value()'"
 	 * @generated
 	 */
 	BigDecimal getMeanValue();
@@ -61,7 +60,6 @@ public interface NormalDistribution extends MeasurementUncertaintyInformation {
 	 * @see #setStandardDeviation(BigDecimal)
 	 * @see org.atlanmod.analysis.algae.AlgaePackage#getNormalDistribution_StandardDeviation()
 	 * @model derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='MeasurementUncertainty.allInstances()-&gt;select(u |\n\t\t\t\t\t\tu.information = self)-&gt;asOrderedSet()-&gt;first().standardUncertainty'"
 	 * @generated
 	 */
 	BigDecimal getStandardDeviation();

@@ -27,7 +27,6 @@ import java.math.BigDecimal;
 public interface MeasureValue extends TypedMeasure {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -37,7 +36,7 @@ public interface MeasureValue extends TypedMeasure {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(BigDecimal)
 	 * @see org.atlanmod.analysis.algae.AlgaePackage#getMeasureValue_Value()
-	 * @model default="0" required="true"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='0.0'"
 	 * @generated
 	 */
 	BigDecimal getValue();

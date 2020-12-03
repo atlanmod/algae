@@ -12,7 +12,6 @@ package org.atlanmod.analysis.algae;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.atlanmod.analysis.algae.IntegrationMeasure#getFunction <em>Function</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.IntegrationMeasure#getLeftBound <em>Left Bound</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.IntegrationMeasure#getRightBound <em>Right Bound</em>}</li>
  * </ul>
@@ -21,33 +20,7 @@ package org.atlanmod.analysis.algae;
  * @model
  * @generated
  */
-public interface IntegrationMeasure extends MeasureValue {
-	/**
-	 * Returns the value of the '<em><b>Function</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Function</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Function</em>' reference.
-	 * @see #setFunction(CompositeMeasure)
-	 * @see org.atlanmod.analysis.algae.AlgaePackage#getIntegrationMeasure_Function()
-	 * @model required="true"
-	 * @generated
-	 */
-	CompositeMeasure getFunction();
-
-	/**
-	 * Sets the value of the '{@link org.atlanmod.analysis.algae.IntegrationMeasure#getFunction <em>Function</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Function</em>' reference.
-	 * @see #getFunction()
-	 * @generated
-	 */
-	void setFunction(CompositeMeasure value);
-
+public interface IntegrationMeasure extends CompositeMeasure {
 	/**
 	 * Returns the value of the '<em><b>Left Bound</b></em>' reference.
 	 * <!-- begin-user-doc -->

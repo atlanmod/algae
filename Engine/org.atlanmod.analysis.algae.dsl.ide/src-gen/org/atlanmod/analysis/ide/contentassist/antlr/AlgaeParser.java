@@ -303,7 +303,7 @@ public class AlgaeParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntegrationMeasureAccess().getTargetOperationAssignment_3_1(), "rule__IntegrationMeasure__TargetOperationAssignment_3_1");
 			builder.put(grammarAccess.getIntegrationMeasureAccess().getTypeAssignment_5_0(), "rule__IntegrationMeasure__TypeAssignment_5_0");
 			builder.put(grammarAccess.getIntegrationMeasureAccess().getSubnameAssignment_5_1(), "rule__IntegrationMeasure__SubnameAssignment_5_1");
-			builder.put(grammarAccess.getIntegrationMeasureAccess().getFunctionAssignment_8(), "rule__IntegrationMeasure__FunctionAssignment_8");
+			builder.put(grammarAccess.getIntegrationMeasureAccess().getXAssignment_8(), "rule__IntegrationMeasure__XAssignment_8");
 			builder.put(grammarAccess.getIntegrationMeasureAccess().getLeftBoundAssignment_10(), "rule__IntegrationMeasure__LeftBoundAssignment_10");
 			builder.put(grammarAccess.getIntegrationMeasureAccess().getRightBoundAssignment_12(), "rule__IntegrationMeasure__RightBoundAssignment_12");
 			builder.put(grammarAccess.getMeasurementUncertaintyAccess().getStandardUncertaintyAssignment_3_1(), "rule__MeasurementUncertainty__StandardUncertaintyAssignment_3_1");

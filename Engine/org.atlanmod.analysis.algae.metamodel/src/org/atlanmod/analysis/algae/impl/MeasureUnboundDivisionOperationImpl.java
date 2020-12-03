@@ -40,7 +40,7 @@ public class MeasureUnboundDivisionOperationImpl extends MeasureUnboundOperation
 			val = val.divide(getMeasures().get(i).value(), 5, RoundingMode.HALF_EVEN);
 		}
 		
-		this.value = val;
+		setValue(val);		
 	}
 	
 	/**

@@ -234,11 +234,6 @@ public class PlatformItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(AlgaePackage.Literals.PLATFORM__MEASURES,
-				 AlgaeFactory.eINSTANCE.createCompositeMeasure()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.PLATFORM__MEASURES,
 				 AlgaeFactory.eINSTANCE.createLogisticMeasure()));
 
 		newChildDescriptors.add

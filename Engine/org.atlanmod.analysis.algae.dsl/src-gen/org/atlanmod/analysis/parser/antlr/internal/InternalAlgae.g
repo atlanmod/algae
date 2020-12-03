@@ -2443,7 +2443,7 @@ ruleIntegrationMeasure returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureCrossReference_8_0());
+					newCompositeNode(grammarAccess.getIntegrationMeasureAccess().getXMeasureCrossReference_8_0());
 				}
 				ruleEString
 				{

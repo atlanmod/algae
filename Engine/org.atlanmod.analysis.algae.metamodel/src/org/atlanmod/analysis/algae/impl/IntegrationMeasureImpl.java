@@ -3,18 +3,17 @@
 package org.atlanmod.analysis.algae.impl;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 import javax.annotation.Generated;
 
 import org.apache.commons.math3.analysis.UnivariateFunction;
 import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
 import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
-import org.atlanmod.analysis.algae.AlgaeFactory;
 import org.atlanmod.analysis.algae.AlgaePackage;
-import org.atlanmod.analysis.algae.CompositeMeasure;
 import org.atlanmod.analysis.algae.IntegrationMeasure;
 import org.atlanmod.analysis.algae.Measure;
-import org.atlanmod.analysis.algae.MeasureValue;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -30,24 +29,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.atlanmod.analysis.algae.impl.IntegrationMeasureImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.impl.IntegrationMeasureImpl#getLeftBound <em>Left Bound</em>}</li>
  *   <li>{@link org.atlanmod.analysis.algae.impl.IntegrationMeasureImpl#getRightBound <em>Right Bound</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IntegrationMeasureImpl extends MeasureValueImpl implements IntegrationMeasure {
-	/**
-	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFunction()
-	 * @generated
-	 * @ordered
-	 */
-	protected CompositeMeasure function;
-
+public class IntegrationMeasureImpl extends CompositeMeasureImpl implements IntegrationMeasure {
 	/**
 	 * The cached value of the '{@link #getLeftBound() <em>Left Bound</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -87,16 +75,13 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 			
 			@Override
 			public double value(double arg0) {
-				MeasureValue value = AlgaeFactory.eINSTANCE.createMeasureValue();
-				value.setValue(new BigDecimal(arg0));
-				function.setX(value);
-				function.computeValue(targetClass, targetOperation);
-				return function.getValue().doubleValue();
+				return x.value().doubleValue();
 			}
 		};
 		UnivariateIntegrator in = new SimpsonIntegrator();
 		// 100 is the number of points to compute before calculating the area. This is arbitrary and should definitely be adapted to the desired accuracy.
-		in.integrate(100, fun, leftBound.value().doubleValue(), rightBound.value().doubleValue());
+		BigDecimal b = new BigDecimal(in.integrate(100, fun, leftBound.value().doubleValue(), rightBound.value().doubleValue()));
+		setValue(b.round(new MathContext(5, RoundingMode.HALF_EVEN)));
 	}
 
 	/**
@@ -107,44 +92,6 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 	@Override
 	protected EClass eStaticClass() {
 		return AlgaePackage.Literals.INTEGRATION_MEASURE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CompositeMeasure getFunction() {
-		if (function != null && function.eIsProxy()) {
-			InternalEObject oldFunction = (InternalEObject)function;
-			function = (CompositeMeasure)eResolveProxy(oldFunction);
-			if (function != oldFunction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgaePackage.INTEGRATION_MEASURE__FUNCTION, oldFunction, function));
-			}
-		}
-		return function;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CompositeMeasure basicGetFunction() {
-		return function;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFunction(CompositeMeasure newFunction) {
-		CompositeMeasure oldFunction = function;
-		function = newFunction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgaePackage.INTEGRATION_MEASURE__FUNCTION, oldFunction, function));
 	}
 
 	/**
@@ -231,9 +178,6 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgaePackage.INTEGRATION_MEASURE__FUNCTION:
-				if (resolve) return getFunction();
-				return basicGetFunction();
 			case AlgaePackage.INTEGRATION_MEASURE__LEFT_BOUND:
 				if (resolve) return getLeftBound();
 				return basicGetLeftBound();
@@ -252,9 +196,6 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgaePackage.INTEGRATION_MEASURE__FUNCTION:
-				setFunction((CompositeMeasure)newValue);
-				return;
 			case AlgaePackage.INTEGRATION_MEASURE__LEFT_BOUND:
 				setLeftBound((Measure)newValue);
 				return;
@@ -273,9 +214,6 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgaePackage.INTEGRATION_MEASURE__FUNCTION:
-				setFunction((CompositeMeasure)null);
-				return;
 			case AlgaePackage.INTEGRATION_MEASURE__LEFT_BOUND:
 				setLeftBound((Measure)null);
 				return;
@@ -294,8 +232,6 @@ public class IntegrationMeasureImpl extends MeasureValueImpl implements Integrat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgaePackage.INTEGRATION_MEASURE__FUNCTION:
-				return function != null;
 			case AlgaePackage.INTEGRATION_MEASURE__LEFT_BOUND:
 				return leftBound != null;
 			case AlgaePackage.INTEGRATION_MEASURE__RIGHT_BOUND:

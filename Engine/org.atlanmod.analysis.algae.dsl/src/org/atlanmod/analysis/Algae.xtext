@@ -102,7 +102,7 @@ LogisticMeasure returns LogisticMeasure:
 
 IntegrationMeasure returns IntegrationMeasure:
 	{IntegrationMeasure}
-	(post ?= 'post')? targetClass=EString ('.' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" function=[CompositeMeasure|EString] '['leftBound=[Measure|EString] ';' rightBound=[Measure|EString]']'
+	(post ?= 'post')? targetClass=EString ('.' targetOperation=EString)? ('.') (type=Type | subname = EString) "=" "integral" x=[Measure|EString] '['leftBound=[Measure|EString] ';' rightBound=[Measure|EString]']'
 ;
 
 

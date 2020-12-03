@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionContext;
@@ -100,6 +101,7 @@ public class EngineAddon implements IEngineAddon {
 				}
 			});
 										
+			EcoreUtil.resolveAll(resource);
 			System.out.println(platform.getName()+" estimation model loaded");
 			initializeModelers(ctx, resourceSet);								
 		} catch (IOException e) {
@@ -224,13 +226,23 @@ public class EngineAddon implements IEngineAddon {
 		mapClassEstimation.getOrDefault(classOperation, Collections.<Measure>emptyList()).forEach(measure -> {	
 			if (measure != null && (hasPost(measure))) {			
 				//updateMeasure(measure, caller, operation);
-				
+				measure.computeValue(caller, operation);
+
 				if (measure instanceof RealTimeDuration) {
 					((RealTimeDuration) measure).setValue(BigDecimal.valueOf(duration));
 				}				
 				
-				System.out.println(classOperation+" :  "+measure.value());
-				manageEstimation(measure, caller);
+				try {
+					BigDecimal output = measure.value();
+					System.out.println(classOperation + "." 
+							+ (measure.getSubname() == null ? ((TypedMeasure) measure).getType() : measure.getSubname())
+							+ " : "+output);					
+					manageEstimation(measure, caller);
+					
+				} catch (Exception e) {				
+					System.out.println(measure.getName()+" - "+measure.getSubname()+" cannot compute analysis");
+				}		
+				
 			}		
 			
 		});;		

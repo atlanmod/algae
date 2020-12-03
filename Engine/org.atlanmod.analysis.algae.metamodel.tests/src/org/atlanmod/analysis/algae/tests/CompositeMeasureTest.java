@@ -2,9 +2,6 @@
  */
 package org.atlanmod.analysis.algae.tests;
 
-import junit.textui.TestRunner;
-
-import org.atlanmod.analysis.algae.AlgaeFactory;
 import org.atlanmod.analysis.algae.CompositeMeasure;
 
 /**
@@ -13,16 +10,7 @@ import org.atlanmod.analysis.algae.CompositeMeasure;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CompositeMeasureTest extends MeasureValueTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(CompositeMeasureTest.class);
-	}
+public abstract class CompositeMeasureTest extends MeasureValueTest {
 
 	/**
 	 * Constructs a new Composite Measure test case with the given name.
@@ -43,28 +31,6 @@ public class CompositeMeasureTest extends MeasureValueTest {
 	@Override
 	protected CompositeMeasure getFixture() {
 		return (CompositeMeasure)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(AlgaeFactory.eINSTANCE.createCompositeMeasure());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //CompositeMeasureTest

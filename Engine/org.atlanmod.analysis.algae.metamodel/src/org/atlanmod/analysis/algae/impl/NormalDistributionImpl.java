@@ -7,8 +7,9 @@ import java.math.BigDecimal;
 import org.atlanmod.analysis.algae.AlgaePackage;
 import org.atlanmod.analysis.algae.NormalDistribution;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,24 +27,44 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  */
 public class NormalDistributionImpl extends MeasurementUncertaintyInformationImpl implements NormalDistribution {
 	/**
-	 * The cached setting delegate for the '{@link #getMeanValue() <em>Mean Value</em>}' attribute.
+	 * The default value of the '{@link #getMeanValue() <em>Mean Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMeanValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate MEAN_VALUE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)AlgaePackage.Literals.NORMAL_DISTRIBUTION__MEAN_VALUE).getSettingDelegate();
+	protected static final BigDecimal MEAN_VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached setting delegate for the '{@link #getStandardDeviation() <em>Standard Deviation</em>}' attribute.
+	 * The cached value of the '{@link #getMeanValue() <em>Mean Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMeanValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal meanValue = MEAN_VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStandardDeviation() <em>Standard Deviation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStandardDeviation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate STANDARD_DEVIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)AlgaePackage.Literals.NORMAL_DISTRIBUTION__STANDARD_DEVIATION).getSettingDelegate();
+	protected static final BigDecimal STANDARD_DEVIATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStandardDeviation() <em>Standard Deviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStandardDeviation()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigDecimal standardDeviation = STANDARD_DEVIATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +91,7 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	 * @generated
 	 */
 	public BigDecimal getMeanValue() {
-		return (BigDecimal)MEAN_VALUE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		return meanValue;
 	}
 
 	/**
@@ -79,7 +100,10 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	 * @generated
 	 */
 	public void setMeanValue(BigDecimal newMeanValue) {
-		MEAN_VALUE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newMeanValue);
+		BigDecimal oldMeanValue = meanValue;
+		meanValue = newMeanValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgaePackage.NORMAL_DISTRIBUTION__MEAN_VALUE, oldMeanValue, meanValue));
 	}
 
 	/**
@@ -88,7 +112,7 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	 * @generated
 	 */
 	public BigDecimal getStandardDeviation() {
-		return (BigDecimal)STANDARD_DEVIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		return standardDeviation;
 	}
 
 	/**
@@ -97,7 +121,10 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	 * @generated
 	 */
 	public void setStandardDeviation(BigDecimal newStandardDeviation) {
-		STANDARD_DEVIATION__ESETTING_DELEGATE.dynamicSet(this, null, 0, newStandardDeviation);
+		BigDecimal oldStandardDeviation = standardDeviation;
+		standardDeviation = newStandardDeviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgaePackage.NORMAL_DISTRIBUTION__STANDARD_DEVIATION, oldStandardDeviation, standardDeviation));
 	}
 
 	/**
@@ -143,10 +170,10 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AlgaePackage.NORMAL_DISTRIBUTION__MEAN_VALUE:
-				MEAN_VALUE__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				setMeanValue(MEAN_VALUE_EDEFAULT);
 				return;
 			case AlgaePackage.NORMAL_DISTRIBUTION__STANDARD_DEVIATION:
-				STANDARD_DEVIATION__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				setStandardDeviation(STANDARD_DEVIATION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -161,11 +188,29 @@ public class NormalDistributionImpl extends MeasurementUncertaintyInformationImp
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AlgaePackage.NORMAL_DISTRIBUTION__MEAN_VALUE:
-				return MEAN_VALUE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return MEAN_VALUE_EDEFAULT == null ? meanValue != null : !MEAN_VALUE_EDEFAULT.equals(meanValue);
 			case AlgaePackage.NORMAL_DISTRIBUTION__STANDARD_DEVIATION:
-				return STANDARD_DEVIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return STANDARD_DEVIATION_EDEFAULT == null ? standardDeviation != null : !STANDARD_DEVIATION_EDEFAULT.equals(standardDeviation);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (meanValue: ");
+		result.append(meanValue);
+		result.append(", standardDeviation: ");
+		result.append(standardDeviation);
+		result.append(')');
+		return result.toString();
 	}
 
 } //NormalDistributionImpl

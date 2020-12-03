@@ -34,7 +34,7 @@
     </eOperations>
     <eOperations name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="body" value="0"/>
+        <details key="body" value="null"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -82,8 +82,11 @@
         <details key="body" value="self.value"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
-        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="0.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureOCL" eSuperTypes="#//MeasureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oclQuery" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -144,17 +147,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//MeasurementUncertaintyInformation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="meanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
-        derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="Measure.allInstances()->select(v |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;v.uncertainty = (MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first()))->asOrderedSet()->first().value()"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardDeviation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
-        derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="MeasurementUncertainty.allInstances()->select(u |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;u.information = self)->asOrderedSet()->first().standardUncertainty"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interval" eSuperTypes="#//MeasurementUncertaintyInformation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lowerEndpoint" lowerBound="1" eType="#//Measure" containment="true"/>
@@ -172,7 +167,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sample">
     <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" upperBound="-1" eType="#//Measure" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeMeasure" eSuperTypes="#//MeasureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeMeasure" abstract="true" eSuperTypes="#//MeasureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="x" lowerBound="1" eType="#//Measure"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogisticMeasure" eSuperTypes="#//CompositeMeasure">
@@ -181,8 +176,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="x0" lowerBound="1" eType="#//Measure"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExponentialMeasure" eSuperTypes="#//CompositeMeasure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegrationMeasure" eSuperTypes="#//MeasureValue">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1" eType="#//CompositeMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegrationMeasure" eSuperTypes="#//CompositeMeasure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftBound" lowerBound="1" eType="#//Measure"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightBound" lowerBound="1" eType="#//Measure"/>
   </eClassifiers>

@@ -19146,31 +19146,31 @@ public class InternalAlgaeParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegrationMeasure__Group__8__Impl"
-    // InternalAlgae.g:5977:1: rule__IntegrationMeasure__Group__8__Impl : ( ( rule__IntegrationMeasure__FunctionAssignment_8 ) ) ;
+    // InternalAlgae.g:5977:1: rule__IntegrationMeasure__Group__8__Impl : ( ( rule__IntegrationMeasure__XAssignment_8 ) ) ;
     public final void rule__IntegrationMeasure__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAlgae.g:5981:1: ( ( ( rule__IntegrationMeasure__FunctionAssignment_8 ) ) )
-            // InternalAlgae.g:5982:1: ( ( rule__IntegrationMeasure__FunctionAssignment_8 ) )
+            // InternalAlgae.g:5981:1: ( ( ( rule__IntegrationMeasure__XAssignment_8 ) ) )
+            // InternalAlgae.g:5982:1: ( ( rule__IntegrationMeasure__XAssignment_8 ) )
             {
-            // InternalAlgae.g:5982:1: ( ( rule__IntegrationMeasure__FunctionAssignment_8 ) )
-            // InternalAlgae.g:5983:2: ( rule__IntegrationMeasure__FunctionAssignment_8 )
+            // InternalAlgae.g:5982:1: ( ( rule__IntegrationMeasure__XAssignment_8 ) )
+            // InternalAlgae.g:5983:2: ( rule__IntegrationMeasure__XAssignment_8 )
             {
-             before(grammarAccess.getIntegrationMeasureAccess().getFunctionAssignment_8()); 
-            // InternalAlgae.g:5984:2: ( rule__IntegrationMeasure__FunctionAssignment_8 )
-            // InternalAlgae.g:5984:3: rule__IntegrationMeasure__FunctionAssignment_8
+             before(grammarAccess.getIntegrationMeasureAccess().getXAssignment_8()); 
+            // InternalAlgae.g:5984:2: ( rule__IntegrationMeasure__XAssignment_8 )
+            // InternalAlgae.g:5984:3: rule__IntegrationMeasure__XAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__IntegrationMeasure__FunctionAssignment_8();
+            rule__IntegrationMeasure__XAssignment_8();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntegrationMeasureAccess().getFunctionAssignment_8()); 
+             after(grammarAccess.getIntegrationMeasureAccess().getXAssignment_8()); 
 
             }
 
@@ -62747,9 +62747,9 @@ public class InternalAlgaeParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__IntegrationMeasure__SubnameAssignment_5_1"
 
 
-    // $ANTLR start "rule__IntegrationMeasure__FunctionAssignment_8"
-    // InternalAlgae.g:20529:1: rule__IntegrationMeasure__FunctionAssignment_8 : ( ( ruleEString ) ) ;
-    public final void rule__IntegrationMeasure__FunctionAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__IntegrationMeasure__XAssignment_8"
+    // InternalAlgae.g:20529:1: rule__IntegrationMeasure__XAssignment_8 : ( ( ruleEString ) ) ;
+    public final void rule__IntegrationMeasure__XAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -62760,21 +62760,21 @@ public class InternalAlgaeParser extends AbstractInternalContentAssistParser {
             // InternalAlgae.g:20534:2: ( ( ruleEString ) )
             // InternalAlgae.g:20535:3: ( ruleEString )
             {
-             before(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureCrossReference_8_0()); 
+             before(grammarAccess.getIntegrationMeasureAccess().getXMeasureCrossReference_8_0()); 
             // InternalAlgae.g:20536:3: ( ruleEString )
             // InternalAlgae.g:20537:4: ruleEString
             {
-             before(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureEStringParserRuleCall_8_0_1()); 
+             before(grammarAccess.getIntegrationMeasureAccess().getXMeasureEStringParserRuleCall_8_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureEStringParserRuleCall_8_0_1()); 
+             after(grammarAccess.getIntegrationMeasureAccess().getXMeasureEStringParserRuleCall_8_0_1()); 
 
             }
 
-             after(grammarAccess.getIntegrationMeasureAccess().getFunctionCompositeMeasureCrossReference_8_0()); 
+             after(grammarAccess.getIntegrationMeasureAccess().getXMeasureCrossReference_8_0()); 
 
             }
 
@@ -62793,7 +62793,7 @@ public class InternalAlgaeParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__IntegrationMeasure__FunctionAssignment_8"
+    // $ANTLR end "rule__IntegrationMeasure__XAssignment_8"
 
 
     // $ANTLR start "rule__IntegrationMeasure__LeftBoundAssignment_10"

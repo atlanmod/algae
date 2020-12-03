@@ -463,29 +463,6 @@ public class AlgaeItemProviderAdapterFactory extends AlgaeAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.atlanmod.analysis.algae.CompositeMeasure} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CompositeMeasureItemProvider compositeMeasureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.atlanmod.analysis.algae.CompositeMeasure}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCompositeMeasureAdapter() {
-		if (compositeMeasureItemProvider == null) {
-			compositeMeasureItemProvider = new CompositeMeasureItemProvider(this);
-		}
-
-		return compositeMeasureItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.atlanmod.analysis.algae.LogisticMeasure} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,7 +647,6 @@ public class AlgaeItemProviderAdapterFactory extends AlgaeAdapterFactory impleme
 		if (samplingItemProvider != null) samplingItemProvider.dispose();
 		if (integralItemProvider != null) integralItemProvider.dispose();
 		if (sampleItemProvider != null) sampleItemProvider.dispose();
-		if (compositeMeasureItemProvider != null) compositeMeasureItemProvider.dispose();
 		if (logisticMeasureItemProvider != null) logisticMeasureItemProvider.dispose();
 		if (exponentialMeasureItemProvider != null) exponentialMeasureItemProvider.dispose();
 		if (integrationMeasureItemProvider != null) integrationMeasureItemProvider.dispose();

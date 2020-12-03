@@ -3,6 +3,8 @@
 package org.atlanmod.analysis.algae.impl;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 import javax.annotation.Generated;
 
@@ -81,7 +83,7 @@ public class LogisticMeasureImpl extends CompositeMeasureImpl implements Logisti
 		
 		double expValue = Math.exp((x.value().doubleValue() - x0.value().doubleValue())* (-1) * k.value().doubleValue());
 				
-		value = BigDecimal.valueOf(l.value().doubleValue() / (1+expValue));
+		setValue(BigDecimal.valueOf(l.value().doubleValue() / (1+expValue)).round(new MathContext(5, RoundingMode.HALF_EVEN)));
 	}
 
 

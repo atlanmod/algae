@@ -74,7 +74,6 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 			case AlgaePackage.SAMPLING: return createSampling();
 			case AlgaePackage.INTEGRAL: return createIntegral();
 			case AlgaePackage.SAMPLE: return createSample();
-			case AlgaePackage.COMPOSITE_MEASURE: return createCompositeMeasure();
 			case AlgaePackage.LOGISTIC_MEASURE: return createLogisticMeasure();
 			case AlgaePackage.EXPONENTIAL_MEASURE: return createExponentialMeasure();
 			case AlgaePackage.INTEGRATION_MEASURE: return createIntegrationMeasure();
@@ -285,16 +284,6 @@ public class AlgaeFactoryImpl extends EFactoryImpl implements AlgaeFactory {
 	public Sample createSample() {
 		SampleImpl sample = new SampleImpl();
 		return sample;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CompositeMeasure createCompositeMeasure() {
-		CompositeMeasureImpl compositeMeasure = new CompositeMeasureImpl();
-		return compositeMeasure;
 	}
 
 	/**

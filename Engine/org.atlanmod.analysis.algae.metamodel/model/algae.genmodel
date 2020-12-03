@@ -100,7 +100,6 @@
     </genClasses>
     <genClasses ecoreClass="algae.ecore#//ExponentialMeasure"/>
     <genClasses ecoreClass="algae.ecore#//IntegrationMeasure">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/function"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/leftBound"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algae.ecore#//IntegrationMeasure/rightBound"/>
     </genClasses>

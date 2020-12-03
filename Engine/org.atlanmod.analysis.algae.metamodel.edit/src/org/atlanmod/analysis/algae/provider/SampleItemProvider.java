@@ -196,11 +196,6 @@ public class SampleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(AlgaePackage.Literals.SAMPLE__QUANTITY,
-				 AlgaeFactory.eINSTANCE.createCompositeMeasure()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgaePackage.Literals.SAMPLE__QUANTITY,
 				 AlgaeFactory.eINSTANCE.createLogisticMeasure()));
 
 		newChildDescriptors.add

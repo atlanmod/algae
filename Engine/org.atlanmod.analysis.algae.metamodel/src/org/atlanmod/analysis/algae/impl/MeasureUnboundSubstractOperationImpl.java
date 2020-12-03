@@ -39,10 +39,10 @@ public class MeasureUnboundSubstractOperationImpl extends MeasureUnboundOperatio
 				m.computeValue(targetClass, targetOperation);
 				sum = sum.subtract(m.value());
 			} else {
-				sum = this.value;
+				sum = getValue();
 			}
 		}
-		value = sum;
+		setValue(sum);
 	}
 	
 	

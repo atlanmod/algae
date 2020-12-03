@@ -1470,9 +1470,9 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSubnameEStringParserRuleCall_5_1_0 = (RuleCall)cSubnameAssignment_5_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cIntegralKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cFunctionAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cFunctionCompositeMeasureCrossReference_8_0 = (CrossReference)cFunctionAssignment_8.eContents().get(0);
-		private final RuleCall cFunctionCompositeMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cFunctionCompositeMeasureCrossReference_8_0.eContents().get(1);
+		private final Assignment cXAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cXMeasureCrossReference_8_0 = (CrossReference)cXAssignment_8.eContents().get(0);
+		private final RuleCall cXMeasureEStringParserRuleCall_8_0_1 = (RuleCall)cXMeasureCrossReference_8_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cLeftBoundAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final CrossReference cLeftBoundMeasureCrossReference_10_0 = (CrossReference)cLeftBoundAssignment_10.eContents().get(0);
@@ -1485,13 +1485,12 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//IntegrationMeasure:
 		//	{IntegrationMeasure} post?='post'? targetClass=EString ('.' targetOperation=EString)? '.' (type=Type |
-		//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
-		//	rightBound=[Measure|EString] ']';
+		//	subname=EString) "=" "integral" x=[Measure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString]
+		//	']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IntegrationMeasure} post?='post'? targetClass=EString ('.' targetOperation=EString)? '.' (type=Type | subname=EString)
-		//"=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString]
-		//']'
+		//"=" "integral" x=[Measure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString] ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{IntegrationMeasure}
@@ -1545,14 +1544,14 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 		//"integral"
 		public Keyword getIntegralKeyword_7() { return cIntegralKeyword_7; }
 		
-		//function=[CompositeMeasure|EString]
-		public Assignment getFunctionAssignment_8() { return cFunctionAssignment_8; }
+		//x=[Measure|EString]
+		public Assignment getXAssignment_8() { return cXAssignment_8; }
 		
-		//[CompositeMeasure|EString]
-		public CrossReference getFunctionCompositeMeasureCrossReference_8_0() { return cFunctionCompositeMeasureCrossReference_8_0; }
+		//[Measure|EString]
+		public CrossReference getXMeasureCrossReference_8_0() { return cXMeasureCrossReference_8_0; }
 		
 		//EString
-		public RuleCall getFunctionCompositeMeasureEStringParserRuleCall_8_0_1() { return cFunctionCompositeMeasureEStringParserRuleCall_8_0_1; }
+		public RuleCall getXMeasureEStringParserRuleCall_8_0_1() { return cXMeasureEStringParserRuleCall_8_0_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_9() { return cLeftSquareBracketKeyword_9; }
@@ -5007,8 +5006,8 @@ public class AlgaeGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//IntegrationMeasure:
 	//	{IntegrationMeasure} post?='post'? targetClass=EString ('.' targetOperation=EString)? '.' (type=Type |
-	//	subname=EString) "=" "integral" function=[CompositeMeasure|EString] '[' leftBound=[Measure|EString] ';'
-	//	rightBound=[Measure|EString] ']';
+	//	subname=EString) "=" "integral" x=[Measure|EString] '[' leftBound=[Measure|EString] ';' rightBound=[Measure|EString]
+	//	']';
 	public IntegrationMeasureElements getIntegrationMeasureAccess() {
 		return pIntegrationMeasure;
 	}

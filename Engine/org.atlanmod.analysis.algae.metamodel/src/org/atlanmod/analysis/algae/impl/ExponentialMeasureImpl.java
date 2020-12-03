@@ -3,6 +3,8 @@
 package org.atlanmod.analysis.algae.impl;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 import javax.annotation.Generated;
 
@@ -32,9 +34,8 @@ public class ExponentialMeasureImpl extends CompositeMeasureImpl implements Expo
 	@Generated({"NOT"})
 	@Override
 	public void computeValue(EObject targetClass, EOperation targetOperation) {
-		x.computeValue(targetClass, targetOperation);
-		
-		value = BigDecimal.valueOf(Math.exp(getX().value().doubleValue()));
+		x.computeValue(targetClass, targetOperation);			
+		setValue(BigDecimal.valueOf(Math.exp(getX().value().doubleValue())).round(new MathContext(5, RoundingMode.HALF_EVEN)));
 	}
 
 	/**
