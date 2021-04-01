@@ -1,19 +1,19 @@
-# Energy Estimation Language: EEL
+# Atlanmod Language for Generic Analysis of Executable models: ALGAE
 
 ## General information
 
-This is the implementation of EEL (Energy Estimation Language), presented in the SLE 2020 paper "Annotating Executable DSLs with Energy Estimation Formulas".
+This is the implementation of ALGAE, extension of EEL presented first in the SLE 2020 paper "Annotating Executable DSLs with Energy Estimation Formulas".
 Note that GEMOC Studio 3.2.0 do not work on MacOS.
 
 ## Content of the Repository
 
 ### Engine
 
-This directory contains all the Eclipse plugins to perform energy estimations using EEL:
+This directory contains all the Eclipse plugins to perform energy estimations using algae:
 
-- The EEL meta-model: `org.atlanmod.energy.estimation.metamodel(.*)?`
-- The EEL concrete syntax: `org.atlanmod.energy.estimation.dsl(.*)?`
-- The EEL engine, that extends GEMOC's engine, and enables the estimation of energy consumption at runtime: `org.atlanmod.energy.estimation.engine` 
+- The algae meta-model: `org.atlanmod.energy.estimation.metamodel(.*)?`
+- The algae concrete syntax: `org.atlanmod.energy.estimation.dsl(.*)?`
+- The algae engine, that extends GEMOC's engine, and enables the estimation of energy consumption at runtime: `org.atlanmod.energy.estimation.engine` 
 - An additional extension of GEMOC's engine, for ArduinoML, used to define events happening when simulating Arduino systems. `org.atlanmod.arduino.sequential.eventengine`
 
 ### Language_Workbench
@@ -39,12 +39,12 @@ It contains:
   - `waitForIRBlueLED.arduino` corresponds to the Arduino model in Figure 5.
   - `blink.arduino`, `photoresistor.arduino` and `servo9g.arduino` corresponds to the models used as benchmarks in Figure 8.
   - `servoIrButton.arduino` is the model in Figure 9.
-- EEL models, with the `.eel` extension
-  - `model.eel` corresponds to the excerpt in Listing 1.
-- The additional EEL models in the `usecases` repository, define with EEL the energy estimation formulas for the existing languages from the state-of-the-art.
+- algae models, with the `.algae` extension
+  - `model.algae` corresponds to the excerpt in Listing 1.
+- The additional algae models in the `usecases` repository, define with algae the energy estimation formulas for the existing languages from the state-of-the-art.
 
 Note that the `metrics` directory contains all the measurements performed for the evaluation of the paper, in `.mat` Octave files, as well as the Arduino C code generated.
-These results were compared with the energy estimations provided by EEL.
+These results were compared with the energy estimations provided by algae.
 
 
 ## Installation guide
@@ -56,8 +56,8 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 1. Start GEMOC and create a new workspace. Make sure that the JRE version used by GEMOC is Java 9, as well as the Compiler Compliance.
 2. `File > Import > General > Existing Projects into Workspace`
-3. Pick `eel/language_workbench` directory
-4. Same for `eel/engine` directory.
+3. Pick `algae/language_workbench` directory
+4. Same for `algae/engine` directory.
 5. `Run > Run configuration > New Eclipse Application`
    1. Make sure that the product is `gemoc_studio`, and the execution environment is Java 9.
 6. Run (Gemoc might throw some errors related to egit, but that's not related to our app.)
@@ -66,13 +66,13 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 1. Switch to the new Gemoc Runtime Window
 2. `File > Import > General > Existing Projects into Workspace`
-3. Pick `eel/modeling_workbench`
-4. Open the `blink.arduino` and the `model.eel` models, to make sure that the plugins are properly loaded.
+3. Pick `algae/modeling_workbench`
+4. Open the `blink.arduino` and the `model.algae` models, to make sure that the plugins are properly loaded.
 
 ### Execution
 
 1. In the Gemoc Runtime, click on the `Energy > Estimation model > Set model`
-2. Select `model.eel`, validate. A `Done` message should appear in the console, confirming that the energy estimation model is properly loaded.
+2. Select `model.algae`, validate. A `Done` message should appear in the console, confirming that the energy estimation model is properly loaded.
 3. `Run > Run configuration > Executable model with Gemoc Java Engine`
 4. Complete the configuration with the following data:
    1. Model to execute: `blink.arduino`
@@ -84,8 +84,8 @@ It relies on xText, which needs Java ≥ 9. We used Java 9.0.4 for the evaluatio
 
 ### Additional executions
 
-1. Many more Arduino models are available, and an other EEL model that estimates a Arduino Mini platform. They correspond to the usecases presented in the paper. 
-2. Changing the EEL model can be done through `Energy > Estimation model > Load model`, and selecting the other EEL model.
+1. Many more Arduino models are available, and an other algae model that estimates a Arduino Mini platform. They correspond to the usecases presented in the paper. 
+2. Changing the algae model can be done through `Energy > Estimation model > Load model`, and selecting the other algae model.
 3. Some Arduino models require external inputs. These are defined in the event addon. Thus, running the `waitForIRBlueLed.arduino` model requires to check the `Event addon` in the Engine addon tab, along with the `Energy estimation`.
 
 ## Video guide
@@ -96,10 +96,9 @@ Link: https://youtu.be/MgnarNZ2q6E
 
     java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be found by org.eclipse.egit.core_5.0.0.201806131550-r
 
-This is not due to EEL, and thus can be ignored.
+This is not due to algae, and thus can be ignored.
 
     class has been compiled by a more recent version of the Java Runtime (class file version 54.0), this version of the Java Runtime only recognizes class file versions up to 53.0
 
 The compiler compliance level do not match the jdk used. To fix:
 `Window > Preferences > Java > Compiler > Compiler compliance level > 9`
-
