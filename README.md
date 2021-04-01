@@ -11,9 +11,9 @@ Note that GEMOC Studio 3.2.0 do not work on MacOS.
 
 This directory contains all the Eclipse plugins to perform energy estimations using algae:
 
-- The algae meta-model: `org.atlanmod.energy.estimation.metamodel(.*)?`
-- The algae concrete syntax: `org.atlanmod.energy.estimation.dsl(.*)?`
-- The algae engine, that extends GEMOC's engine, and enables the estimation of energy consumption at runtime: `org.atlanmod.energy.estimation.engine` 
+- The algae meta-model: `org.atlanmod.algae.metamodel(.*)?`
+- The algae concrete syntax: `org.atlanmod.algae.dsl(.*)?`
+- The algae engine, that extends GEMOC's engine, and enables the estimation of energy consumption at runtime: `org.atlanmod.algae.engine` 
 - An additional extension of GEMOC's engine, for ArduinoML, used to define events happening when simulating Arduino systems. `org.atlanmod.arduino.sequential.eventengine`
 
 ### Language_Workbench
